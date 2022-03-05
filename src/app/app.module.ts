@@ -5,10 +5,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { WaiterTablesComponent } from './waiter-tables/waiter-tables.component';
+import { ChefKitchenComponent } from './chef-kitchen/chef-kitchen.component';
+import { ChefOrdersReadyComponent } from './chef-orders-ready/chef-orders-ready.component';
+import { WaiterMenuComponent } from './waiter-menu/waiter-menu.component';
+import { WaiterOrdersComponent } from './waiter-orders/waiter-orders.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    WaiterTablesComponent,
+    ChefKitchenComponent,
+    ChefOrdersReadyComponent,
+    WaiterMenuComponent,
+    WaiterOrdersComponent
   ],
   imports: [
     BrowserModule,
