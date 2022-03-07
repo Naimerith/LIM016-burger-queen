@@ -1,1 +1,90 @@
-<p>waiter-menu works!</p>
+  <header>
+    <nav>
+      <ul class="nav justify-content-end">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Pedidos</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <section>
+    <div class="input-group mb-3">
+      <fa-icon [icon]="['fas', 'user']"></fa-icon>
+      <input type="text" class="form-control" placeholder="Nombre cliente" aria-label="Username"
+        aria-describedby="basic-addon1">
+    </div>
+    <div>
+      Mesa N°:
+    </div>
+    <div>
+      <button type="button" class="btn btn-primary" disabled data-bs-toggle="button"
+        autocomplete="off">Desayuno</button>
+      <button type="button" class="btn btn-primary" data-bs-toggle="button" autocomplete="off">Almuerzo</button>
+    </div>
+    <div>
+      <ul class="list-group">
+        <li class="list-group-item"> Hamburguesa simple $10 <fa-icon [icon]="['fas', 'plus']"></fa-icon>
+        </li>
+        <li class="list-group-item">Hamburguesa doble $15 <fa-icon [icon]="['fas', 'plus']"></fa-icon>
+        </li>
+        <li class="list-group-item">Papas fritas $5 <fa-icon [icon]="['fas', 'plus']"></fa-icon>
+        </li>
+        <li class="list-group-item">Aros de cebolla $5 <fa-icon [icon]="['fas', 'plus']"></fa-icon>
+        </li>
+        <li class="list-group-item">Agua 500l $5 <fa-icon [icon]="['fas', 'plus']"></fa-icon>
+        </li>
+        <li class="list-group-item">Agua 750ml $7 <fa-icon [icon]="['fas', 'plus']"></fa-icon>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <div>
+      <div>
+        <div>
+          Pedido de:
+        </div>
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="Nombre cliente" aria-label="Username"
+            aria-describedby="basic-addon1">
+        </div>
+      </div>
+      <div>
+        <div>
+          Mesa N°:
+        </div>
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="" aria-label="Username"
+            aria-describedby="basic-addon1">
+        </div>
+      </div>
+    </div>
+    <div>
+      <button type="button" class="btn btn-primary" disabled data-bs-toggle="button"
+        autocomplete="off">Desayuno</button>
+      <button type="button" class="btn btn-primary" data-bs-toggle="button" autocomplete="off">Almuerzo</button>
+    </div>
+    <div>
+      <ul class="list-group">
+        <li class="list-group-item"><fa-icon [icon]="['fas', 'plus']"></fa-icon>
+        </li>
+        <li class="list-group-item"><fa-icon [icon]="['fas', 'plus']"></fa-icon>
+        </li>
+        <li class="list-group-item"><fa-icon [icon]="['fas', 'plus']"></fa-icon>
+        </li>
+        <li class="list-group-item"><fa-icon [icon]="['fas', 'plus']"></fa-icon>
+        </li>
+        <li class="list-group-item"><fa-icon [icon]="['fas', 'plus']"></fa-icon>
+        </li>
+        <li class="list-group-item"><fa-icon [icon]="['fas', 'plus']"></fa-icon>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <fa-icon [icon]="faCoffee"></fa-icon>

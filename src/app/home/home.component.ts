@@ -1,12 +1,17 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from '@angular/core';
 
-//agregamos el decorador 
 @Component({
-    selector: 'app-home',
-    templateUrl: './home.component.html',
-    styleUrls: ['./home.component.css']
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.scss']
 })
-//Esta es la clase que acompaña al decorador
-export class HomeComponent {
+export class HomeComponent implements OnInit {
+  title = 'my-app';
+  saludo = 'Hola nai'
+
+  constructor() { }
+
+  ngOnInit(): void {
+  }
 
 }

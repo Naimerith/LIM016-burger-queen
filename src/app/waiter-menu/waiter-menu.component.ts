@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-waiter-menu',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./waiter-menu.component.scss']
 })
 export class WaiterMenuComponent implements OnInit {
+  faCoffee = faCoffee;
 
   constructor() { }
 
