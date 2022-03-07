@@ -1,0 +1,130 @@
+{
+    "restaurante": "Luna burger",
+    "teléfono": "955 555 555",
+    "menú": [
+        {
+            "nombre": "cafe americano",
+            "tipo": "bebidas",
+            "precio": 5,
+            "categoria": "desayuno"
+        },
+        {
+            "nombre": "café con leche",
+            "tipo": "bebidas",
+            "precio": 7,
+            "categoria": "desayuno"
+        },
+        {
+            "nombre": "sandwich de jamón y queso",
+            "tipo": "plato principal",
+            "precio": 10,
+            "categoria": "desayuno"
+        },
+        {
+            "nombre": "jugo de frutas natural",
+            "tipo": "bebidas",
+            "precio": 7,
+            "categoria": "desayuno"
+        },
+        {
+            "nombre": "hamburguesa doble",
+            "tipo": "plato principal",
+            "precio": 15,
+            "categoria": "almuerzo y cena",
+            "ingredientes": [
+                "res",
+                "pollo",
+                "vegetariana"
+            ]
+        },
+        {
+            "nombre": "hamburguesa simple",
+            "tipo": "plato principal",
+            "precio": 10,
+            "categoria": "almuerzo y cena",
+            "ingrediente": [
+                "res",
+                "pollo",
+                "vegetariana"
+            ]
+        },
+        {
+            "nombre": "hamburguesa venezolana",
+            "tipo": "plato principal",
+            "precio": 15,
+            "categoria": "almuerzo y cena",
+            "ingrediente": [
+                "res",
+                "pollo",
+                "mixta",
+                "vegetariana"
+            ]
+        },
+        {
+            "nombre": "papas fritas",
+            "tipo": "acompañamientos",
+            "precio": 5,
+            "categoria": "almuerzo y cena"
+        },
+        {
+            "nombre": "aros de cebolla",
+            "tipo": "acompañamiento",
+            "precio": 5,
+            "categoria": "almuerzo y cena"
+        },
+        {
+            "nombre": "huevo frito",
+            "tipo": "acompañamiento",
+            "precio": 1,
+            "categoria": "almuerzo y cena"
+        },
+        {
+            "nombre": "palta",
+            "tipo": "acompañamiento",
+            "precio": 1,
+            "categoria": "almuerzo y cena"
+        },
+        {
+            "nombre": "papas al hilo",
+            "tipo": "acompañamiento",
+            "precio": 1,
+            "categoria": "almuerzo y cena"
+        },
+        {
+            "nombre": "agua de 500ml",
+            "tipo": "bebidas",
+            "precio": 5,
+            "categoria": "menu del dia"
+        },
+        {
+            "nombre": "agua de 700ml",
+            "tipo": "bebidas",
+            "precio": 7,
+            "categoria": "menu del dia"
+        },
+        {
+            "nombre": "gaseosa 500ml",
+            "tipo": "bebidas",
+            "precio": 7,
+            "categoria": "almuerzo y cena"
+        },
+        {
+            "nombre": "gaseosa 750ml",
+            "tipo": "bebidas",
+            "precio": 10,
+            "categoria": "almuerzo y cena"
+        },
+        {
+            "nombre": "queso",
+            "tipo": "acompañamiento",
+            "precio": 1,
+            "categoria": "almuerzo y cena"
+        },
+        {
+            "nombre": "huevo",
+            "tipo": "acompañamiento",
+            "precio": 1,
+            "categoria": "almuerzo y cena"
+        }
+    ]
+}
