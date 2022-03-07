@@ -1,23 +1,6 @@
-<body>
-  <header class="header">
-    <div>
-      <img class="logo" src="../../assets/img/logoheader.png" alt="logo luna burger">
-    </div>
-    <nav>
-      <ul class="nav justify-content-end">
-        <li class="nav-item" [routerLink]="['/']">
-          <h1 class="nav-link">Home</h1>
-          <img class="home" src="../../assets/img/home.png" alt="home">
-          <!-- <a class="nav-link" href="#">Home</a> -->
-        </li>
-        <li class="nav-item" [routerLink]="['/']">
-          <h1 class="nav-link">Pedidos</h1>
-          <!-- <a class="nav-link" href="#">Pedidos</a> -->
-        </li>
-      </ul>
-    </nav>
-  </header>
+<app-header></app-header>
 
+<body>
   <div class="container">
     <div class="btn-table-container">
       <button class="btn-table" [routerLink]="['/', 'menu']">Mesa 01</button>
