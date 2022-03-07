@@ -1,22 +1,21 @@
 <body>
-  <main class="home">
-    <h1 class="welcome">Bienvenido(a)!</h1>
-    <div class="container-home">
-        <section class="section-imgHome">
-            <img class="img-home" src="../../assets/img/Imagen2.png" alt="imagen Hamburguesa">
-        </section>
-        <section class="section-btnHome">
-            <button class="btn-waiter">
-                <a class="btn-text" [routerLink]="['/', 'tables']">Mesero</a>
-            </button>
-            <button class="btn-chef">
-                <a class="btn-text" [routerLink]="['/', 'kitchen']">Chef</a>
-            </button>
-            <div>
-                <img class="img-logo" src="../../assets/img/logo.png" alt="logo luna burguer">
-            </div>
-        </section>
-    </div>
-</main>
+    <main class="home">
+        <h1 class="welcome">Bienvenido(a)!</h1>
+        <div class="container-home">
+            <section class="section-imgHome">
+                <img class="img-home" src="../../assets/img/Imagen2.png" alt="imagen Hamburguesa">
+            </section>
+            <section class="section-btnHome">
+                <button class="btn-waiter" [routerLink]="['/tables']">
+                    <h1 class="btn-text">Mesero</h1>
+                </button>
+                <button class="btn-chef" [routerLink]="['/kitchen']">
+                    <h1 class="btn-text">Chef</h1>
+                </button>
+                <div>
+                    <img class="img-logo" src="../../assets/img/logo.png" alt="logo luna burguer">
+                </div>
+            </section>
+        </div>
+    </main>
 </body>
-

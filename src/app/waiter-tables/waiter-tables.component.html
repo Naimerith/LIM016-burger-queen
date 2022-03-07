@@ -5,26 +5,27 @@
     </div>
     <nav>
       <ul class="nav justify-content-end">
-        <li class="nav-item">
+        <li class="nav-item" [routerLink]="['/']">
+          <h1 class="nav-link">Home</h1>
           <img class="home" src="../../assets/img/home.png" alt="home">
           <a class="nav-link" [routerLink]="['/']">Home</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Pedidos</a>
+        <li class="nav-item" [routerLink]="['/']">
+          <h1 class="nav-link">Pedidos</h1>
+          <!-- <a class="nav-link" href="#">Pedidos</a> -->
         </li>
       </ul>
     </nav>
   </header>
 
   <div class="container">
-  <div class="btn-table-container">
-    <button class="btn-table" [routerLink]="['/', 'menu']">Mesa 01</button>
-    <button class="btn-table" [routerLink]="['/', 'menu']">Mesa 02</button>
-    <button class="btn-table" [routerLink]="['/', 'menu']">Mesa 03</button>
-    <button class="btn-table" [routerLink]="['/', 'menu']">Mesa 04</button>
-    <button class="btn-table" [routerLink]="['/', 'menu']">Mesa 05</button>
-    <button class="btn-table" [routerLink]="['/', 'menu']">Mesa 06</button>
-  </div>
+    <div class="btn-table-container">
+      <button class="btn-table" [routerLink]="['/', 'menu']">Mesa 01</button>
+      <button class="btn-table" [routerLink]="['/', 'menu']">Mesa 02</button>
+      <button class="btn-table" [routerLink]="['/', 'menu']">Mesa 03</button>
+      <button class="btn-table" [routerLink]="['/', 'menu']">Mesa 04</button>
+      <button class="btn-table" [routerLink]="['/', 'menu']">Mesa 05</button>
+      <button class="btn-table" [routerLink]="['/', 'menu']">Mesa 06</button>
+    </div>
   </div>
 </body>
-
