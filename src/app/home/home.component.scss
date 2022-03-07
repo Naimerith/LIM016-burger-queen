@@ -1,4 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Festive&family=Redressed&display=swap');
+$color-mix-btn: linear-gradient(180deg, rgba(255, 197, 70, 0.9) 0%, rgba(245, 130, 50, 0.9) 100%);
+$color-header: rgba(197, 156, 54, 1);
+$color-body: linear-gradient(180.3deg, #0E4975 50.98%, rgba(0, 11, 19, 0.97) 116.78%), linear-gradient(180.3deg, #0E4975 50.98%, rgba(0, 11, 19, 0.97) 116.78%);
+$color-words: #fff;
 
 * {
     margin: 0%;
@@ -6,10 +10,14 @@
     box-sizing: border-box;
     /*para mover el modelo de caja*/
 }
+
+body{
+  background: $color-body ;
+}
+
 .home {
     width: 100%;
     height: 100%;
-    background: linear-gradient(180.3deg, #0E4975 50.98%, rgba(0, 11, 19, 0.97) 116.78%), linear-gradient(180.3deg, #0E4975 50.98%, rgba(0, 11, 19, 0.97) 116.78%);
 }
 
 .welcome {

@@ -12,6 +12,9 @@ import { ChefKitchenComponent } from './chef-kitchen/chef-kitchen.component';
 import { ChefOrdersReadyComponent } from './chef-orders-ready/chef-orders-ready.component';
 import { WaiterMenuComponent } from './waiter-menu/waiter-menu.component';
 import { WaiterOrdersComponent } from './waiter-orders/waiter-orders.component';
+import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
+import { fas } from '@fortawesome/free-solid-svg-icons';
+import { far } from '@fortawesome/free-regular-svg-icons';
 
 @NgModule({
   declarations: [
@@ -31,9 +34,14 @@ import { WaiterOrdersComponent } from './waiter-orders/waiter-orders.component';
       // Register the ServiceWorker as soon as the app is stable
       // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000'
-    })
+    }),
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(library: FaIconLibrary) {
+    library.addIconPacks(fas, far);
+  }
+ }
