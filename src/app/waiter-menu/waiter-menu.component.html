@@ -14,11 +14,10 @@
   <section>
     <div class="input-group mb-3">
       <fa-icon [icon]="['fas', 'user']"></fa-icon>
-      <input type="text" class="form-control" placeholder="Nombre cliente" aria-label="Username"
-        aria-describedby="basic-addon1">
+      <input type="text" class="form-control" (keyup)="changeCommensalName($event)" placeholder="Nombre cliente" aria-label="Username"        aria-describedby="basic-addon1">
     </div>
     <div>
-      Mesa N°:
+      Mesa N°: {{commensal.tableNumber}}
     </div>
     <div>
       <button type="button" class="btn btn-primary" disabled data-bs-toggle="button"
@@ -47,20 +46,12 @@
     <div>
       <div>
         <div>
-          Pedido de:
-        </div>
-        <div class="input-group mb-3">
-          <input type="text" class="form-control" placeholder="Nombre cliente" aria-label="Username"
-            aria-describedby="basic-addon1">
+          Pedido de: <p>{{commensal.name}}</p>
         </div>
       </div>
       <div>
         <div>
-          Mesa N°:
-        </div>
-        <div class="input-group mb-3">
-          <input type="text" class="form-control" placeholder="" aria-label="Username"
-            aria-describedby="basic-addon1">
+          Mesa N°: <p>{{commensal.tableNumber}} </p>
         </div>
       </div>
     </div>

@@ -9,6 +9,16 @@ import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 export class WaiterMenuComponent implements OnInit {
   faCoffee = faCoffee;
 
+  commensal = {
+    name:'',
+    tableNumber: '01'
+  }
+
+  changeCommensalName(event: Event) {
+    const element = event.target as HTMLInputElement;
+    this.commensal.name = element.value;
+  }
+
   constructor() { }
 
   ngOnInit(): void {
