@@ -1,7 +1,12 @@
-  <header>
+<body>
+  <header class="header">
+    <div>
+      <img class="logo" src="../../assets/img/logoheader.png" alt="logo luna burger">
+    </div>
     <nav>
       <ul class="nav justify-content-end">
         <li class="nav-item">
+          <img class="home" src="../../assets/img/home.png" alt="home">
           <a class="nav-link" href="#">Home</a>
         </li>
         <li class="nav-item">
@@ -11,71 +16,70 @@
     </nav>
   </header>
 
-  <section>
-    <div class="input-group mb-3">
-      <fa-icon [icon]="['fas', 'user']"></fa-icon>
-      <input type="text" class="form-control" (keyup)="changeCommensalName($event)" placeholder="Nombre cliente" aria-label="Username"        aria-describedby="basic-addon1">
-    </div>
-    <div>
-      Mesa N°: {{commensal.tableNumber}}
-    </div>
-    <div>
-      <button type="button" class="btn btn-primary" disabled data-bs-toggle="button"
-        autocomplete="off">Desayuno</button>
-      <button type="button" class="btn btn-primary" data-bs-toggle="button" autocomplete="off">Almuerzo</button>
-    </div>
-    <div>
-      <ul class="list-group">
-        <li class="list-group-item"> Hamburguesa simple $10 <fa-icon [icon]="['fas', 'plus']"></fa-icon>
-        </li>
-        <li class="list-group-item">Hamburguesa doble $15 <fa-icon [icon]="['fas', 'plus']"></fa-icon>
-        </li>
-        <li class="list-group-item">Papas fritas $5 <fa-icon [icon]="['fas', 'plus']"></fa-icon>
-        </li>
-        <li class="list-group-item">Aros de cebolla $5 <fa-icon [icon]="['fas', 'plus']"></fa-icon>
-        </li>
-        <li class="list-group-item">Agua 500l $5 <fa-icon [icon]="['fas', 'plus']"></fa-icon>
-        </li>
-        <li class="list-group-item">Agua 750ml $7 <fa-icon [icon]="['fas', 'plus']"></fa-icon>
-        </li>
-      </ul>
-    </div>
-  </section>
+  <main class="flex-container">
+    <section class="menuOptions-content">
+      <div class="input-group mb-3">
+        <fa-icon [icon]="['fas', 'user']"></fa-icon>
+        <input type="text" class="form-control" (keyup)="changeCommensalName($event)" placeholder="Nombre cliente" aria-label="Username"        aria-describedby="basic-addon1">
+      </div>
+      <div>
+        Mesa N°: {{commensal.tableNumber}}
+      </div>
+      <div>
+        <button type="button" class="btn btn-primary" disabled data-bs-toggle="button"
+          autocomplete="off">Desayuno</button>
+        <button type="button" class="btn btn-primary" data-bs-toggle="button" autocomplete="off">Almuerzo</button>
+      </div>
+      <div>
+        <ul class="list-group">
+          <li class="list-group-item"> Hamburguesa simple $10 <fa-icon [icon]="['fas', 'plus']"></fa-icon>
+          </li>
+          <li class="list-group-item">Hamburguesa doble $15 <fa-icon [icon]="['fas', 'plus']"></fa-icon>
+          </li>
+          <li class="list-group-item">Papas fritas $5 <fa-icon [icon]="['fas', 'plus']"></fa-icon>
+          </li>
+          <li class="list-group-item">Aros de cebolla $5 <fa-icon [icon]="['fas', 'plus']"></fa-icon>
+          </li>
+          <li class="list-group-item">Agua 500l $5 <fa-icon [icon]="['fas', 'plus']"></fa-icon>
+          </li>
+          <li class="list-group-item">Agua 750ml $7 <fa-icon [icon]="['fas', 'plus']"></fa-icon>
+          </li>
+        </ul>
+      </div>
+    </section>
 
-  <section>
-    <div>
+    <aside class="selectedOptionsMenu">
       <div>
         <div>
-          Pedido de: <p>{{commensal.name}}</p>
+          <div>
+            Pedido de: <p>{{commensal.name}}</p>
+          </div>
+        </div>
+        <div>
+          <div>
+            Mesa N°: <p>{{commensal.tableNumber}} </p>
+          </div>
         </div>
       </div>
       <div>
-        <div>
-          Mesa N°: <p>{{commensal.tableNumber}} </p>
-        </div>
+        <ul class="list-group">
+          <li class="list-group-item"><fa-icon [icon]="['fas', 'plus']"></fa-icon>
+          </li>
+          <li class="list-group-item"><fa-icon [icon]="['fas', 'plus']"></fa-icon>
+          </li>
+          <li class="list-group-item"><fa-icon [icon]="['fas', 'plus']"></fa-icon>
+          </li>
+          <li class="list-group-item"><fa-icon [icon]="['fas', 'plus']"></fa-icon>
+          </li>
+          <li class="list-group-item"><fa-icon [icon]="['fas', 'plus']"></fa-icon>
+          </li>
+          <li class="list-group-item"><fa-icon [icon]="['fas', 'plus']"></fa-icon>
+          </li>
+        </ul>
+        <p>TOTAL:</p>
       </div>
-    </div>
-    <div>
-      <button type="button" class="btn btn-primary" disabled data-bs-toggle="button"
-        autocomplete="off">Desayuno</button>
-      <button type="button" class="btn btn-primary" data-bs-toggle="button" autocomplete="off">Almuerzo</button>
-    </div>
-    <div>
-      <ul class="list-group">
-        <li class="list-group-item"><fa-icon [icon]="['fas', 'plus']"></fa-icon>
-        </li>
-        <li class="list-group-item"><fa-icon [icon]="['fas', 'plus']"></fa-icon>
-        </li>
-        <li class="list-group-item"><fa-icon [icon]="['fas', 'plus']"></fa-icon>
-        </li>
-        <li class="list-group-item"><fa-icon [icon]="['fas', 'plus']"></fa-icon>
-        </li>
-        <li class="list-group-item"><fa-icon [icon]="['fas', 'plus']"></fa-icon>
-        </li>
-        <li class="list-group-item"><fa-icon [icon]="['fas', 'plus']"></fa-icon>
-        </li>
-      </ul>
-    </div>
-  </section>
+    </aside>
+  </main>
 
   <fa-icon [icon]="faCoffee"></fa-icon>
+</body>
