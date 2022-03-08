@@ -1,0 +1,23 @@
+$color-modal : rgba(208, 108, 39, 1);
+$color-btn :rgba(239, 178, 44, 1);
+
+.container-modal{
+    background-color: $color-modal;
+    width: 50%;
+    height: 70%;
+    float: inherit;
+    margin: -20px 0 0 180px;
+    border-radius: 30px;
+}
+div{
+    border: none;
+}
+.btn-close{
+    background-color: #FFFF;
+    border-radius: 50%;
+}
+
+input{
+    display: flex;
+    flex-direction: column-reverse;
+}
