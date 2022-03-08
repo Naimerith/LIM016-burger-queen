@@ -4,13 +4,14 @@ import { ChefKitchenComponent } from './chef-kitchen/chef-kitchen.component';
 import { HomeComponent } from './home/home.component';
 import { WaiterMenuComponent } from './waiter-menu/waiter-menu.component';
 import { WaiterTablesComponent } from './waiter-tables/waiter-tables.component';
+import { WaiterOrdersComponent } from './waiter-orders/waiter-orders.component';
 
 const routes: Routes = [
   {
     path: '',
     component: HomeComponent
   },
-    {
+  {
     path: 'tables',
     component: WaiterTablesComponent
   },
@@ -21,7 +22,12 @@ const routes: Routes = [
   {
     path: 'kitchen',
     component: ChefKitchenComponent
+  },
+  {
+    path: 'orders',
+    component: WaiterOrdersComponent
   }
+
 ];
 
 @NgModule({

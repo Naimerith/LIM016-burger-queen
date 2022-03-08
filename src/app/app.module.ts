@@ -15,6 +15,7 @@ import { WaiterOrdersComponent } from './waiter-orders/waiter-orders.component';
 import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { far } from '@fortawesome/free-regular-svg-icons';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { far } from '@fortawesome/free-regular-svg-icons';
     ChefKitchenComponent,
     ChefOrdersReadyComponent,
     WaiterMenuComponent,
-    WaiterOrdersComponent
+    WaiterOrdersComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
