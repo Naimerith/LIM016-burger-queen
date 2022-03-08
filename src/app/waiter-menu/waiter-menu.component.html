@@ -3,14 +3,18 @@
 <body>
   <main class="flex-container">
     <section class="menuOptions-content">
-      <div class="input-group mb-3">
-        <fa-icon [icon]="['fas', 'user']"></fa-icon>
-        <input type="text" class="form-control" (keyup)="changeCommensalName($event)" placeholder="Nombre cliente"
-          aria-label="Username" aria-describedby="basic-addon1">
+
+      <div class="commensalDates">
+
+        <div class="commensalNameDiv">
+          <label for="commensal" class="commensalNameLabel"><fa-icon [icon]="['fas', 'user']"></fa-icon></label>
+          <input type="text" class="commensalNameInput" (keyup)="changeCommensalName($event)" placeholder="Nombre cliente"
+            aria-label="Username" aria-describedby="basic-addon1">
+        </div>
+          <label for="commensal" class="commensalTableLabel">Mesa N°: {{commensal.tableNumber}}</label>
+
       </div>
-      <div>
-        Mesa N°: {{commensal.tableNumber}}
-      </div>
+
       <div>
         <button type="button" class="btn btn-primary" disabled data-bs-toggle="button"
           autocomplete="off">Desayuno</button>
@@ -18,17 +22,17 @@
       </div>
       <div>
         <ul class="list-group">
-          <li class="list-group-item"> Hamburguesa simple $10 <fa-icon [icon]="['fas', 'plus']"></fa-icon>
+          <li class="list-group-item"> Hamburguesa simple $10
           </li>
-          <li class="list-group-item">Hamburguesa doble $15 <fa-icon [icon]="['fas', 'plus']"></fa-icon>
+          <li class="list-group-item">Hamburguesa doble $15
           </li>
-          <li class="list-group-item">Papas fritas $5 <fa-icon [icon]="['fas', 'plus']"></fa-icon>
+          <li class="list-group-item">Papas fritas $5
           </li>
-          <li class="list-group-item">Aros de cebolla $5 <fa-icon [icon]="['fas', 'plus']"></fa-icon>
+          <li class="list-group-item">Aros de cebolla $5
           </li>
-          <li class="list-group-item">Agua 500l $5 <fa-icon [icon]="['fas', 'plus']"></fa-icon>
+          <li class="list-group-item">Agua 500l $5
           </li>
-          <li class="list-group-item">Agua 750ml $7 <fa-icon [icon]="['fas', 'plus']"></fa-icon>
+          <li class="list-group-item">Agua 750ml $7
           </li>
         </ul>
       </div>
@@ -72,6 +76,5 @@
       </div>
     </aside>
   </main>
-
   <fa-icon [icon]="faCoffee"></fa-icon>
 </body>
