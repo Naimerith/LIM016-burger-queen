@@ -1,0 +1,12 @@
+<section class="container-modal">
+    <div class="modal-header">
+        <button class="btn-close" (click)="closeModal()"></button>
+    </div>
+    <div class="modal-body">
+        <input type="email" placeholder="Email">
+        <input type="password" placeholder="Password">
+    </div>
+    <div class="modal-footer">
+        <button [routerLink]="['/tables']">Enviar</button>
+    </div>
+</section>

@@ -6,16 +6,19 @@
                 <img class="img-home" src="../../assets/img/Imagen2.png" alt="imagen Hamburguesa">
             </section>
             <section class="section-btnHome">
-                <button class="btn-waiter" [routerLink]="['/tables']">
+                <button (click)="openModal()" class="btn-waiter">
                     <h1 class="btn-text">Mesero</h1>
                 </button>
-                <button class="btn-chef" [routerLink]="['/kitchen']">
+                <button (click)="openModal()" class="btn-chef">
                     <h1 class="btn-text">Chef</h1>
                 </button>
                 <div>
                     <img class="img-logo" src="../../assets/img/logo.png" alt="logo luna burguer">
                 </div>
             </section>
+        </div>
+        <div class="" *ngIf="modalSwitch == true">
+            <app-modal-component></app-modal-component>
         </div>
     </main>
 </body>
