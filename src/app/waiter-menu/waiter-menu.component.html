@@ -7,11 +7,13 @@
       <div class="commensalDates">
 
         <div class="commensalNameDiv">
-          <label for="commensal" class="commensalNameLabel"><fa-icon [icon]="['fas', 'user']"></fa-icon></label>
-          <input type="text" class="commensalNameInput" (keyup)="changeCommensalName($event)" placeholder="Nombre cliente"
-            aria-label="Username" aria-describedby="basic-addon1">
+          <label for="commensal" class="commensalNameLabel">
+            <fa-icon [icon]="['fas', 'user']"></fa-icon>
+          </label>
+          <input type="text" class="commensalNameInput" (keyup)="changeCommensalName($event)"
+            placeholder="Nombre cliente" aria-label="Username" aria-describedby="basic-addon1">
         </div>
-          <label for="commensal" class="commensalTableLabel">Mesa N°: {{commensal.tableNumber}}</label>
+        <label for="commensal" class="commensalTableLabel">Mesa N°: {{commensal.tableNumber}}</label>
 
       </div>
 
@@ -39,18 +41,19 @@
     </section>
 
     <aside class="selectedOptionsMenu">
-      <div>
-        <div>
-          <div>
-            Pedido de: <p>{{commensal.name}}</p>
-          </div>
+
+      <div class="recordedData">
+        <div class="recordedDataCommensal">
+          <p>Pedido de:</p>
+          <p>{{commensal.name}}</p>
         </div>
-        <div>
-          <div>
-            Mesa N°: <p>{{commensal.tableNumber}} </p>
-          </div>
+
+        <div class="recordedDataTable">
+          <p>Mesa N°:</p>
+          <p>{{commensal.tableNumber}}</p>
         </div>
       </div>
+
       <div>
         <ul class="list-group">
           <li class="list-group-item">
@@ -59,20 +62,12 @@
           <li class="list-group-item">
             <fa-icon [icon]="['fas', 'plus']"></fa-icon>
           </li>
-          <li class="list-group-item">
-            <fa-icon [icon]="['fas', 'plus']"></fa-icon>
-          </li>
-          <li class="list-group-item">
-            <fa-icon [icon]="['fas', 'plus']"></fa-icon>
-          </li>
-          <li class="list-group-item">
-            <fa-icon [icon]="['fas', 'plus']"></fa-icon>
-          </li>
-          <li class="list-group-item">
-            <fa-icon [icon]="['fas', 'plus']"></fa-icon>
-          </li>
         </ul>
-        <p>TOTAL:</p>
+        <p class="totalAmount">TOTAL:</p>
+      </div>
+
+      <div class="container-btn-enviarPedido">
+        <button class="btn-enviarPedido">Enviar Pedido</button>
       </div>
     </aside>
   </main>
