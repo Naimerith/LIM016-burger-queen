@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
-
 import { HomeComponent } from './home/home.component';
 import { WaiterTablesComponent } from './waiter-tables/waiter-tables.component';
 import { ChefKitchenComponent } from './chef-kitchen/chef-kitchen.component';
@@ -48,4 +47,4 @@ export class AppModule {
   constructor(library: FaIconLibrary) {
     library.addIconPacks(fas, far);
   }
- }
+}

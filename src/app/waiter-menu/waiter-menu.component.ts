@@ -10,7 +10,7 @@ export class WaiterMenuComponent implements OnInit {
   faCoffee = faCoffee;
 
   commensal = {
-    name:'',
+    name: '',
     tableNumber: '01'
   }
 
@@ -23,5 +23,6 @@ export class WaiterMenuComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
 
 }

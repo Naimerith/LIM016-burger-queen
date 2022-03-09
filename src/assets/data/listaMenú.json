@@ -119,12 +119,6 @@
             "tipo": "acompañamiento",
             "precio": 1,
             "categoria": "almuerzo y cena"
-        },
-        {
-            "nombre": "huevo",
-            "tipo": "acompañamiento",
-            "precio": 1,
-            "categoria": "almuerzo y cena"
         }
     ]
 }
