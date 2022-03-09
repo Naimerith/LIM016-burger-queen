@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
+import { MenuService } from '../services/menu.service';
 
 @Component({
   selector: 'app-waiter-menu',
@@ -8,6 +9,7 @@ import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 })
 export class WaiterMenuComponent implements OnInit {
   faCoffee = faCoffee;
+  menuLuna: any = [] ;
 
   commensal = {
     name: '',
@@ -19,9 +21,13 @@ export class WaiterMenuComponent implements OnInit {
     this.commensal.name = element.value;
   }
 
-  constructor() { }
+  constructor(private service: MenuService) { }
 
   ngOnInit(): void {
+    this.service.getAllMenu().subscribe(menuLuna  => {
+      this.menuLuna = menuLuna.menú;
+      console.log(this.menuLuna)
+    })
   }
 
 

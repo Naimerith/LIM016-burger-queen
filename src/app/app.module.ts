@@ -17,6 +17,9 @@ import { far } from '@fortawesome/free-regular-svg-icons';
 import { HeaderComponent } from './header/header.component';
 import { ModalComponentComponent } from './modal-component/modal-component.component';
 
+//importaciones para leer data en json
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +41,8 @@ import { ModalComponentComponent } from './modal-component/modal-component.compo
       // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000'
     }),
-    FontAwesomeModule
+    FontAwesomeModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

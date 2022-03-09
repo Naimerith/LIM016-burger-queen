@@ -72,4 +72,13 @@
     </aside>
   </main>
   <fa-icon [icon]="faCoffee"></fa-icon>
+
+  <div class="menuList" *ngFor="let menu of menuLuna">
+    <tr>
+      <td scope="row">{{menu.nombre + "............." + menu.precio }}</td>
+    </tr>
+  </div>
+
+
+
 </body>
