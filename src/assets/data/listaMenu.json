@@ -1,7 +1,7 @@
 {
     "restaurante": "Luna burger",
     "teléfono": "955 555 555",
-    "menú": [
+    "menu": [
         {
             "nombre": "cafe americano",
             "tipo": "bebidas",

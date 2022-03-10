@@ -17,8 +17,21 @@ import { far } from '@fortawesome/free-regular-svg-icons';
 import { HeaderComponent } from './header/header.component';
 import { ModalComponentComponent } from './modal-component/modal-component.component';
 
+// Firebase services + environment module
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+
+// Auth service
+import { AuthService } from "./services/auth.service";
+
 //importaciones para leer data en json
 import { HttpClientModule } from '@angular/common/http';
+import { SignInComponent } from './components/sign-in/sign-in.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
 
 @NgModule({
   declarations: [
@@ -30,9 +43,17 @@ import { HttpClientModule } from '@angular/common/http';
     WaiterMenuComponent,
     WaiterOrdersComponent,
     HeaderComponent,
-    ModalComponentComponent
+    ModalComponentComponent,
+    SignInComponent,
+    DashboardComponent,
+    SignUpComponent
   ],
   imports: [
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule,
+    AngularFirestoreModule,
+    AngularFireStorageModule,
+    AngularFireDatabaseModule,
     BrowserModule,
     AppRoutingModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
@@ -44,7 +65,7 @@ import { HttpClientModule } from '@angular/common/http';
     FontAwesomeModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

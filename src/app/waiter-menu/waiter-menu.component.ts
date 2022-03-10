@@ -9,7 +9,7 @@ import { MenuService } from '../services/menu.service';
 })
 export class WaiterMenuComponent implements OnInit {
   faCoffee = faCoffee;
-  menuLuna: any = [] ;
+  menuLuna: any = [];
 
   commensal = {
     name: '',
@@ -24,8 +24,8 @@ export class WaiterMenuComponent implements OnInit {
   constructor(private service: MenuService) { }
 
   ngOnInit(): void {
-    this.service.getAllMenu().subscribe(menuLuna  => {
-      this.menuLuna = menuLuna.menú;
+    this.service.getAllMenu().subscribe(menuLuna => {
+      this.menuLuna = menuLuna.menu;
       console.log(this.menuLuna)
     })
   }
