@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { MenuService } from './services/menu.service'
 
 @Component({
@@ -7,7 +8,7 @@ import { MenuService } from './services/menu.service'
   styleUrls: ['./app.component.scss', '../styles.scss']
 })
 export class AppComponent {
-  constructor(public menuLuna:MenuService){
+  constructor(firestore: AngularFirestore){
 
   }
 

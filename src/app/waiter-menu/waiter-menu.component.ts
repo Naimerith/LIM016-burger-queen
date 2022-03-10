@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 import { MenuService } from '../services/menu.service';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-waiter-menu',
@@ -9,7 +11,7 @@ import { MenuService } from '../services/menu.service';
 })
 export class WaiterMenuComponent implements OnInit {
   faCoffee = faCoffee;
-  menuLuna: any = [];
+  items: Observable<any[]>;
 
   commensal = {
     name: '',
@@ -21,13 +23,12 @@ export class WaiterMenuComponent implements OnInit {
     this.commensal.name = element.value;
   }
 
-  constructor(private service: MenuService) { }
+  constructor(firestore: AngularFirestore) {
+    this.items = firestore.collection('menuLunaBurgers').valueChanges()
+  }
 
   ngOnInit(): void {
-    this.service.getAllMenu().subscribe(menuLuna => {
-      this.menuLuna = menuLuna.menu;
-      console.log(this.menuLuna)
-    })
+
   }
 
 
