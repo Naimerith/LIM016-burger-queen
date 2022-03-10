@@ -24,7 +24,7 @@ export class WaiterMenuComponent implements OnInit {
   }
 
   constructor(firestore: AngularFirestore) {
-    this.items = firestore.collection('menuLunaBurgers').valueChanges()
+    this.items = firestore.collection('cartaLuna').valueChanges()
   }
 
   ngOnInit(): void {
