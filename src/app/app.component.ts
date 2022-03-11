@@ -7,7 +7,7 @@ import { MenuService } from './services/menu.service'
   styleUrls: ['./app.component.scss', '../styles.scss']
 })
 export class AppComponent {
-  constructor(public menuLuna:MenuService){
+  constructor(public menuLuna: MenuService) {
 
   }
 
