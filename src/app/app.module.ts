@@ -19,6 +19,8 @@ import { ModalComponentComponent } from './modal-component/modal-component.compo
 import { SignInComponent } from './auth/sign-in/sign-in.component';
 import { SignUpComponent } from './auth/sign-up/sign-up.component';
 
+// Auth service
+import { AuthService } from "./services/auth.service";
 
 //importaciones para leer data en json
 import { HttpClientModule } from '@angular/common/http';
@@ -46,6 +48,11 @@ import { environment } from '../environments/environment';
     SignUpComponent
   ],
   imports: [
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule,
+    AngularFirestoreModule,
+    AngularFireStorageModule,
+    AngularFireDatabaseModule,
     BrowserModule,
     AppRoutingModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
@@ -64,7 +71,7 @@ import { environment } from '../environments/environment';
     AngularFireStorageModule,
     AngularFireDatabaseModule,
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
