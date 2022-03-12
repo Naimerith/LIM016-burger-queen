@@ -26,7 +26,7 @@ import { AuthService } from "./services/auth.service";
 import { HttpClientModule } from '@angular/common/http';
 
 // Firebase services + environment module
-import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireModule } from '@angular/fire/compat'; //Para enlazar con el proyecto en firebase
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
@@ -48,7 +48,7 @@ import { environment } from '../environments/environment';
     SignUpComponent
   ],
   imports: [
-    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireModule.initializeApp(environment.firebaseConfig), //Aqui inicializamos firebase
     AngularFireAuthModule,
     AngularFirestoreModule,
     AngularFireStorageModule,

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms'
+//import { FormGroup, FormControl, Validators } from '@angular/forms'
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -11,17 +11,33 @@ import { AuthService } from 'src/app/services/auth.service';
 
 export class SignInComponent implements OnInit {
 
-  logInForm = new FormGroup({
-    email: new FormControl('', Validators.required),
-    password: new FormControl('', Validators.required)
-  })
-  constructor(private auth: AuthService) { }
+  usuario = {
+    email: '',
+    password: '',
+  }
+
+  /*  logInForm = new FormGroup({
+     email: new FormControl('', Validators.required),
+     password: new FormControl('', Validators.required)
+   })*/
+  constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
   }
 
-  login() {
-    console.log(this.logInForm.value)
+  ingresar() {
+    console.log(this.usuario);
+    const { email, password } = this.usuario; //desestructuramos las variables
+    this.authService.register(email, password).then(res => {
+      console.log("Se registro", res);
+    })
+    //Obtenemos el usuario logueado 
+    this.authService.getUserLogged().subscribe(res => {
+      console.log(res?.email); //Si esta variable tiene el campo email, muestralo
+    })
   }
+  /* login() {
+    console.log(this.logInForm.value)
+  } */
 
 }

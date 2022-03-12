@@ -1,5 +1,16 @@
 <div class="displayTable">
-    <form class="logIn-form" [formGroup]="logInForm" (ngSubmit)="login()">
+    <div class="formGroup">
+        <input type="text" class="input-email" id="inputEmail" placeholder="email" [(ngModel)]="usuario.email">
+    </div>
+    <div class="formGroup">
+        <input type="password" class="input-password" id="inputPassword" placeholder="contraseña"
+            [(ngModel)]="usuario.password">
+    </div>
+    <div class="formGroup">
+        <button class="logIn-button" [routerLink]="['/tables']" type='submit' (click)="ingresar()">Ingresar</button>
+    </div>
+
+    <!-- <form class="logIn-form" [formGroup]="logInForm" (ngSubmit)="login()">
         <h3>Inicio de Sesion</h3>
         <div class="formGroup">
             <input type="text" class="input-email" id="inputEmail" formControlName="email" placeholder="  e-mail">
@@ -9,9 +20,9 @@
                 placeholder="  contraseña">
         </div>
         <div class="formGroup">
-            <button class="logIn-button" type='submit'>Ingresar ya</button>
+            <button class="logIn-button" type='submit'>Ingresar</button>
         </div>
-    </form>
+    </form> -->
 </div>
 
 <!--

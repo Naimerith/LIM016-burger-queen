@@ -15,6 +15,11 @@
             <img class="back" [routerLink]="['/tables']" src="../../assets/img/regreso.png" alt="home">
             <h1 class="text-header"> Volver</h1>
         </div>
+        <div>
+            <button [routerLink]="['/']" (click)="logout()">Salir</button>
+        </div>
     </section>
-
 </header>
+<div>
+    <a href="#" *ngIf="userLogged | async as user">{{user.email}}</a>
+</div>
