@@ -1,5 +1,5 @@
 <app-header></app-header>
-
+<!-- Aquí puedes escribir tu comentario -->
 <body>
   <main class="flex-container">
     <section class="menuOptions-content">
@@ -24,15 +24,8 @@
       </div>
       <div>
         <ul class="list-group">
-          <li class="list-group-item"> Hamburguesa simple $10
-          </li>
-          <li class="list-group-item">Hamburguesa doble $15
-          </li>
-          <li class="list-group-item">Papas fritas $5
-          </li>
-          <li class="list-group-item">Aros de cebolla $5
-          </li>
-          <li class="list-group-item">Agua 500l $5
+          <li class="list-group-item" *ngFor="let item of items">
+            {{item.nombre}} {{item.precio}}
           </li>
           <li class="list-group-item">Agua 750ml $7
           </li>
@@ -55,6 +48,7 @@
       </div>
 
       <div>
+
         <ul class="list-group">
           <li class="list-group-item">
             <fa-icon [icon]="['fas', 'plus']"></fa-icon>
@@ -72,13 +66,5 @@
     </aside>
   </main>
   <fa-icon [icon]="faCoffee"></fa-icon>
-
-  <ul>
-    <li class="text" *ngFor="let item of items | async">
-      {{item.nombre}}
-    </li>
-  </ul>
-
-
 
 </body>
