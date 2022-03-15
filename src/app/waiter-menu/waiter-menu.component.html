@@ -1,70 +1,74 @@
-<app-header></app-header>
+<app-header> </app-header>
 <!-- Aquí puedes escribir tu comentario -->
+
 <body>
+
   <main class="flex-container">
+
     <section class="menuOptions-content">
 
       <div class="commensalDates">
-
         <div class="commensalNameDiv">
           <label for="commensal" class="commensalNameLabel">
             <fa-icon [icon]="['fas', 'user']"></fa-icon>
           </label>
-          <input type="text" class="commensalNameInput" (keyup)="changeCommensalName($event)"
+          <input type="text" class="commensalNameInput" class="form-control" (keyup)="changeCommensalName($event)"
             placeholder="Nombre cliente" aria-label="Username" aria-describedby="basic-addon1">
         </div>
         <label for="commensal" class="commensalTableLabel">Mesa N°: {{commensal.tableNumber}}</label>
-
+        <p class="text-center fs-1">mesa{{selectedTable.numero_mesa}}</p>
       </div>
 
       <div>
-        <button type="button" class="btn btn-primary" disabled data-bs-toggle="button"
-          autocomplete="off">Desayuno</button>
-        <button type="button" class="btn btn-primary" data-bs-toggle="button" autocomplete="off">Almuerzo</button>
+        <button type="button" class="btn btn-primary" data-bs-toggle="button" autocomplete="off"
+          (click)="changeTypeMenu('desayuno')">Desayuno</button>
+        <button type="button" class="btn btn-primary" data-bs-toggle="button" autocomplete="off"
+          (click)="changeTypeMenu('menu')">Almuerzo</button>
       </div>
-      <div>
-        <ul class="list-group">
-          <li class="list-group-item" *ngFor="let item of items">
-            {{item.nombre}} {{item.precio}}
-          </li>
-          <li class="list-group-item">Agua 750ml $7
-          </li>
-        </ul>
-      </div>
+
+      <ul class="list-group tableMenu mb-2 mt-2">
+        <app-template-products *ngFor="let product of productsFilter" [product]="product"></app-template-products>
+      </ul>
+
     </section>
 
+
     <aside class="selectedOptionsMenu">
+
+      <div class="col">
+        <button type="button" class="btn col-6 mx-auto d-block mt-3" routerLink="/booking" (click)="clearTable()">
+          <i class="fas fa-reply fs-1"></i>
+        </button>
+      </div>
+
+      <p class="text-center fs-3 mb-0 btnMenu">Pedido</p>
+
 
       <div class="recordedData">
         <div class="recordedDataCommensal">
           <p>Pedido de:</p>
           <p>{{commensal.name}}</p>
         </div>
-
         <div class="recordedDataTable">
           <p>Mesa N°:</p>
           <p>{{commensal.tableNumber}}</p>
         </div>
       </div>
 
-      <div>
+      <ul class="list-group tableOrder mt-2">
+        <app-counter-input *ngFor="let item of itemsCart" [itemCart]="item"> </app-counter-input>
+      </ul>
 
-        <ul class="list-group">
-          <li class="list-group-item">
-            <fa-icon [icon]="['fas', 'plus']"></fa-icon>
-          </li>
-          <li class="list-group-item">
-            <fa-icon [icon]="['fas', 'plus']"></fa-icon>
-          </li>
-        </ul>
-        <p class="totalAmount">TOTAL:</p>
-      </div>
+
+
+      <section class="col-sm">
+        <p class="text-end fs-3 mb-0 ">Total: {{getTotal() | currency}}</p>
+      </section>
 
       <div class="container-btn-enviarPedido">
-        <button class="btn-enviarPedido">Enviar Pedido</button>
+        <button type="button" class="btn-enviarPedido" (click)="makeOrder()" routerLink="/orders">Enviar pedido</button>
       </div>
+
     </aside>
   </main>
-  <fa-icon [icon]="faCoffee"></fa-icon>
-
 </body>

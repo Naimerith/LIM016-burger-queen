@@ -3,7 +3,7 @@
 <body>
   <div class="container">
     <div class="btn-table-container">
-      <button class="btn-table" [routerLink]="['/', 'menu']">Mesa 01</button>
+      <button class="btn-table" (click)="table.status=!table.status; updateStatusTable(); sendSelectedTable()" [routerLink]="['/', 'menu']">Mesa 01</button>
       <button class="btn-table" [routerLink]="['/', 'menu']">Mesa 02</button>
       <button class="btn-table" [routerLink]="['/', 'menu']">Mesa 03</button>
       <button class="btn-table" [routerLink]="['/', 'menu']">Mesa 04</button>
@@ -11,4 +11,22 @@
       <button class="btn-table" [routerLink]="['/', 'menu']">Mesa 06</button>
     </div>
   </div>
+
+  <button type="button" class="btnTable" *ngIf="table" (click)="table.status=!table.status; updateStatusTable(); sendSelectedTable()" routerLink="/menu">oooooooooooooo
+    <!--Mesa desocupada-->
+    <img src="../../../assets/mesa_on.png" alt="" class="imgTable mx-auto d-block mt-3" *ngIf="!table.status">
+    <p class="rounded-pill text-center mt-3 fs-3 btnTitle btns" *ngIf="!table.status"> {{ table.name }}</p>
+    <!--Mesa ocupada-->
+    <img src="../../../assets/mesa_off.png" alt="" class="imgTable mx-auto d-block mt-3" *ngIf="table.status">
+    <p class="rounded-pill text-center mt-3 fs-3 btnTitle btns btnRed" *ngIf="table.status"> {{ table.name }}</p>
+  </button>
+  <!-- message contiene el nro de la mesa y lo envía
+    <div>
+      <h1>Message from Service : {{message}}</h1>
+    </div>
+  -->
+
 </body>
+
+
+

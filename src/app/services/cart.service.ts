@@ -3,12 +3,13 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class SelectedDishesService {
+export class CartService {
+
   itemsCart: any[] = []; //para carrito
 
   constructor() { }
 
-  //funciones;
+   /****************Funciones*************** */
 
   //agregar a carrito (sale de templates-products)
   addToCart(product: any) {
@@ -17,18 +18,18 @@ export class SelectedDishesService {
     this.itemsCart.push(product);
   }
 
-  //actualizar contenido de carrito
+  //actualiza contenido del carrito
   updateCart(product: any, operator: string) {
     for (let j = 0; j < this.itemsCart.length; j++) {
       if(this.itemsCart[j].id === product.id) {
         switch(operator) {
           case '+':
             this.itemsCart[j].cantidad++;
-            this.itemsCart[j].total = this.itemsCart[j].total + product.precio;
+            this.itemsCart[j].total =  this.itemsCart[j].total + product.precio;
           break;
           case '-':
             this.itemsCart[j].cantidad--;
-            this.itemsCart[j].total = this.itemsCart[j].total - product.precio;
+            this.itemsCart[j].total =  this.itemsCart[j].total - product.precio;
           break;
         }
         break;
@@ -36,7 +37,7 @@ export class SelectedDishesService {
     }
   }
 
-  //eliminar contenido del carrito
+  // elimina contenido del carrito
   deleteItem(product: any) {
     const index = this.itemsCart.indexOf(product);
     if(index !== -1) {
@@ -44,14 +45,25 @@ export class SelectedDishesService {
     }
   }
 
-  //obtener items del carrito
+  //Calcula el total de totales
+  getTotal() {
+    let total = 0;
+    this.itemsCart.forEach( item => {
+        total = total + item.total;
+    });
+    return total;
+  }
+
+  //obtener items de carrito
   getItems() {
     return this.itemsCart;
   }
 
-  // limpiar el carrito
+  //limpiar el carrito
   clearCart() {
     this.itemsCart = [];
     return this.itemsCart;
   }
+
+
 }
