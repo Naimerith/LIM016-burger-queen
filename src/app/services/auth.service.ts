@@ -21,7 +21,7 @@ export class AuthService {
     try {
       return await this.authFirebase.createUserWithEmailAndPassword(email, password);
     } catch (e) {
-      console.log('error en registro', e)
+      console.log('error en registro', e);
       return null
     }
   }
@@ -36,7 +36,4 @@ export class AuthService {
     this.authFirebase.signOut();
   }
 
-  // login(email: string = '', password: string = '') {
-  //   return this.authFirebase.signInWithEmailAndPassword(email, password);
-  // }
 }

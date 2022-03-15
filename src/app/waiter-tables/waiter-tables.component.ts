@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-waiter-tables',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WaiterTablesComponent implements OnInit {
 
-  constructor() { }
+
+
+
+
+  constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
   }
+  selectTable() {
+    //this.dataService.tablesEvent$.emit('holanai')
+    console.log('Seleccionaste una mesa')
+  }
+
+
 
 }

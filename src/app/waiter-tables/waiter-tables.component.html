@@ -3,12 +3,12 @@
 <body>
   <div class="container">
     <div class="btn-table-container">
-      <button class="btn-table" [routerLink]="['/', 'menu']">Mesa 01</button>
-      <button class="btn-table" [routerLink]="['/', 'menu']">Mesa 02</button>
-      <button class="btn-table" [routerLink]="['/', 'menu']">Mesa 03</button>
-      <button class="btn-table" [routerLink]="['/', 'menu']">Mesa 04</button>
-      <button class="btn-table" [routerLink]="['/', 'menu']">Mesa 05</button>
-      <button class="btn-table" [routerLink]="['/', 'menu']">Mesa 06</button>
+      <button (click)="selectTable()" id="mesa01" class="btn-table" [routerLink]="['/', 'menu']">Mesa 01</button>
+      <button (click)="selectTable()" id="mesa02" class="btn-table" [routerLink]="['/', 'menu']">Mesa 02</button>
+      <button (click)="selectTable()" id="mesa03" class="btn-table" [routerLink]="['/', 'menu']">Mesa 03</button>
+      <button (click)="selectTable()" id="mesa04" class="btn-table" [routerLink]="['/', 'menu']">Mesa 04</button>
+      <button (click)="selectTable()" id="mesa05" class="btn-table" [routerLink]="['/', 'menu']">Mesa 05</button>
+      <button (click)="selectTable()" id="mesa06" class="btn-table" [routerLink]="['/', 'menu']">Mesa 06</button>
     </div>
   </div>
 </body>

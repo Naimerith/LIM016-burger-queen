@@ -16,10 +16,6 @@ export class SignInComponent implements OnInit {
     password: '',
   }
 
-  /*  logInForm = new FormGroup({
-     email: new FormControl('', Validators.required),
-     password: new FormControl('', Validators.required)
-   })*/
   constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
@@ -28,8 +24,8 @@ export class SignInComponent implements OnInit {
   ingresar() {
     console.log(this.usuario);
     const { email, password } = this.usuario; //desestructuramos las variables
-    this.authService.register(email, password).then(res => {
-      console.log("Se registro", res);
+    this.authService.login(email, password).then(res => {
+      console.log("Inicio sesion", res);
     })
     //Obtenemos el usuario logueado 
     this.authService.getUserLogged().subscribe(res => {

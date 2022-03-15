@@ -47,6 +47,10 @@ import { environment } from '../environments/environment';
     SignInComponent,
     SignUpComponent
   ],
+  exports: [
+    WaiterTablesComponent,
+    WaiterMenuComponent
+  ],
   imports: [
     AngularFireModule.initializeApp(environment.firebaseConfig), //Aqui inicializamos firebase
     AngularFireAuthModule,
@@ -78,4 +82,5 @@ export class AppModule {
   constructor(library: FaIconLibrary) {
     library.addIconPacks(fas, far);
   }
+
 }

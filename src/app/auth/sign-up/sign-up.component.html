@@ -1,18 +1,18 @@
 <p>Registrar un usuario</p>
 <div class="displayTable">
     <div class="formGroup">
-        <input type="text" class="input-email" id="inputName" placeholder="Nombre" [(ngModel)]="usuario.name">
+        <input type="text" class="input-email" id="inputName" placeholder="Nombre">
     </div>
     <div class="formGroup">
-        <input type="text" class="input-email" id="inputRol" placeholder="Rol" [(ngModel)]="usuario.rol">
+        <input type="text" class="input-email" id="inputRol" placeholder="Rol">
     </div>
     <div class="formGroup">
-        <input type="text" class="input-email" id="inputEmail" placeholder="email" [(ngModel)]="usuario.email">
+        <input type="text" class="input-email" id="inputEmail" placeholder="email">
     </div>
     <div class="formGroup">
-        <input type="password" class="input-password" id="inputPassword" placeholder="contraseña"
-            [(ngModel)]="usuario.password">
+        <input type="password" class="input-password" id="inputPassword" placeholder="contraseña">
     </div>
     <div class="formGroup">
-        <button class="logIn-button" type='submit'>Registrar</button>
+        <button class="logIn-button" type='submit' (click)="registrar()">Registrar</button>
+        <span class="redirect" routerLink="/">Iniciar sesión</span>
     </div>
