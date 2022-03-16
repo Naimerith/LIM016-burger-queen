@@ -5,18 +5,21 @@ import { HomeComponent } from './home/home.component';
 import { WaiterMenuComponent } from './waiter-menu/waiter-menu.component';
 import { WaiterTablesComponent } from './waiter-tables/waiter-tables.component';
 import { WaiterOrdersComponent } from './waiter-orders/waiter-orders.component';
-import { SignUpComponent } from './components/sign-up/sign-up.component';
-import { SignInComponent } from './components/sign-in/sign-in.component';
+import { SignUpComponent } from './auth/sign-up/sign-up.component';
+import { AuthGuard } from './guards/auth.guard';
+
 
 
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent
+    component: HomeComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: 'tables',
-    component: WaiterTablesComponent
+    component: WaiterTablesComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: 'menu',
@@ -29,14 +32,9 @@ const routes: Routes = [
   {
     path: 'orders',
     component: WaiterOrdersComponent
-  },
-  {
-    path: 'register-user',
+  }, {
+    path: 'registro',
     component: SignUpComponent
-  },
-  {
-    path: 'Login',
-    component: SignInComponent
   },
 ];
 

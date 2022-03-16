@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { MenuService } from '../services/menu.service';
-import { ShareDataService } from '../services/share-data.service';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-waiter-tables',
@@ -9,30 +8,15 @@ import { ShareDataService } from '../services/share-data.service';
 })
 export class WaiterTablesComponent implements OnInit {
 
-  //traen los datos de booking.component.html
-  @Input()
-  table: any;
-  selectedTable: any;
-
-  constructor(private service: MenuService,
-    private shareData: ShareDataService) { }
+  constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
-    this.shareData.sharedMessage.subscribe(message => this.selectedTable = message)
+
   }
 
-  updateStatusTable(){
-    const idTable=this.table.id;
-    console.log(idTable);
-    const statusTable=this.table.status;
-    const objTable = {status:statusTable};
-    this.service.updateTable(idTable,objTable);
-  }
-
-  // envía información a ser transmitida desde el botón de Mesa
-  sendSelectedTable() {
-    // trae la data completa de la mesa y no solo el nombre
-    this.shareData.nextMessage(this.table)
+  selectTable() {
+    //this.dataService.tablesEvent$.emit('holanai')
+    console.log('Seleccionaste una mesa')
   }
 
 }

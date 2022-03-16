@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { DataService } from '../services/data.service';
 import { MenuService } from '../services/menu.service';
 import { ShareDataService } from '../services/share-data.service';
 import { CartService } from '../services/cart.service';
@@ -8,7 +10,7 @@ import { CartService } from '../services/cart.service';
   templateUrl: './waiter-menu.component.html',
   styleUrls: ['./waiter-menu.component.scss']
 })
-export class WaiterMenuComponent implements OnInit {
+export class WaiterMenuComponent implements OnInit, OnDestroy {
 
   //variables globales:
 
@@ -22,7 +24,8 @@ export class WaiterMenuComponent implements OnInit {
 
   constructor(private service: MenuService, //db de firebase
     private shareData: ShareDataService, //servicio para compartir info
-    private cartService: CartService) { //Servicio del Carrito y Orden
+    private cartService: CartService,
+    private dataService: DataService) { //Servicio del Carrito y Orden
   };
 
   // Ejecuta funciones al cargar vista
@@ -31,7 +34,16 @@ export class WaiterMenuComponent implements OnInit {
     this.getProducts();
     console.log(this.itemsCart);
     this.shareData.sharedMessage.subscribe(message => this.selectedTable = message) //trae la data message del servicio
+
+    //Aqui me suscribo al servicio
+    this.suscription = this.dataService.tablesEvent$.subscribe(numMesa => {
+      this.numberTable = numMesa;
+      console.log('numero de mesa es:', numMesa);
+    })
+
+    this.dataService.tablesEvent$.emit('nuevo')
   }
+
 
   getTotal() {
     return this.cartService.getTotal();
@@ -47,9 +59,11 @@ export class WaiterMenuComponent implements OnInit {
 
 
   commensal = {
-    name: '',
-    tableNumber: '01'
+    name: ''
   };
+
+  numberTable: string = 'hola';
+  suscription: Subscription | undefined; // Su valor por defecto es undefined
 
   changeCommensalName(event: Event) {
     const element = event.target as HTMLInputElement;
@@ -62,6 +76,11 @@ export class WaiterMenuComponent implements OnInit {
       return this.itemsMenu.filter((item) => item.categoria == 'desayuno');
     }
     else return this.itemsMenu.filter((item) => item.categoria == 'almuerzo y cena');
+  }
+
+  //Se llama cada vez que necesitemos actualizar el observador y que se muestre la nueva seleccion cada vez que se presiona
+  ngOnDestroy() {
+    this.suscription?.unsubscribe();
   }
 
   // cambia estado de menu a mostrar(cambio de estado)
@@ -89,12 +108,12 @@ export class WaiterMenuComponent implements OnInit {
     this.service.createOrder(saveOrder);
   }
 
-    // Limpia el status de la mesa si vuelve a booking
-    clearTable() {
-      const idTable = this.selectedTable.id;
-      const objTable = {status:false};
-      this.service.updateTable(idTable,objTable);
-      // console.log(this.selectedTable);
-    }
+  // Limpia el status de la mesa si vuelve a booking
+  clearTable() {
+    const idTable = this.selectedTable.id;
+    const objTable = { status: false };
+    this.service.updateTable(idTable, objTable);
+    // console.log(this.selectedTable);
+  }
 };
 

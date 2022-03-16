@@ -15,8 +15,8 @@
           <input type="text" class="commensalNameInput" class="form-control" (keyup)="changeCommensalName($event)"
             placeholder="Nombre cliente" aria-label="Username" aria-describedby="basic-addon1">
         </div>
-        <label for="commensal" class="commensalTableLabel">Mesa N°: {{commensal.tableNumber}}</label>
-        <p class="text-center fs-1">{{selectedTable.numero_mesa}}</p>
+        <label for="commensal" class="commensalTableLabel">Mesa N°: {{numberTable}}</label>
+
       </div>
 
       <div>
@@ -51,7 +51,7 @@
         </div>
         <div class="recordedDataTable">
           <p>Mesa N°:</p>
-          <p>{{commensal.tableNumber}}</p>
+          <p>{{numberTable}}</p>
         </div>
       </div>
 

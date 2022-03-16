@@ -22,7 +22,7 @@ export const environment = {
     storageBucket: "luna-burger-queen.appspot.com",
     messagingSenderId: "917390878924",
     appId: "1:917390878924:web:c8bf381e8c269a55c3fa69"
-  },
+  }
 };
 
 /*
