@@ -2,11 +2,11 @@ import { Component, Input, OnInit } from '@angular/core';
 import { CartService } from 'src/app/services/cart.service';
 
 @Component({
-  selector: 'app-counter-input',
-  templateUrl: './counter-input.component.html',
-  styleUrls: ['./counter-input.component.scss']
+  selector: 'app-waiter-counter',
+  templateUrl: './waiter-counter.component.html',
+  styleUrls: ['./waiter-counter.component.scss']
 })
-export class CounterInputComponent implements OnInit {
+export class WaiterCounterComponent implements OnInit {
 
   //variables globales
   @Input () itemCart: any;

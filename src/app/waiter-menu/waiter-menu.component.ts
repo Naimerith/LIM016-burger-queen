@@ -12,9 +12,9 @@ export class WaiterMenuComponent implements OnInit {
 
   //variables globales:
 
-  products: any[] = [];
-  productsFilter: any[] = []; // trae los platos filtrados para mostrar
-  menuType: string = 'desayuno';
+  itemsMenu: any[] = [];
+  itemsMenuFilter: any[] = []; // trae los platos filtrados para mostrar
+  menuCategory: string = 'desayuno';
   selectedTable: any;
   itemsCart = this.cartService.getItems(); // trae los platos del carrito
   username: string = '';
@@ -40,9 +40,9 @@ export class WaiterMenuComponent implements OnInit {
 
   // Trae el listado de productos
   getProducts() {
-    this.service.getProducts().subscribe(items => this.products = items);
+    this.service.getProducts().subscribe(items => this.itemsMenu = items);
 
-    this.productsFilter = this.getBreakfastItem();
+    this.itemsMenuFilter = this.getBreakfastItem();
   }
 
 
@@ -58,16 +58,16 @@ export class WaiterMenuComponent implements OnInit {
 
   // Trae elementos del menú que coinciden con tipo Desayuno
   getBreakfastItem() {
-    if (this.menuType === 'desayuno') {
-      return this.products.filter((item) => item.categoria == 'desayuno');
+    if (this.menuCategory === 'desayuno') {
+      return this.itemsMenu.filter((item) => item.categoria == 'desayuno');
     }
-    else return this.products.filter((item) => item.categoria == 'almuerzo y cena');
+    else return this.itemsMenu.filter((item) => item.categoria == 'almuerzo y cena');
   }
 
   // cambia estado de menu a mostrar(cambio de estado)
   changeTypeMenu(type: string) {
-    this.menuType = type;
-    this.productsFilter = this.getBreakfastItem();
+    this.menuCategory = type;
+    this.itemsMenuFilter = this.getBreakfastItem();
   }
 
   makeOrder() {

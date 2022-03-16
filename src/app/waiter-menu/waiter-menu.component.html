@@ -27,7 +27,7 @@
       </div>
 
       <ul class="list-group tableMenu mb-2 mt-2">
-        <app-template-products *ngFor="let product of productsFilter" [product]="product"></app-template-products>
+        <app-template-products *ngFor="let product of itemsMenuFilter" [product]="product"></app-template-products>
       </ul>
 
     </section>
@@ -56,7 +56,7 @@
       </div>
 
       <ul class="list-group tableOrder mt-2">
-        <app-counter-input *ngFor="let item of itemsCart" [itemCart]="item"> </app-counter-input>
+        <app-waiter-counter *ngFor="let item of itemsCart" [itemCart]="item"> </app-waiter-counter>
       </ul>
 
 

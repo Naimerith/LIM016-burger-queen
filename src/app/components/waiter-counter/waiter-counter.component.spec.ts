@@ -1,20 +1,19 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { WaiterCounterComponent } from './waiter-counter.component';
 
-import { CounterInputComponent } from './counter-input.component';
-
-describe('CounterInputComponent', () => {
-  let component: CounterInputComponent;
-  let fixture: ComponentFixture<CounterInputComponent>;
+describe('WaiterCounterComponent', () => {
+  let component: WaiterCounterComponent;
+  let fixture: ComponentFixture<WaiterCounterComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CounterInputComponent ]
+      declarations: [ WaiterCounterComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CounterInputComponent);
+    fixture = TestBed.createComponent(WaiterCounterComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

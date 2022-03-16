@@ -37,7 +37,8 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideDatabase,getDatabase } from '@angular/fire/database';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { TemplateProductsComponent } from './template-products/template-products.component';
-import { CounterInputComponent } from './components/counter-input/counter-input.component';
+
+import { WaiterCounterComponent } from './components/waiter-counter/waiter-counter.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,7 @@ import { CounterInputComponent } from './components/counter-input/counter-input.
     DashboardComponent,
     SignUpComponent,
     TemplateProductsComponent,
-    CounterInputComponent,
+    WaiterCounterComponent,
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebaseConfig),
