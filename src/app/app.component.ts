@@ -6,7 +6,9 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss', '../styles.scss']
 })
-export class AppComponent {constructor(firestore: AngularFirestore){
+export class AppComponent {
 
+  constructor(firestore: AngularFirestore) {
 
+  }
 }

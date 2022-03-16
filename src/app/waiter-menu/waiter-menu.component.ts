@@ -13,6 +13,8 @@ import { CartService } from '../services/cart.service';
 export class WaiterMenuComponent implements OnInit, OnDestroy {
 
   //variables globales:
+  numberTable: string = '';
+  suscription: Subscription | undefined; // Su valor por defecto es undefined
 
   itemsMenu: any[] = [];
   itemsMenuFilter: any[] = []; // trae los platos filtrados para mostrar
@@ -32,18 +34,18 @@ export class WaiterMenuComponent implements OnInit, OnDestroy {
   ngOnInit() {
     //Inicializar valores
     this.getProducts();
-    console.log(this.itemsCart);
+    //console.log(this.itemsCart);
     this.shareData.sharedMessage.subscribe(message => this.selectedTable = message) //trae la data message del servicio
 
     //Aqui me suscribo al servicio
-    this.suscription = this.dataService.tablesEvent$.subscribe(numMesa => {
+    this.dataService.tablesEvent$.subscribe(numMesa => {
       this.numberTable = numMesa;
+      console.log(this.numberTable);
       console.log('numero de mesa es:', numMesa);
     })
 
-    this.dataService.tablesEvent$.emit('holanai')
+    // this.dataService.tablesEvent$.emit('holanai')
   }
-
 
   getTotal() {
     return this.cartService.getTotal();
@@ -62,8 +64,6 @@ export class WaiterMenuComponent implements OnInit, OnDestroy {
     name: ''
   };
 
-  numberTable: string = 'hola';
-  suscription: Subscription | undefined; // Su valor por defecto es undefined
 
   changeCommensalName(event: Event) {
     const element = event.target as HTMLInputElement;
