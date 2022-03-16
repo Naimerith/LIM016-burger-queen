@@ -8,7 +8,6 @@ import { MenuService } from './services/menu.service'
 })
 export class AppComponent {
   constructor(public menuLuna: MenuService) {
-
   }
 
 
