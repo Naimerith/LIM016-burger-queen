@@ -41,7 +41,7 @@ export class WaiterMenuComponent implements OnInit, OnDestroy {
       console.log('numero de mesa es:', numMesa);
     })
 
-    this.dataService.tablesEvent$.emit('nuevo')
+    this.dataService.tablesEvent$.emit('holanai')
   }
 
 
