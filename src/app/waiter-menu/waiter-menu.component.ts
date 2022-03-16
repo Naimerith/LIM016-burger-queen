@@ -89,14 +89,16 @@ export class WaiterMenuComponent implements OnInit, OnDestroy {
     this.itemsMenuFilter = this.getBreakfastItem();
   }
 
+  /*
   makeOrder() {
+
     const date = new Date();
     const newDate = date.toString();
     const saveOrder = {
       cliente: this.username,
       total: this.getTotal(),
-      mesa: this.selectedTable.numero_mesa,
-      mesaID: this.selectedTable.id,
+      // mesa: this.selectedTable.numero_mesa,
+      // mesaID: this.selectedTable.id,
       status: 0,
       fecha: newDate,
       detalle: this.itemsCart,
@@ -105,15 +107,8 @@ export class WaiterMenuComponent implements OnInit, OnDestroy {
     this.itemsCart = [];// limpia el contenido del carrito
     this.username = '';
     this.selectedTable = '';
-    this.service.createOrder(saveOrder);
+    //this.service.createOrder(saveOrder);
   }
-
-  // Limpia el status de la mesa si vuelve a booking
-  clearTable() {
-    const idTable = this.selectedTable.id;
-    const objTable = { status: false };
-    this.service.updateTable(idTable, objTable);
-    // console.log(this.selectedTable);
-  }
+  */
 };
 
