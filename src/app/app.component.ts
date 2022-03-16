@@ -1,14 +1,12 @@
 import { Component } from '@angular/core';
-import { MenuService } from './services/menu.service'
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss', '../styles.scss']
 })
-export class AppComponent {
-  constructor(public menuLuna: MenuService) {
-  }
+export class AppComponent {constructor(firestore: AngularFirestore){
 
 
 }

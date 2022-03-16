@@ -8,19 +8,15 @@ import { DataService } from '../services/data.service';
 })
 export class WaiterTablesComponent implements OnInit {
 
-
-
-
-
   constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
+
   }
+
   selectTable() {
     //this.dataService.tablesEvent$.emit('holanai')
     console.log('Seleccionaste una mesa')
   }
-
-
 
 }

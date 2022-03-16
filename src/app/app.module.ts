@@ -24,6 +24,13 @@ import { AuthService } from "./services/auth.service";
 
 //importaciones para leer data en json
 import { HttpClientModule } from '@angular/common/http';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { provideAuth,getAuth } from '@angular/fire/auth';
+import { provideDatabase,getDatabase } from '@angular/fire/database';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import { TemplateProductsComponent } from './template-products/template-products.component';
+
+import { WaiterCounterComponent } from './components/waiter-counter/waiter-counter.component';
 
 // Firebase services + environment module
 import { AngularFireModule } from '@angular/fire/compat'; //Para enlazar con el proyecto en firebase
@@ -45,6 +52,8 @@ import { environment } from '../environments/environment';
     HeaderComponent,
     ModalComponentComponent,
     SignInComponent,
+    TemplateProductsComponent,
+    WaiterCounterComponent,
     SignUpComponent
   ],
   exports: [
@@ -69,6 +78,14 @@ import { environment } from '../environments/environment';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+
+    // OJO
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAuth(() => getAuth()),
+    provideDatabase(() => getDatabase()),
+    provideFirestore(() => getFirestore()),
+
+    //OJO
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
     AngularFirestoreModule,

@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "luna-burger-queen"
+  },
+  "targets": {
+    "luna-burger-queen": {
+      "hosting": {
+        "my-app": [
+          "luna-burger-queen"
+        ]
+      }
+    }
+  }
+}
