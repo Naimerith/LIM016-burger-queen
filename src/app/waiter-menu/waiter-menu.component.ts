@@ -79,7 +79,8 @@ export class WaiterMenuComponent implements OnInit, OnDestroy {
 
   //Se llama cada vez que necesitemos actualizar el observador y que se muestre la nueva seleccion cada vez que se presiona
   ngOnDestroy() {
-    this.suscription?.unsubscribe();
+    //this.suscription?.unsubscribe();
+    localStorage.removeItem("mesa");
   }
 
   // cambia estado de menu a mostrar(cambio de estado)
@@ -88,14 +89,14 @@ export class WaiterMenuComponent implements OnInit, OnDestroy {
     this.itemsMenuFilter = this.getBreakfastItem();
   }
 
-  makeOrder() {
+  /* makeOrder() {
     const date = new Date();
     const newDate = date.toString();
     const saveOrder = {
       cliente: this.username,
       total: this.getTotal(),
-      mesa: this.selectedTable.numero_mesa,
-      mesaID: this.selectedTable.id,
+      //mesa: this.selectedTable.numero_mesa,
+      mesa: this.numberTable,
       status: 0,
       fecha: newDate,
       detalle: this.itemsCart,
@@ -103,16 +104,8 @@ export class WaiterMenuComponent implements OnInit, OnDestroy {
     }
     this.itemsCart = [];// limpia el contenido del carrito
     this.username = '';
-    this.selectedTable = '';
     this.service.createOrder(saveOrder);
   }
-
-  // Limpia el status de la mesa si vuelve a booking
-  clearTable() {
-    const idTable = this.selectedTable.id;
-    const objTable = { status: false };
-    this.service.updateTable(idTable, objTable);
-    // console.log(this.selectedTable);
-  }
+ */
 };
 
