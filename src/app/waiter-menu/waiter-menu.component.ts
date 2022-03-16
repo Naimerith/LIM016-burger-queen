@@ -13,7 +13,7 @@ import { CartService } from '../services/cart.service';
 export class WaiterMenuComponent implements OnInit, OnDestroy {
 
   //variables globales:
-  numberTable: string = '';
+  numberTable: any;
   suscription: Subscription | undefined; // Su valor por defecto es undefined
 
   itemsMenu: any[] = [];
@@ -39,12 +39,11 @@ export class WaiterMenuComponent implements OnInit, OnDestroy {
 
     //Aqui me suscribo al servicio
     this.dataService.tablesEvent$.subscribe(numMesa => {
-      this.numberTable = numMesa;
-      console.log(this.numberTable);
-      console.log('numero de mesa es:', numMesa);
+      localStorage.setItem("mesa", numMesa)
+      //console.log(this.numberTable);
+      //console.log('numero de mesa es:', numMesa);
     })
-
-    // this.dataService.tablesEvent$.emit('holanai')
+    this.numberTable = localStorage.getItem("mesa")
   }
 
   getTotal() {

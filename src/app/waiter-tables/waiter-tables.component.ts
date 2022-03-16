@@ -17,7 +17,10 @@ export class WaiterTablesComponent implements OnInit {
   selectTable(event: any) {
     const idTable = event.target.id;
     console.log(idTable)
-    this.dataService.tablesEvent$.emit(idTable)
+    /*this.dataService.tablesEvent$.emit(idTable) */
+
+    //Con localStorage
+    localStorage.setItem("mesa", idTable);
   }
 
 }
