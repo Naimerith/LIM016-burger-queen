@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DataService } from '../services/data.service';
 
 @Component({
@@ -14,9 +14,13 @@ export class WaiterTablesComponent implements OnInit {
 
   }
 
-  selectTable() {
-    //this.dataService.tablesEvent$.emit('holanai')
-    console.log('Seleccionaste una mesa')
+  selectTable(event: any) {
+    const idTable = event.target.id;
+    console.log(idTable)
+    /*this.dataService.tablesEvent$.emit(idTable) */
+
+    //Con localStorage
+    localStorage.setItem("mesa", idTable);
   }
 
 }

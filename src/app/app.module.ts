@@ -23,7 +23,6 @@ import { SignUpComponent } from './auth/sign-up/sign-up.component';
 import { AuthService } from "./services/auth.service";
 
 //importaciones para leer data en json
-import { HttpClientModule } from '@angular/common/http';
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideDatabase,getDatabase } from '@angular/fire/database';
@@ -75,7 +74,6 @@ import { environment } from '../environments/environment';
       registrationStrategy: 'registerWhenStable:30000'
     }),
     FontAwesomeModule,
-    HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
 
@@ -85,12 +83,6 @@ import { environment } from '../environments/environment';
     provideDatabase(() => getDatabase()),
     provideFirestore(() => getFirestore()),
 
-    //OJO
-    AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFireAuthModule,
-    AngularFirestoreModule,
-    AngularFireStorageModule,
-    AngularFireDatabaseModule,
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
