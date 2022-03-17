@@ -1,12 +1,8 @@
 <app-header> </app-header>
-<!-- Aquí puedes escribir tu comentario -->
 
 <body>
-
   <main class="flex-container">
-
     <section class="menuOptions-content">
-
       <div class="commensalDates">
         <div class="commensalNameDiv">
           <label for="commensal" class="commensalNameLabel">
@@ -16,53 +12,38 @@
             placeholder="Nombre cliente" aria-label="Username" aria-describedby="basic-addon1">
         </div>
         <label for="commensal" class="commensalTableLabel">Mesa N°: {{numberTable}}</label>
-
       </div>
-
       <div>
         <button type="button" class="btn btn-primary" data-bs-toggle="button" autocomplete="off"
           (click)="changeTypeMenu('desayuno')">Desayuno</button>
         <button type="button" class="btn btn-primary" data-bs-toggle="button" autocomplete="off"
           (click)="changeTypeMenu('menu')">Almuerzo</button>
       </div>
-
       <ul class="list-group tableMenu mb-2 mt-2">
         <app-template-products *ngFor="let product of itemsMenuFilter" [product]="product"></app-template-products>
       </ul>
-
     </section>
-
-
     <aside class="selectedOptionsMenu">
-
       <p class="text-center fs-3 mb-0 btnMenu">Pedido</p>
-
-
       <div class="recordedData">
         <div class="recordedDataCommensal">
           <p>Pedido de:</p>
-          <p>{{commensal.name}}</p>
+          <p>{{nameComensal}}</p>
         </div>
         <div class="recordedDataTable">
           <p>Mesa N°:</p>
           <p>{{numberTable}}</p>
         </div>
       </div>
-
       <ul class="list-group tableOrder mt-2">
         <app-waiter-counter *ngFor="let item of itemsCart" [itemCart]="item"> </app-waiter-counter>
       </ul>
-
-
-
       <section class="col-sm">
         <p class="text-end fs-3 mb-0 ">Total: {{getTotal() | currency}}</p>
       </section>
-
       <div class="container-btn-enviarPedido">
-        <button type="button" class="btn-enviarPedido" routerLink="/orders">Enviar pedido</button>
+        <button type="button" class="btn-enviarPedido" (click)="makeOrder()">Enviar pedido</button>
       </div>
-
     </aside>
   </main>
 </body>

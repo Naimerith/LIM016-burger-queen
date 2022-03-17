@@ -44,5 +44,4 @@ export class MenuService {
     return this.afs.collection('pedidos').add(order);
   }
 
-
 }

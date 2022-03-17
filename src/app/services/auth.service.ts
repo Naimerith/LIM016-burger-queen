@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 //import firebase from 'firebase/compat/app';
 @Injectable({
   providedIn: 'root'
@@ -16,7 +17,7 @@ export class AuthService {
       return null
     }
   }
-
+  /*registrar un usuario*/
   async register(email: string, password: string) {
     try {
       return await this.authFirebase.createUserWithEmailAndPassword(email, password);
@@ -25,6 +26,7 @@ export class AuthService {
       return null
     }
   }
+
 
   /* Obtener usuario logueado */
   getUserLogged() {
