@@ -26,7 +26,7 @@ const routes: Routes = [
     component: WaiterMenuComponent
   },
   {
-    path: 'kitchen',
+    path: 'cocina',
     component: ChefKitchenComponent
   },
   {

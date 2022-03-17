@@ -9,5 +9,22 @@
     </header>
     <div class="container-orders-received">
         <h1 class="title-kitchen">Pedidos Recibidos</h1>
+
+        <div class="orderContainer" *ngFor="let orders of order">
+            <ul>
+                <li>Num de mesa: {{orders.mesa}}</li>
+                <div *ngFor="let clientOrder of orders.detalle">
+                    <ul>
+                        <div>
+                            <li>Nombre del producto: </li>
+                            <li>Cantidad:</li>
+                            <li>tipo:</li>
+                        </div>
+                    </ul>
+
+                </div>
+                <li>Mesero:</li>
+            </ul>
+        </div>
     </div>
 </main>

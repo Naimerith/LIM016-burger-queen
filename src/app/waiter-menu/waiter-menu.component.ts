@@ -2,8 +2,9 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { DataService } from '../services/data.service';
 import { MenuService } from '../services/menu.service';
-import { ShareDataService } from '../services/share-data.service';
+//import { ShareDataService } from '../services/share-data.service';
 import { CartService } from '../services/cart.service';
+import { Detalle } from '../interfaz/order.interface';
 
 @Component({
   selector: 'app-waiter-menu',
@@ -19,14 +20,14 @@ export class WaiterMenuComponent implements OnInit, OnDestroy {
 
   itemsMenu: any[] = [];
   itemsMenuFilter: any[] = []; // trae los platos filtrados para mostrar
-  menuCategory: string = 'desayuno';
+  menuCategory: string = '';
   selectedTable: any;
-  itemsCart = this.cartService.getItems(); // trae los platos del carrito
+  itemsCart: Detalle[] = this.cartService.getItems(); // trae los platos del carrito
   username: string = '';
 
 
   constructor(private service: MenuService, //db de firebase
-    private shareData: ShareDataService, //servicio para compartir info
+    //private shareData: ShareDataService, //servicio para compartir info
     private cartService: CartService,
     private dataService: DataService) { //Servicio del numero de mesa y nombre de cliente
   };
@@ -36,7 +37,7 @@ export class WaiterMenuComponent implements OnInit, OnDestroy {
     //Inicializar valores
     this.getProducts();
     //console.log(this.itemsCart);
-    this.shareData.sharedMessage.subscribe(message => this.selectedTable = message) //trae la data message del servicio
+    //this.shareData.sharedMessage.subscribe(message => this.selectedTable = message) //trae la data message del servicio
 
     //Aqui me suscribo al servicio
     this.dataService.tablesEvent$.subscribe(numMesa => {
