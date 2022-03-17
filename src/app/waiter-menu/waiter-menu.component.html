@@ -42,7 +42,8 @@
         <p class="text-end fs-3 mb-0 ">Total: {{getTotal() | currency}}</p>
       </section>
       <div class="container-btn-enviarPedido">
-        <button type="button" class="btn-enviarPedido" (click)="makeOrder()">Enviar pedido</button>
+        <button type="button" class="btn-enviarPedido" [routerLink]="['/', 'pedidos']" (click)="makeOrder()">Enviar
+          pedido</button>
       </div>
     </aside>
   </main>

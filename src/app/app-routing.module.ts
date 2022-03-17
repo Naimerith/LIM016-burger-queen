@@ -30,7 +30,7 @@ const routes: Routes = [
     component: ChefKitchenComponent
   },
   {
-    path: 'orders',
+    path: 'pedidos',
     component: WaiterOrdersComponent
   }, {
     path: 'registro',

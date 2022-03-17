@@ -50,6 +50,7 @@ export class CartService {
   getTotal() {
     let total = 0;
     this.itemsCart.forEach(item => {
+      //console.log(item)
       total = total + item.total;
     });
     return total;

@@ -109,7 +109,6 @@ export class WaiterMenuComponent implements OnInit, OnDestroy {
     const saveOrder = {
       cliente: this.username,
       total: this.getTotal(),
-      //mesa: this.selectedTable.numero_mesa,
       mesa: this.numberTable,
       status: 0,
       fecha: newDate,
