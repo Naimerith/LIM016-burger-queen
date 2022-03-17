@@ -26,11 +26,11 @@ const routes: Routes = [
     component: WaiterMenuComponent
   },
   {
-    path: 'kitchen',
+    path: 'cocina',
     component: ChefKitchenComponent
   },
   {
-    path: 'orders',
+    path: 'pedidos',
     component: WaiterOrdersComponent
   }, {
     path: 'registro',
