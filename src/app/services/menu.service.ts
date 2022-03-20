@@ -3,7 +3,13 @@ import { Observable } from 'rxjs';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
 import { map } from 'rxjs/operators';
 
-export interface Item { name: string; }
+export interface Item {
+  nombre: string;
+  cantidad: number;
+  categoria: string;
+  precio: number;
+  tipo: string;
+}
 
 @Injectable({
   providedIn: 'root'
@@ -43,5 +49,6 @@ export class MenuService {
   createOrder(order: any) {
     return this.afs.collection('pedidos').add(order);
   }
+
 
 }

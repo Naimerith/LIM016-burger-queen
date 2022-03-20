@@ -116,7 +116,9 @@ export class WaiterMenuComponent implements OnInit, OnDestroy {
       detalle: this.itemsCart,
       tiempo: ''
     }
+    console.log(saveOrder.detalle)
     this.itemsCart = [];// limpia el contenido del carrito
+
     this.username = '';
     this.service.createOrder(saveOrder);
   }
