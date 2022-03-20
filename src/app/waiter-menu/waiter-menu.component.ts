@@ -15,7 +15,6 @@ export class WaiterMenuComponent implements OnInit, OnDestroy {
 
   //variables globales:
   numberTable: any;
-  nameComensal: any;
   suscription: Subscription | undefined; // Su valor por defecto es undefined
 
   itemsMenu: any[] = [];
@@ -24,7 +23,7 @@ export class WaiterMenuComponent implements OnInit, OnDestroy {
   selectedTable: any;
   itemsCart: Detalle[] = this.cartService.getItems(); // trae los platos del carrito
   username: string = '';
-
+  nameCommensal: any = "";
 
   constructor(private service: MenuService, //db de firebase
     //private shareData: ShareDataService, //servicio para compartir info
@@ -37,7 +36,6 @@ export class WaiterMenuComponent implements OnInit, OnDestroy {
     //Inicializar valores
     this.getProducts();
     //console.log(this.itemsCart);
-    //this.shareData.sharedMessage.subscribe(message => this.selectedTable = message) //trae la data message del servicio
 
     //Aqui me suscribo al servicio
     this.dataService.tablesEvent$.subscribe(numMesa => {
@@ -55,39 +53,18 @@ export class WaiterMenuComponent implements OnInit, OnDestroy {
     return this.cartService.getTotal();
   }
 
-
   // Trae el listado de productos para mostrar en el menu
   getProducts() {
     this.service.getProducts().subscribe(items => this.itemsMenu = items);
     this.itemsMenuFilter = this.getBreakfastItem();
   }
 
-
-  commensal = {
-    name: ''
-  };
-
-  // funcion que muestra el nombre del comensal 
-  changeCommensalName(event: Event) {
-    // const element = event.target as HTMLInputElement;
-    // this.commensal.name = element.value;
-    const nameC = event.target as HTMLInputElement;
-    this.nameComensal = nameC.value
-    console.log(this.nameComensal)
-    /*this.dataService.tablesEvent$.emit(idTable) */
-
-    //Con localStorage
-    // localStorage.setItem("name", nameC);
-    this.dataService.nameEvent$.subscribe((hola: string) => {
-      localStorage.setItem("name", hola)
-      //   //console.log(this.numberTable);
-      //   //console.log('numero de mesa es:', numMesa);
-      // })
-      this.nameComensal = localStorage.getItem("name")
-    })
+  cambiarNombre(event: Event) {
+    const element = event.target as HTMLInputElement;
+    this.nameCommensal = element.value;
+    localStorage.setItem("NombreCliente", this.nameCommensal)
+    this.nameCommensal = localStorage.getItem("NombreCliente") //obtengo el num de mesa
   }
-
-
 
   // Muestra los productos disponibles para desayuno o cena segun lo que seleccione 
   getBreakfastItem() {
@@ -108,7 +85,7 @@ export class WaiterMenuComponent implements OnInit, OnDestroy {
     const date = new Date();
     const newDate = date.toString();
     const saveOrder = {
-      cliente: this.username,
+      cliente: this.nameCommensal,
       total: this.getTotal(),
       mesa: this.numberTable,
       status: 0,
