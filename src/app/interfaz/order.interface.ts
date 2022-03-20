@@ -3,6 +3,7 @@ export interface Orders {
     fecha: Date;
     cliente: string;
     mesa: number;
+    mesero: string;
     //total: number;
 }
 export interface Detalle {

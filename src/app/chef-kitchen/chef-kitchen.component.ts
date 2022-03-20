@@ -15,7 +15,7 @@ export class ChefKitchenComponent implements OnInit {
   ngOnInit(): void {
     this.orderService.getOrder().subscribe(
       (ped: any) => {
-        console.log(ped) //me traigo la coleccion
+        //console.log(ped) //me traigo la coleccion
         this.order = ped;
         console.log(this.order)
       }

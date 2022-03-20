@@ -9,7 +9,7 @@
             <fa-icon [icon]="['fas', 'user']"></fa-icon>
           </label>
           <input type="text" class="form-control" placeholder="Nombre cliente" [value]="nameCommensal"
-            (keyup)="cambiarNombre($event)">
+            (keyup)="saveNameClient($event)">
 
         </div>
         <label for="commensal" class="commensalTableLabel">Mesa N°: {{numberTable}}</label>
@@ -43,7 +43,7 @@
         <p class="text-end fs-3 mb-0 ">Total: {{getTotal() | currency}}</p>
       </section>
       <div class="container-btn-enviarPedido">
-        <button type="button" class="btn-enviarPedido" [routerLink]="['/', 'pedidos']" (click)="makeOrder()">Enviar
+        <button type="button" class="btn-enviarPedido" [routerLink]="['/', 'cocina']" (click)="makeOrder()">Enviar
           pedido</button>
       </div>
     </aside>

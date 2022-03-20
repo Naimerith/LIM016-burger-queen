@@ -44,6 +44,7 @@ export class WaiterMenuComponent implements OnInit, OnDestroy {
     this.numberTable = localStorage.getItem("mesa") //obtengo el num de mesa
   }
 
+
   ngOnDestroy() {
     //this.suscription?.unsubscribe();
     localStorage.removeItem("mesa"); //remuevo el numero de mesa cuando cambio de vista
@@ -59,12 +60,13 @@ export class WaiterMenuComponent implements OnInit, OnDestroy {
     this.itemsMenuFilter = this.getBreakfastItem();
   }
 
-  cambiarNombre(event: Event) {
+  saveNameClient(event: Event) {
     const element = event.target as HTMLInputElement;
     this.nameCommensal = element.value;
     localStorage.setItem("NombreCliente", this.nameCommensal)
     this.nameCommensal = localStorage.getItem("NombreCliente") //obtengo el num de mesa
   }
+
 
   // Muestra los productos disponibles para desayuno o cena segun lo que seleccione 
   getBreakfastItem() {
@@ -85,6 +87,7 @@ export class WaiterMenuComponent implements OnInit, OnDestroy {
     const date = new Date();
     const newDate = date.toString();
     const saveOrder = {
+      mesero: 'Carlos',
       cliente: this.nameCommensal,
       total: this.getTotal(),
       mesa: this.numberTable,
