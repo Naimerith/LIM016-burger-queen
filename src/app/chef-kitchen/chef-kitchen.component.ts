@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Detalle, Orders } from '../interfaz/order.interface';
 import { CartService } from '../services/cart.service';
+import { MenuService } from '../services/menu.service';
+
 
 @Component({
   selector: 'app-chef-kitchen',
@@ -10,7 +12,7 @@ import { CartService } from '../services/cart.service';
 export class ChefKitchenComponent implements OnInit {
   public order: Orders[] = [];
   //public clientOrder: Detalle[] = [];
-  constructor(private orderService: CartService) { }
+  constructor(private orderService: CartService, private menuService: MenuService) { }
 
   ngOnInit(): void {
     this.orderService.getOrder().subscribe(
@@ -21,4 +23,5 @@ export class ChefKitchenComponent implements OnInit {
       }
     )
   }
+
 }

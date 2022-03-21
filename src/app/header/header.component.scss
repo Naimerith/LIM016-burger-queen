@@ -3,6 +3,9 @@
 $color-header: rgba(197, 156, 54, 1);
 $color-text: #ffffff;
 
+.text-userLogged{
+    color: $color-text;
+}
 .header-kitchen{
     background-color: $color-header;
     width: 100%;

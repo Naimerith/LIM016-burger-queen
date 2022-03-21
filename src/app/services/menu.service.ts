@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
+import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/compat/firestore';
 import { map } from 'rxjs/operators';
 
 export interface Item {
@@ -18,6 +18,7 @@ export class MenuService {
 
   // Trae la colección de Productos de firebase
   private itemsCollection: AngularFirestoreCollection<Item>;
+  private itemsDocument!: AngularFirestoreDocument<Item>;
   items: Observable<Item[]>;
 
   constructor(private afs: AngularFirestore) {
@@ -44,11 +45,8 @@ export class MenuService {
     return this.afs.collection('mesas').doc(id).update(status);
   }
 
-
   // Permite crear una orden y enviar a FB
   createOrder(order: any) {
     return this.afs.collection('pedidos').add(order);
   }
-
-
 }

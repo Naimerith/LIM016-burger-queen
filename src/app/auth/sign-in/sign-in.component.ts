@@ -12,6 +12,7 @@ import { AuthService } from 'src/app/services/auth.service';
 export class SignInComponent implements OnInit {
 
   usuario = {
+    name: '',
     email: '',
     password: ''
   }
@@ -24,16 +25,11 @@ export class SignInComponent implements OnInit {
 
   ingresar() {
     console.log(this.usuario);
-    const { email, password } = this.usuario; //desestructuramos las variables
+    const { name, email, password } = this.usuario; //desestructuramos las variables
     this.authService.login(email, password).then(res => {
       console.log("Inicio sesion", res);
     })
-    //Obtenemos el usuario logueado 
-    // this.authService.getUserLogged().subscribe(res => {
-    //   return res?.email
-    //console.log(res?.email); //Si esta variable tiene el campo email, muestralo
-    // })
     //Guardamos en el localStorage el usuario activo
-    localStorage.setItem('usuarioActivo', this.usuario.email)
+    localStorage.setItem('usuarioActivo', this.usuario.name)
   }
 }
