@@ -9,13 +9,13 @@ import { CartService } from '../services/cart.service';
 })
 export class ChefKitchenComponent implements OnInit {
   public order: Orders[] = [];
-  public clientOrder: Detalle[] = [];
+  //public clientOrder: Detalle[] = [];
   constructor(private orderService: CartService) { }
 
   ngOnInit(): void {
     this.orderService.getOrder().subscribe(
       (ped: any) => {
-        console.log(ped) //me traigo la coleccion
+        //console.log(ped) //me traigo la coleccion
         this.order = ped;
         console.log(this.order)
       }

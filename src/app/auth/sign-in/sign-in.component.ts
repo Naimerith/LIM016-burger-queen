@@ -13,10 +13,11 @@ export class SignInComponent implements OnInit {
 
   usuario = {
     email: '',
-    password: '',
+    password: ''
   }
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService) {
+  }
 
   ngOnInit(): void {
   }
@@ -28,12 +29,11 @@ export class SignInComponent implements OnInit {
       console.log("Inicio sesion", res);
     })
     //Obtenemos el usuario logueado 
-    this.authService.getUserLogged().subscribe(res => {
-      console.log(res?.email); //Si esta variable tiene el campo email, muestralo
-    })
+    // this.authService.getUserLogged().subscribe(res => {
+    //   return res?.email
+    //console.log(res?.email); //Si esta variable tiene el campo email, muestralo
+    // })
+    //Guardamos en el localStorage el usuario activo
+    localStorage.setItem('usuarioActivo', this.usuario.email)
   }
-  /* login() {
-    console.log(this.logInForm.value)
-  } */
-
 }

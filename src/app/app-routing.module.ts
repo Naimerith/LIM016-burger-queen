@@ -9,17 +9,15 @@ import { SignUpComponent } from './auth/sign-up/sign-up.component';
 import { AuthGuard } from './guards/auth.guard';
 
 
-
 const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
-    canActivate: [AuthGuard],
   },
   {
     path: 'tables',
     component: WaiterTablesComponent,
-    canActivate: [AuthGuard],
+    canActivate: [AuthGuard], //controla si un usuario puede acceder a una ruta
   },
   {
     path: 'menu',

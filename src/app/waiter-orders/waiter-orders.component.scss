@@ -30,6 +30,9 @@ h5 {
   height:auto;
   overflow-x: hidden;
   overflow-y: scroll;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 #eachOrderToServe {
@@ -64,4 +67,6 @@ h5 {
 
 #eachOrderToServe {
   color: black;
+  font-size: 15px;
 }
+

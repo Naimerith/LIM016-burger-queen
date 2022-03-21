@@ -6,16 +6,15 @@
       <h5>Por servir</h5>
       <section id="toServeContainer">
         <div id="eachOrderToServe" *ngFor="let eachOrderToServe of orderToServe">
-              <div>Num de mesa: {{eachOrderToServe.mesa}}</div>
-              <div *ngFor="let clientOrder of eachOrderToServe.detalle">
-
-              </div>
-          <br>
-          <br>
-          <br>
+            <span class="nameClient">Cliente: {{eachOrderToServe.cliente}}</span><br>
+          <div>Num de mesa: {{eachOrderToServe.mesa}}</div>
+          <div *ngFor="let eachOrderToServeDetails of eachOrderToServe.detalle">
+            <span class="list-group-item" class="eachOrderDetails">{{eachOrderToServeDetails.nombre}}</span>
+            <span class="list-group-item" class="eachOrderDetails"> {{eachOrderToServeDetails.cantidad}}</span>
+          </div>
           <button class="btn-toServe" id="btn-toServe-listo">Listo</button>
           <button class="btn-toServe" id="btn-toServe-cerrar">Cerrar</button>
-          </div>
+        </div>
       </section>
 
     </article>
