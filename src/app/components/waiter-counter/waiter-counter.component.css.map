@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,WAAW,CAAA;EACT,gBAAgB,EAAE,WAAW;EAC7B,MAAM,EAAE,qBAAqB;CAC9B;;AACD,AAAA,OAAO,CAAA;EACL,SAAS,EAAE,cAAc;CAC1B;;AACD,AAAA,CAAC,CAAA;EACC,MAAM,EAAE,GAAG;CACZ;;AACD,AAAA,iBAAiB,CAAA;EACf,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,aAAa;CAC/B",
+    "sources": [
+        "waiter-counter.component.scss"
+    ],
+    "names": [],
+    "file": "waiter-counter.component.css"
+}

@@ -96,7 +96,7 @@ export class WaiterMenuComponent implements OnInit, OnDestroy {
 
 
 
-  // Muestra los productos disponibles para desayuno o cena segun lo que seleccione
+  // Muestra los productos disponibles para "desayuno" o para "almuerzo y cena" según lo que seleccione
   getBreakfastItem() {
     if (this.menuCategory === 'desayuno') {
       return this.itemsMenu.filter((item) => item.categoria == 'desayuno');

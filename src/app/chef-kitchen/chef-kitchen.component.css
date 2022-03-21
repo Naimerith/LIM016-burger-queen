@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css2?family=Festive&family=Redressed&display=swap");
+.header-kitchen {
+  background-color: #c59c36;
+  width: 100%;
+  height: 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.logo {
+  height: 140px;
+  width: 280px;
+  padding: 0 0 0 20px;
+  margin-bottom: -30px;
+}
+
+.home {
+  height: 60px;
+  width: 50px;
+  padding: 0 0 4px 0;
+}
+
+/* main{
+    background: linear-gradient(180.3deg, #0E4975 50.98%, rgba(0, 11, 19, 0.97) 116.78%), linear-gradient(180.3deg, #0E4975 50.98%, rgba(0, 11, 19, 0.97) 116.78%);
+} */
+.container-orders-received {
+  height: 80%;
+}
+
+.title-kitchen, .text-home {
+  color: #ffffff;
+  font-family: 'festive', cursive;
+  font-weight: normal;
+  text-align: center;
+}
+
+.text-home {
+  text-decoration: none;
+  cursor: pointer;
+  padding: 0 0 0 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+  font-size: 25px;
+  padding: 10px 20px 0 0;
+}
+
+.orderContainer {
+  background-color: aliceblue;
+  border: 1px solid;
+}
+/*# sourceMappingURL=chef-kitchen.component.css.map */
