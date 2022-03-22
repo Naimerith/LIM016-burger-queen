@@ -4,22 +4,16 @@
     </div>
     <section>
         <div>
-            <img class="home" [routerLink]="['/']" src="../../assets/img/home.png" alt="home">
-            <h1 class="text-header">Home</h1>
+            <img class="home" [routerLink]="['/tables']" src="../../assets/img/home.png" alt="home">
         </div>
         <div>
             <img class="orders" [routerLink]="['/orders']" src="../../assets/img/pedidos.png" alt="home">
-            <h1 class="text-header"> Pedidos</h1>
         </div>
         <div>
-            <img class="back" [routerLink]="['/tables']" src="../../assets/img/regreso.png" alt="home">
-            <h1 class="text-header"> Volver</h1>
+            <img class="back" (click)="logout()">
         </div>
         <div>
-            <button (click)="logout()">Salir</button>
+            <p class="text-userLogged">Usuario: {{usuarioLogueado}}</p>
         </div>
     </section>
 </header>
-<div>
-    <p class="text-userLogged">Bienvenido: {{usuarioLogueado}}</p>
-</div>

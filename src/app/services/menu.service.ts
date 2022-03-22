@@ -2,17 +2,6 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 
-import { map } from 'rxjs/operators';
-import { Item } from '../interfaz/order.interface';
-
-// export interface Item {
-//   nombre: string;
-//   cantidad: number;
-//   categoria: string;
-//   precio: number;
-//   tipo: string;
-// }
-
 @Injectable({
   providedIn: 'root'
 })

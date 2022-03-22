@@ -29,20 +29,18 @@
     <p class="text-center fs-3 mb-0 btnMenu">Pedido</p>
     <div class="recordedData">
       <div class="recordedDataCommensal">
-        <p>Pedido de:</p>
-        <p>{{nameCommensal}}</p>
+        <p>Cliente:{{nameCommensal}}</p>
       </div>
       <div class="recordedDataTable">
-        <p>Mesa N°:</p>
-        <p>{{numberTable}}</p>
+        <p>Mesa N°:{{numberTable}}</p>
       </div>
     </div>
+    <section id="chosenOrder">
     <ul class="list-group tableOrder mt-2">
       <app-waiter-counter *ngFor="let item of itemsCart" [itemCart]="item"> </app-waiter-counter>
     </ul>
-    <div class="col-sm">
-      <p class="text-end fs-3 mb-0 ">Total: {{getTotal() | currency}}</p>
-    </div>
+  </section>
+      <p class="text-end fs-3 mb-0 " id="total">Total: {{getTotal() | currency}}</p>
     <div class="container-btn-enviarPedido">
       <button type="button" class="btn-enviarPedido" [routerLink]="['/', 'cocina']" (click)="makeOrder()">Enviar
         pedido</button>

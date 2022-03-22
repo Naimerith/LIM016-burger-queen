@@ -22,15 +22,6 @@ export class AuthService {
       return null
     }
   }
-  /*registrar un usuario*/
-  async register(email: string, password: string) {
-    try {
-      return await this.authFirebase.createUserWithEmailAndPassword(email, password);
-    } catch (e) {
-      console.log('error en registro', e);
-      return null
-    }
-  }
 
   //Obtener Id usuario logueado
   getUser(uid: string): Observable<any> {
