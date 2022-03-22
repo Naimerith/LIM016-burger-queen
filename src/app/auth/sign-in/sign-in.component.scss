@@ -1,0 +1,31 @@
+
+$Color-sign-in : linear-gradient(180deg, rgba(255, 197, 70, 0.9) 0%, rgba(245, 130, 50, 0.9) 100%);
+
+.displayTable{
+background: $Color-sign-in;
+border-radius: 20px;
+padding: 10px;
+    h2{
+        color: #fff;
+        font-size: 16px;
+    }
+    span{
+        color: rgb(68, 63, 63);
+    }
+}
+.formGroup{
+    display: flex;
+    display: flex;
+    justify-content: center;
+}
+.input-sigIn{
+    border-radius: 7px;
+    margin: 3px;
+    border: 1px solid #fff;
+}
+.input-rol{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0 0 0 10px;
+}

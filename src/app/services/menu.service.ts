@@ -2,14 +2,15 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/compat/firestore';
 import { map } from 'rxjs/operators';
+import { Item } from '../interfaz/order.interface';
 
-export interface Item {
-  nombre: string;
-  cantidad: number;
-  categoria: string;
-  precio: number;
-  tipo: string;
-}
+// export interface Item {
+//   nombre: string;
+//   cantidad: number;
+//   categoria: string;
+//   precio: number;
+//   tipo: string;
+// }
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +19,6 @@ export class MenuService {
 
   // Trae la colección de Productos de firebase
   private itemsCollection: AngularFirestoreCollection<Item>;
-  private itemsDocument!: AngularFirestoreDocument<Item>;
   items: Observable<Item[]>;
 
   constructor(private afs: AngularFirestore) {
@@ -49,4 +49,7 @@ export class MenuService {
   createOrder(order: any) {
     return this.afs.collection('pedidos').add(order);
   }
+
+
+
 }

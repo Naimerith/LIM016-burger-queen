@@ -5,7 +5,6 @@ import { HomeComponent } from './home/home.component';
 import { WaiterMenuComponent } from './waiter-menu/waiter-menu.component';
 import { WaiterTablesComponent } from './waiter-tables/waiter-tables.component';
 import { WaiterOrdersComponent } from './waiter-orders/waiter-orders.component';
-import { SignUpComponent } from './auth/sign-up/sign-up.component';
 import { AuthGuard } from './guards/auth.guard';
 
 
@@ -17,23 +16,24 @@ const routes: Routes = [
   {
     path: 'tables',
     component: WaiterTablesComponent,
-    canActivate: [AuthGuard], //controla si un usuario puede acceder a una ruta
+    canActivate: [AuthGuard] //controla si un usuario puede acceder a una ruta
   },
   {
     path: 'menu',
-    component: WaiterMenuComponent
+    component: WaiterMenuComponent,
+    canActivate: [AuthGuard] //controla si un usuario puede acceder a una ruta
+
   },
   {
     path: 'cocina',
-    component: ChefKitchenComponent
+    component: ChefKitchenComponent,
+    canActivate: [AuthGuard] //controla si un usuario puede acceder a una ruta
   },
   {
     path: 'pedidos',
-    component: WaiterOrdersComponent
-  }, {
-    path: 'registro',
-    component: SignUpComponent
-  },
+    component: WaiterOrdersComponent,
+    canActivate: [AuthGuard] //controla si un usuario puede acceder a una ruta
+  }
 ];
 
 @NgModule({

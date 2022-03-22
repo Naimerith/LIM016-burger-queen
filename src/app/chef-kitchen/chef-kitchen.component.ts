@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Detalle, Orders } from '../interfaz/order.interface';
+import { Orders } from '../interfaz/order.interface';
 import { CartService } from '../services/cart.service';
 import { MenuService } from '../services/menu.service';
 
@@ -11,7 +11,7 @@ import { MenuService } from '../services/menu.service';
 })
 export class ChefKitchenComponent implements OnInit {
   public order: Orders[] = [];
-  //public clientOrder: Detalle[] = [];
+
   constructor(private orderService: CartService, private menuService: MenuService) { }
 
   ngOnInit(): void {
@@ -23,5 +23,7 @@ export class ChefKitchenComponent implements OnInit {
       }
     )
   }
+
+
 
 }

@@ -1,48 +1,22 @@
 <div class="displayTable">
+    <h2>Selecciona tu rol:</h2>
+    <div class="input-rol">
+        <span><input type="radio" name="rol" value="mesero" (click)="activeBtn()" />Mesero</span>
+        <span><input type="radio" name="rol" value="cocinero" (click)="activeBtn()" />Chef</span>
+        <span><input type="radio" name="rol" value="administrador" (click)="activeBtn()" />Administrador</span>
+    </div>
+    <h2>Inicia sesión:</h2>
     <div class="formGroup">
-        <input type="text" class="input-email" id="inputEmail" placeholder="Nombre" [(ngModel)]="usuario.name">
+        <input type="text" class="input-sigIn" id="inputEmail" placeholder="Nombre" [(ngModel)]="usuario.name">
     </div>
     <div class="formGroup">
-        <input type="email" class="input-email" id="inputEmail" placeholder="email" [(ngModel)]="usuario.email">
+        <input type="email" class="input-sigIn" id="inputEmail" placeholder="email" [(ngModel)]="usuario.email">
     </div>
     <div class="formGroup">
-        <input type="password" class="input-password" id="inputPassword" placeholder="contraseña"
+        <input type="password" class="input-sigIn" id="inputPassword" placeholder="contraseña"
             [(ngModel)]="usuario.password">
     </div>
     <div class="formGroup">
-        <button class="logIn-button" [routerLink]="['/tables']" type='submit' (click)="ingresar()">Ingresar</button>
+        <button class="logIn-button" type='submit' [disabled]="disabled" (click)="ingresar()">Ingresar</button>
     </div>
-
-    <!-- <form class="logIn-form" [formGroup]="logInForm" (ngSubmit)="login()">
-        <h3>Inicio de Sesion</h3>
-        <div class="formGroup">
-            <input type="text" class="input-email" id="inputEmail" formControlName="email" placeholder="  e-mail">
-        </div>
-        <div class="formGroup">
-            <input type="password" class="input-password" id="inputPassword" formControlName="password"
-                placeholder="  contraseña">
-        </div>
-        <div class="formGroup">
-            <button class="logIn-button" type='submit'>Ingresar</button>
-        </div>
-    </form> -->
 </div>
-
-<!--
-        <form class="authBlock" [formGroup]="logInForm">
-            <h3>Inicio de Sesion</h3>
-            <div class="formGroup">
-                <input formControlName="email" type="email" placeholder="Email">
-            </div>
-            <div class="formGroup">
-                <input formControlName="password" type="password" placeholder="Contraseña">
-            </div>
-            <div class="formGroup">
-                <input type="button" value="Ingresar" (click)="login()">
-            </div>
-
-            <div class="redirectToLogin">
-                <span>No tienes cuenta?<span>Contacta al administrador</span></span>
-            </div>
-        </form>
-</div> -->

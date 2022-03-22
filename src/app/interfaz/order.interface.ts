@@ -14,3 +14,12 @@ export interface Detalle {
     total: number;
     id: string;
 }
+
+export interface Item {
+    nombre: string;
+    cantidad: number;
+    categoria: string;
+    precio: number;
+    tipo: string;
+}
+
