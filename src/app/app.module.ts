@@ -17,7 +17,6 @@ import { far } from '@fortawesome/free-regular-svg-icons';
 import { HeaderComponent } from './header/header.component';
 import { ModalComponentComponent } from './modal-component/modal-component.component';
 import { SignInComponent } from './auth/sign-in/sign-in.component';
-import { SignUpComponent } from './auth/sign-up/sign-up.component';
 
 // Auth service
 import { AuthService } from "./services/auth.service";
@@ -52,8 +51,7 @@ import { environment } from '../environments/environment';
     ModalComponentComponent,
     SignInComponent,
     TemplateProductsComponent,
-    WaiterCounterComponent,
-    SignUpComponent,
+    WaiterCounterComponent
   ],
   exports: [
     WaiterTablesComponent,

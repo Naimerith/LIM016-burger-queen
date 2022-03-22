@@ -15,13 +15,22 @@ export class AuthGuard implements CanActivate {
     //return true;
     return this.authService.userData$.pipe(
       map(user => {
+        //console.log(user)
         if (!user) { //Si no hay usuario activo
           this.router.navigate(['/tables']) //no entra a esta ruta
-          return false
+          this.router.navigate(['/menu']) //no entra a esta ruta
+          this.router.navigate(['/pedidos']) //no entra a esta ruta
+          this.router.navigate(['/cocina']) //no entra a esta ruta
+          return false //esto quiere decir que no entra 
         }
-        return true;
+        // if (user.uid === 'pTftFqY78KcEjD65gqbMkDniXfd2') {
+        //   this.router.navigate(['/cocina']) //no entra a esta ruta
+        //   console.log('no entra a cocina')
+        //   return false //esto quiere decir que no entra 
+        // }
+        return true//caso contrario si entra (si hay usuario activo)
+
       })
     )
   }
-
 }

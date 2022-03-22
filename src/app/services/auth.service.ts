@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
+
 import { Observable } from 'rxjs';
-//import { AngularFirestore } from '@angular/fire/compat/firestore';
-//import firebase from 'firebase/compat/app';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -10,7 +11,7 @@ export class AuthService {
 
   public userData$ = this.authFirebase.authState;
 
-  constructor(private authFirebase: AngularFireAuth) {
+  constructor(private authFirebase: AngularFireAuth, private firestore: AngularFirestore) {
   }
   /*Inicio de sesión*/
   async login(email: string, password: string) {
@@ -31,13 +32,14 @@ export class AuthService {
     }
   }
 
-  /* Obtener usuario logueado */
-  getUserLogged() {
-    return this.userData$;
+  //Obtener Id usuario logueado
+  getUser(uid: string): Observable<any> {
+    return this.firestore.collection('rol').doc(uid).snapshotChanges();
   }
 
   /* Cerrar sesión */
   logout() {
     this.authFirebase.signOut();
+    localStorage.removeItem("usuarioActivo");
   }
 }

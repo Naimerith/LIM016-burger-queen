@@ -2,7 +2,6 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { DataService } from '../services/data.service';
 import { MenuService } from '../services/menu.service';
-//import { ShareDataService } from '../services/share-data.service';
 import { CartService } from '../services/cart.service';
 import { Detalle } from '../interfaz/order.interface';
 
@@ -95,8 +94,9 @@ export class WaiterMenuComponent implements OnInit, OnDestroy {
     const date = new Date();
     const newDate = date.toString();
     const saveOrder = {
-      mesero: 'Carlos',
+      mesero: localStorage.getItem('usuarioActivo'),
       cliente: this.nameCommensal,
+      idDoc: "",
       total: this.getTotal(),
       mesa: this.numberTable,
       status: 0,

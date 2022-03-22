@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
-  userLogged = this.authService.getUserLogged()
+  // userLogged = this.authService.getUserLogged()
 
   constructor(
     private authService: AuthService,
@@ -23,5 +23,7 @@ export class HeaderComponent implements OnInit {
     console.log('ha cerrado sesión');
     this.router.navigate(['/']);
   }
+
+  usuarioLogueado = localStorage.getItem('usuarioActivo');
 
 }
