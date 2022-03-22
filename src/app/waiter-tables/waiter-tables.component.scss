@@ -27,6 +27,12 @@ height: 40px;
 width: 50px;
 padding: 0 0 20px 0;
 }
+#main-tables {
+  @media (min-width: 740px) {
+    display: flex;
+    height: 658px;
+  }
+}
 
 .container {
   width: 1200px;
