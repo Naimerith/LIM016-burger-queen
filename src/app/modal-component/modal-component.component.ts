@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SwitchService } from '../services/switch.service'
+import { DataService } from '../services/data.service'
 
 @Component({
   selector: 'app-modal-component',
@@ -9,7 +9,7 @@ import { SwitchService } from '../services/switch.service'
 export class ModalComponentComponent implements OnInit {
 
   //Aqui consumimos el servicio 
-  constructor(private modalSS: SwitchService) { }
+  constructor(private modalSS: DataService) { }
 
   ngOnInit(): void {
   }

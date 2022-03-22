@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SwitchService } from '../services/switch.service';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-home',
@@ -11,7 +11,7 @@ export class HomeComponent implements OnInit {
   modalSwitch: boolean = false;
 
   //aqui consumimos el servicio 
-  constructor(private modalSS: SwitchService) { }
+  constructor(private modalSS: DataService) { }
 
 
   //esta funcion se inicia apenas se renderice el componente 
