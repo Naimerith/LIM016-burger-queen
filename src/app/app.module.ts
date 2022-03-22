@@ -53,7 +53,7 @@ import { environment } from '../environments/environment';
     SignInComponent,
     TemplateProductsComponent,
     WaiterCounterComponent,
-    SignUpComponent
+    SignUpComponent,
   ],
   exports: [
     WaiterTablesComponent,

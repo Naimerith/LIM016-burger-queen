@@ -65,14 +65,16 @@ $color-words: #fff;
 .container-home {
     display: flex;
     flex-direction: row-reverse;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
+    height: 100vh;
+    margin-left: 125px;
 }
 
 .img-home {
-    width: 15rem;
+    width: 24rem;
     margin-top: 1rem;
-    height: 20rem;
+    height: 35rem;
 }
 
 .container-logo {
@@ -84,4 +86,13 @@ $color-words: #fff;
 .img-logo {
     width: 150px;
     height: 80px;
+}
+
+/* ---------------------------------- Media Query para pantallas a partir de 1300px ---------------------------------- */
+@media (min-width: 1300px) {
+
+  .container-home {
+    margin-left: 400px;
+}
+
 }

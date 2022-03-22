@@ -3,22 +3,33 @@ $color-header: rgba(197, 156, 54, 1);
 $color-body: linear-gradient(180.3deg, #0E4975 50.98%, rgba(0, 11, 19, 0.97) 116.78%), linear-gradient(180.3deg, #0E4975 50.98%, rgba(0, 11, 19, 0.97) 116.78%);
 $color-words: #fff;
 
+/* ----------------------------------Tablet - Pantallas hasta 1024px ---------------------------------- */
 .flex-container{
-  @media (min-width: 768px) {
+  @media (min-width: 740px) {
     display: flex;
+    height: 658px;
   }
 }
 
 article, aside{
   width: 100%;
   height: auto;
-  margin-left: 30px;
-  margin-right: 30px;
-  margin-top: 40px;
+  margin-top: 2%;
+  margin-bottom: 2%;
   padding: 0px 20px 20px 20px;
   border-radius: 12px;
-  color: $color-words;
   border: 6px solid #112e50;
+  color: #fff;
+}
+
+article {
+  margin-right: 0.5%;
+  margin-left: 1%;
+}
+
+aside {
+  margin-right: 1%;
+  margin-left: 0.5%;
 }
 
 h5 {
@@ -27,19 +38,25 @@ h5 {
 
 #toServeContainer {
   width:100%;
-  height:auto;
+  height:95%;
   overflow-x: hidden;
   overflow-y: scroll;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0 10px 0 10px;
 }
 
 #eachOrderToServe {
   background: #fff;
-  width: 260px;
-  height: 260px;
+  width: 90%;
+  height: 200px;
   border-radius: 10px;
+  color: black;
+  font-size: 15px;
+  margin: 1.5%;
+  overflow-y: scroll;
 }
 
 .btn-toServe {
@@ -65,8 +82,19 @@ h5 {
   background-color: #EFB22CCF;
 }
 
-#eachOrderToServe {
-  color: black;
-  font-size: 15px;
-}
 
+/* ---------------------------------- Media Query para pantallas a partir de 1300px ---------------------------------- */
+@media (min-width: 1300px) {
+
+  #eachOrderToServe {
+    background: #fff;
+    width: 40%;
+    height: 200px;
+    border-radius: 10px;
+    color: black;
+    font-size: 15px;
+    margin: 3%;
+    justify-content: center;
+  }
+
+}

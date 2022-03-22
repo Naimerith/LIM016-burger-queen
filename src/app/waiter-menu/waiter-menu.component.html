@@ -1,51 +1,51 @@
 <app-header> </app-header>
 
-<body>
-  <main class="flex-container">
-    <section class="menuOptions-content">
-      <div class="commensalDates">
-        <div class="commensalNameDiv">
-          <label for="commensal" class="commensalNameLabel">
-            <fa-icon [icon]="['fas', 'user']"></fa-icon>
-          </label>
-          <input type="text" class="form-control" placeholder="Nombre cliente" [value]="nameCommensal"
-            (keyup)="saveNameClient($event)">
+<main class="flex-container">
+  <article class="menuOptions-content">
+    <div class="commensalDates">
+      <div class="commensalNameDiv">
+        <label for="commensal" class="commensalNameLabel">
+          <fa-icon [icon]="['fas', 'user']"></fa-icon>
+        </label>
+        <input type="text" class="form-control" placeholder="Nombre cliente" [value]="nameCommensal"
+          (keyup)="saveNameClient($event)">
 
-        </div>
-        <label for="commensal" class="commensalTableLabel">Mesa N°: {{numberTable}}</label>
       </div>
-      <div>
-        <button type="button" class="btn btn-primary" data-bs-toggle="button" autocomplete="off"
-          (click)="changeTypeMenu('desayuno')">Desayuno</button>
-        <button type="button" class="btn btn-primary" data-bs-toggle="button" autocomplete="off"
-          (click)="changeTypeMenu('menu')">Almuerzo</button>
-      </div>
+      <label for="commensal" class="commensalTableLabel">Mesa N°: {{numberTable}}</label>
+    </div>
+    <div>
+      <button type="button" class="btn btn-primary" data-bs-toggle="button" autocomplete="off"
+        (click)="changeTypeMenu('desayuno')">Desayuno</button>
+      <button type="button" class="btn btn-primary" data-bs-toggle="button" autocomplete="off"
+        (click)="changeTypeMenu('menu')">Almuerzo</button>
+    </div>
+    <section id="menuContainer">
       <ul class="list-group tableMenu mb-2 mt-2">
         <app-template-products *ngFor="let product of itemsMenuFilter" [product]="product"></app-template-products>
       </ul>
     </section>
-    <aside class="selectedOptionsMenu">
-      <p class="text-center fs-3 mb-0 btnMenu">Pedido</p>
-      <div class="recordedData">
-        <div class="recordedDataCommensal">
-          <p>Pedido de:</p>
-          <p>{{nameCommensal}}</p>
-        </div>
-        <div class="recordedDataTable">
-          <p>Mesa N°:</p>
-          <p>{{numberTable}}</p>
-        </div>
+  </article>
+  <aside class="selectedOptionsMenu">
+    <p class="text-center fs-3 mb-0 btnMenu">Pedido</p>
+    <div class="recordedData">
+      <div class="recordedDataCommensal">
+        <p>Pedido de:</p>
+        <p>{{nameCommensal}}</p>
       </div>
-      <ul class="list-group tableOrder mt-2">
-        <app-waiter-counter *ngFor="let item of itemsCart" [itemCart]="item"> </app-waiter-counter>
-      </ul>
-      <section class="col-sm">
-        <p class="text-end fs-3 mb-0 ">Total: {{getTotal() | currency}}</p>
-      </section>
-      <div class="container-btn-enviarPedido">
-        <button type="button" class="btn-enviarPedido" [routerLink]="['/', 'cocina']" (click)="makeOrder()">Enviar
-          pedido</button>
+      <div class="recordedDataTable">
+        <p>Mesa N°:</p>
+        <p>{{numberTable}}</p>
       </div>
-    </aside>
-  </main>
-</body>
+    </div>
+    <ul class="list-group tableOrder mt-2">
+      <app-waiter-counter *ngFor="let item of itemsCart" [itemCart]="item"> </app-waiter-counter>
+    </ul>
+    <div class="col-sm">
+      <p class="text-end fs-3 mb-0 ">Total: {{getTotal() | currency}}</p>
+    </div>
+    <div class="container-btn-enviarPedido">
+      <button type="button" class="btn-enviarPedido" [routerLink]="['/', 'cocina']" (click)="makeOrder()">Enviar
+        pedido</button>
+    </div>
+  </aside>
+</main>
