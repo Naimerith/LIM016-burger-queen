@@ -34,14 +34,14 @@ export class SignInComponent implements OnInit {
       console.log(idUser)
       console.log("Inicio sesion", res);
     })
-    if (name || email || password === '') {
-      alert('Debes llenar todos los campos')
-      this.router.navigate(['/'])
-    } else {
-      //Guardamos en el localStorage el usuario activo
-      localStorage.setItem('usuarioActivo', this.usuario.name)
-      this.router.navigate(['/tables'])
-    }
+    // if (name || email || password === '') {
+    //   alert('Debes llenar todos los campos')
+    //   this.router.navigate(['/'])
+    // } else {
+    //Guardamos en el localStorage el usuario activo
+    localStorage.setItem('usuarioActivo', this.usuario.name)
+    this.router.navigate(['/tables'])
+    // }
   }
 
   getIdUser(uid: any) {
