@@ -51,7 +51,7 @@ import { environment } from '../environments/environment';
     ModalComponentComponent,
     SignInComponent,
     TemplateProductsComponent,
-    WaiterCounterComponent,
+    WaiterCounterComponent
   ],
   exports: [
     WaiterTablesComponent,

@@ -9,11 +9,11 @@ $color-text: #ffffff;
 .header-kitchen{
     background-color: $color-header;
     width: 100%;
-    height: 20%;
+    height: 10%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-end;
 }
 .logo{
     height: 140px;
@@ -38,7 +38,7 @@ section{
     text-align: center;
     font-size: 25px;
     padding: 0 35px 0 0;
-} 
+}
 /* .text-home{
     text-decoration: none;
     cursor: pointer;

@@ -1,6 +1,23 @@
 <app-header></app-header>
 
-<body>
   <main class="flex-container">
+    <article class="menuOptions-content">
+      <h5>Por servir</h5>
+      <section id="toServeContainer">
+        <div id="eachOrderToServe" *ngFor="let eachOrderToServe of orderToServe">
+            <span class="nameClient">Cliente: {{eachOrderToServe.cliente}}</span><br>
+          <div>Num de mesa: {{eachOrderToServe.mesa}}</div>
+          <div *ngFor="let eachOrderToServeDetails of eachOrderToServe.detalle">
+            <span class="list-group-item" class="eachOrderDetails">{{eachOrderToServeDetails.nombre}}</span>
+            <span class="list-group-item" class="eachOrderDetails"> {{eachOrderToServeDetails.cantidad}}</span>
+          </div>
+          <button class="btn-toServe" id="btn-toServe-listo">Listo</button>
+          <button class="btn-toServe" id="btn-toServe-cerrar">Cerrar</button>
+        </div>
+      </section>
+
+    </article>
+    <aside class="selectedOptionsMenu">
+      <h5>Servidos</h5>
+    </aside>
   </main>
-</body>

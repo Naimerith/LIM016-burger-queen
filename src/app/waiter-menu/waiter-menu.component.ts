@@ -55,8 +55,16 @@ export class WaiterMenuComponent implements OnInit, OnDestroy {
 
   // Trae el listado de productos para mostrar en el menu
   getProducts() {
-    this.service.getProducts().subscribe(items => this.itemsMenu = items);
-    this.itemsMenuFilter = this.getBreakfastItem();
+    this.service.getProducts().subscribe((items: any[]) => {
+      this.itemsMenu = [];
+      items.forEach((e: any) => {
+        this.itemsMenu.push({
+          id: e.payload.doc.id,
+          ...e.payload.doc.data(),
+        })
+      });
+      this.itemsMenuFilter = this.getBreakfastItem();
+    });
   }
 
   saveNameClient(event: Event) {
@@ -67,7 +75,7 @@ export class WaiterMenuComponent implements OnInit, OnDestroy {
   }
 
 
-  // Muestra los productos disponibles para desayuno o cena segun lo que seleccione 
+  // Muestra los productos disponibles para desayuno o cena segun lo que seleccione
   getBreakfastItem() {
     if (this.menuCategory === 'desayuno') {
       return this.itemsMenu.filter((item) => item.categoria == 'desayuno');

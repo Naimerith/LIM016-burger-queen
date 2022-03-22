@@ -1,0 +1,28 @@
+.container-modal {
+  background-color: #d06c27;
+  width: 50%;
+  height: 70%;
+  float: inherit;
+  margin: -20px 0 0 180px;
+  border-radius: 30px;
+}
+
+div {
+  border: none;
+}
+
+.btn-close {
+  background-color: #FFFF;
+  border-radius: 50%;
+}
+
+input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+}
+/*# sourceMappingURL=modal-component.component.css.map */
