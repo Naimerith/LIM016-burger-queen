@@ -29,7 +29,8 @@ export class SignInComponent implements OnInit {
     console.log(this.usuario);
     const { name, email, password } = this.usuario; //desestructuramos las variables
     this.authService.login(email, password).then(res => {
-      const idUser = res != null && res.user != null ? res.user.uid : '';
+      // const idUser = res != null && res.user != null ? res.user.uid : '';
+      const idUser = res?.user?.uid
       this.getIdUser(idUser)
       console.log(idUser)
       console.log("Inicio sesion", res);

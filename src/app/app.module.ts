@@ -76,7 +76,7 @@ import { environment } from '../environments/environment';
     ReactiveFormsModule,
 
     // OJO
-    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
     provideAuth(() => getAuth()),
     provideDatabase(() => getDatabase()),
     provideFirestore(() => getFirestore()),

@@ -1,4 +1,3 @@
-
 <header class="header-kitchen">
   <div>
     <img class="logo" src="../../assets/img/logoheader.png" alt="logo luna burger">
@@ -18,7 +17,7 @@
           <div>
             <span>Mesero: {{orders.mesero}}</span><br>
             <span class="nameClient">Cliente: {{orders.cliente}}</span><br>
-            <span class="nameClient">Fecha: {{orders.fecha | date}}</span>
+            <span class="nameClient">Fecha: {{orders.fecha | date: 'short'}}</span>
           </div>
           <div class="containerNumTable">
             <span class="titleTable">mesa:</span>
@@ -34,7 +33,7 @@
           <li class="listCant">{{clientOrder.cantidad}}</li>
         </div>
         <div class="containerButton">
-          <button class="btnPendient">Pendiente</button>
+          <button class="btnPendient" (click)="btnPendient($event)">{{orders.status}}</button>
           <button class="btnDelete">Eliminar</button>
         </div>
       </div>
@@ -45,4 +44,3 @@
     <h5 class="title-kitchen">Servidos</h5>
   </aside>
 </main>
-

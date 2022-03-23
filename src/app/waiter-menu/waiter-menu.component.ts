@@ -47,6 +47,7 @@ export class WaiterMenuComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     //this.suscription?.unsubscribe();
     localStorage.removeItem("mesa"); //remuevo el numero de mesa cuando cambio de vista
+    localStorage.removeItem("NombreCliente"); //remuevo el nombre del cliente cuando cambio de vista
   }
 
   getTotal() {
@@ -96,10 +97,10 @@ export class WaiterMenuComponent implements OnInit, OnDestroy {
     const saveOrder = {
       mesero: localStorage.getItem('usuarioActivo'),
       cliente: this.nameCommensal,
-      idDoc: "",
+      idDoc: "hola no hay nada",
       total: this.getTotal(),
       mesa: this.numberTable,
-      status: 0,
+      status: 'Pendiente',
       fecha: newDate,
       detalle: this.itemsCart,
       tiempo: ''
