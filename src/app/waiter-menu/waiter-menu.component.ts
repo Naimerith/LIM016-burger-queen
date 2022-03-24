@@ -104,7 +104,7 @@ export class WaiterMenuComponent implements OnInit, OnDestroy {
     this.menuCategory = type;
     this.itemsMenuFilter = this.getBreakfastItem();
   }
-
+  //Enviar pedido a cocina
   makeOrder() {
     console.log('diste click a enviar pedido')
     const date = new Date();
