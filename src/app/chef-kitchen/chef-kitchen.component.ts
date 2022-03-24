@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Orders } from '../interfaz/order.interface';
 import { CartService } from '../services/cart.service';
-import { MenuService } from '../services/menu.service';
+
 
 
 @Component({
@@ -12,7 +12,7 @@ import { MenuService } from '../services/menu.service';
 export class ChefKitchenComponent implements OnInit {
   public order: Orders[] = [];
 
-  constructor(private orderService: CartService, private menuService: MenuService) { }
+  constructor(private orderService: CartService) { }
 
   ngOnInit(): void {
     this.orderService.getOrder().subscribe(
@@ -24,6 +24,8 @@ export class ChefKitchenComponent implements OnInit {
     )
   }
 
+  btnPendient(e: any) {
+    console.log('diste click a pendiente');
 
-
+  }
 }

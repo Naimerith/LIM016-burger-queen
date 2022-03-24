@@ -166,3 +166,12 @@ aside {
 .btnDelete {
   background-color: $color-header;
 }
+
+.btnPendient{
+  &.invalido{
+    background-color: red;
+  }
+  &.valid{
+      border-color:rgb(55, 235, 55);
+  }
+}

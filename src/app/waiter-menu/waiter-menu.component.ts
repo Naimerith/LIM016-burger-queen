@@ -17,6 +17,7 @@ export class WaiterMenuComponent implements OnInit, OnDestroy {
   suscription: Subscription | undefined; // Su valor por defecto es undefined
 
   itemsMenu: any[] = [];
+  itemsId: any[] = [];
   itemsMenuFilter: any[] = []; // trae los platos filtrados para mostrar
   menuCategory: string = '';
   selectedTable: any;
@@ -47,6 +48,7 @@ export class WaiterMenuComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     //this.suscription?.unsubscribe();
     localStorage.removeItem("mesa"); //remuevo el numero de mesa cuando cambio de vista
+    localStorage.removeItem("NombreCliente"); //remuevo el nombre del cliente cuando cambio de vista
   }
 
   getTotal() {
@@ -65,6 +67,20 @@ export class WaiterMenuComponent implements OnInit, OnDestroy {
       });
       this.itemsMenuFilter = this.getBreakfastItem();
     });
+  }
+
+  //Trae id de documentos de la colección "Pedidos"
+  getOrderDocId() {
+    this.service.getOrdeDoc().subscribe((doc: any[]) => {
+      this.itemsId = [];
+      doc.forEach((e: any) => {
+        this.itemsId.push({
+          id: e.payload.doc.id,
+        //  ...e.payload.doc.data(),
+        })
+      });
+    });
+    console.log(this.itemsId)
   }
 
   saveNameClient(event: Event) {
@@ -96,10 +112,10 @@ export class WaiterMenuComponent implements OnInit, OnDestroy {
     const saveOrder = {
       mesero: localStorage.getItem('usuarioActivo'),
       cliente: this.nameCommensal,
-      idDoc: "",
+      idDoc: "hola no hay nada",
       total: this.getTotal(),
       mesa: this.numberTable,
-      status: 0,
+      status: 'Pendiente',
       fecha: newDate,
       detalle: this.itemsCart,
       tiempo: ''

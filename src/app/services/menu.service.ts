@@ -18,4 +18,9 @@ export class MenuService {
   createOrder(order: any) {
     return this.firestoreMenu.collection('pedidos').add(order);
   }
+
+  // Trae id de documentos de pedido
+  getOrdeDoc(): Observable<any> {
+    return this.firestoreMenu.doc('pedidos').snapshotChanges();
+  }
 }

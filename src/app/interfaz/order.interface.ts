@@ -5,6 +5,7 @@ export interface Orders {
     mesa: number;
     mesero: string;
     id: string;
+    status: string;
     //total: number;
 }
 export interface Detalle {
