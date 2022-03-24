@@ -20,9 +20,7 @@
         (click)="changeTypeMenu('menu')">Almuerzo</button>
     </div>
     <section id="menuContainer">
-      <ul class="list-group tableMenu mb-2 mt-2">
-        <app-template-products *ngFor="let product of itemsMenuFilter" [product]="product"></app-template-products>
-      </ul>
+        <app-template-products id="template-content" *ngFor="let product of itemsMenuFilter" [product]="product"></app-template-products>
     </section>
   </article>
   <aside class="selectedOptionsMenu">

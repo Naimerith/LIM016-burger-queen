@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators'
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 
 @Injectable({
@@ -20,7 +21,12 @@ export class MenuService {
   }
 
   // Trae id de documentos de pedido
-  getOrdeDoc(): Observable<any> {
-    return this.firestoreMenu.doc('pedidos').snapshotChanges();
+  getOrdeDoc(id: any) {
+    return this.firestoreMenu.collection('pedidos').snapshotChanges().pipe(
+      map(content => content.map(stado=>{
+        let data = stado.payload.doc.data();
+        let id = stado.payload.doc.id;
+        return [id, {data}]
+      })))
   }
 }

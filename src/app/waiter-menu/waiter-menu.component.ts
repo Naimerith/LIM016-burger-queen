@@ -17,6 +17,7 @@ export class WaiterMenuComponent implements OnInit, OnDestroy {
   suscription: Subscription | undefined; // Su valor por defecto es undefined
 
   itemsMenu: any[] = [];
+  idDoc: string = '';
   itemsId: any[] = [];
   itemsMenuFilter: any[] = []; // trae los platos filtrados para mostrar
   menuCategory: string = '';
@@ -35,6 +36,7 @@ export class WaiterMenuComponent implements OnInit, OnDestroy {
   ngOnInit() {
     //Inicializar valores
     this.getProducts();
+    //this.obtenerId();
     //console.log(this.itemsCart);
 
     //Aqui me suscribo al servicio
@@ -59,6 +61,7 @@ export class WaiterMenuComponent implements OnInit, OnDestroy {
   getProducts() {
     this.service.getProducts().subscribe((items: any[]) => {
       this.itemsMenu = [];
+      console.log(this.itemsMenu)
       items.forEach((e: any) => {
         this.itemsMenu.push({
           id: e.payload.doc.id,
@@ -68,20 +71,19 @@ export class WaiterMenuComponent implements OnInit, OnDestroy {
       this.itemsMenuFilter = this.getBreakfastItem();
     });
   }
-
+/*
   //Trae id de documentos de la colección "Pedidos"
-  getOrderDocId() {
-    this.service.getOrdeDoc().subscribe((doc: any[]) => {
-      this.itemsId = [];
-      doc.forEach((e: any) => {
-        this.itemsId.push({
-          id: e.payload.doc.id,
-        //  ...e.payload.doc.data(),
-        })
-      });
-    });
-    console.log(this.itemsId)
+  getId() {
+  this.service.getOrdeDoc(this.id).subscribe(
+    content => {
+      console.log(content);
+    }
+  )
+}
+  id(id: any) {
+    throw new Error('Method not implemented.');
   }
+  */
 
   saveNameClient(event: Event) {
     const element = event.target as HTMLInputElement;
@@ -89,7 +91,6 @@ export class WaiterMenuComponent implements OnInit, OnDestroy {
     localStorage.setItem("NombreCliente", this.nameCommensal)
     this.nameCommensal = localStorage.getItem("NombreCliente") //obtengo el num de mesa
   }
-
 
   // Muestra los productos disponibles para desayuno o cena segun lo que seleccione
   getBreakfastItem() {
@@ -106,13 +107,14 @@ export class WaiterMenuComponent implements OnInit, OnDestroy {
   }
   //Enviar pedido a cocina
   makeOrder() {
+
     console.log('diste click a enviar pedido')
     const date = new Date();
     const newDate = date.toString();
     const saveOrder = {
       mesero: localStorage.getItem('usuarioActivo'),
       cliente: this.nameCommensal,
-      idDoc: "hola no hay nada",
+      idDoc: this.idDoc,
       total: this.getTotal(),
       mesa: this.numberTable,
       status: 'Pendiente',
@@ -120,11 +122,13 @@ export class WaiterMenuComponent implements OnInit, OnDestroy {
       detalle: this.itemsCart,
       tiempo: ''
     }
-    console.log(saveOrder.detalle)
+
+    //console.log(saveOrder.detalle)
     this.itemsCart = [];// limpia el contenido del carrito
 
     this.username = '';
     this.service.createOrder(saveOrder);
   }
+
 };
 
