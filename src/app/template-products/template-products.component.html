@@ -1,8 +1,6 @@
-  <div id="eachItem">
-  <img class="img-item" src="https://cdn.pixabay.com/photo/2022/02/21/21/18/animal-7027636_960_720.jpg" alt="">
+  <div id="eachItem" class="btn-add" (click)="addToCart(product)">
+  <img class="img-item" [src]="product.img"  alt="">
   <span class="product"> {{ product.nombre }} </span>
   <br>
   <span class="product">{{ product.precio | currency }}</span>
-  <br>
-  <button class="btn-add" (click)="addToCart(product)" >Agregar</button>
-</div>
+  </div>
