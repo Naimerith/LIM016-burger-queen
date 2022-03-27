@@ -67,10 +67,4 @@ export class CartService {
     this.itemsCart = [];
     return this.itemsCart;
   }
-
-  //Obtener coleccion de pedidos
-  getOrder() {
-    return this.af.collection('pedidos').valueChanges(); //cuando haces .valueChanges() en AFS, devolverá un observable. ¿Qué es un Observable?
-    //Los observables abren un canal continuo de comunicación en el que se pueden emitir múltiples valores de datos a lo largo del tiempo.
-  }
 }

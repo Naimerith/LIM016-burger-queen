@@ -1,5 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { environment } from 'src/environments/environment';
 import { ChefKitchenComponent } from './chef-kitchen.component';
 
 describe('ChefKitchenComponent', () => {
@@ -8,9 +10,15 @@ describe('ChefKitchenComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ChefKitchenComponent ]
+      imports: [
+        AngularFireModule.initializeApp(environment.firebaseConfig),
+      ],
+      providers: [
+        AngularFireAuth,
+      ],
+      declarations: [ChefKitchenComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

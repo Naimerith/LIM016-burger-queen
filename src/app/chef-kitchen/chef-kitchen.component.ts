@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Orders } from '../interfaz/order.interface';
-import { CartService } from '../services/cart.service';
+import { MenuService } from '../services/menu.service';
 
 
 
@@ -10,22 +10,48 @@ import { CartService } from '../services/cart.service';
   styleUrls: ['./chef-kitchen.component.scss']
 })
 export class ChefKitchenComponent implements OnInit {
-  public order: Orders[] = [];
+  itemsId: Orders[] = [];
+  public myClass: boolean = false;
+  statusOrder: string = 'pendiente';
 
-  constructor(private orderService: CartService) { }
+  constructor(private service: MenuService) { }
 
   ngOnInit(): void {
-    this.orderService.getOrder().subscribe(
-      (ped: any) => {
-        //console.log(ped) //me traigo la coleccion
-        this.order = ped;
-        console.log(this.order)
-      }
-    )
+    this.getId();
+  }
+  getId() {
+    return this.service.collectionOrder().subscribe((docs: any[]) => {
+      this.itemsId = [];
+      docs.forEach(doc => {
+        this.itemsId.push({
+          id: doc.id,
+          ...doc.data()
+        });
+      })
+      console.log(this.itemsId);
+    })
   }
 
+
   btnPendient(e: any) {
-    console.log('diste click a pendiente');
+    console.log('diste click a un pedido');
+    //this.myClass = !this.myClass;
+
+
+    //vemos cual es el status del pedido al que hacemos click
+    const statusOrder = e.target.value;
+    console.log(statusOrder);
+
+    if (statusOrder === 'pendiente') {
+      this.myClass = !this.myClass;
+    } else {
+      this.myClass = !this.myClass;
+      this.statusOrder = 'cocinando';
+      console.log(this.statusOrder)
+    }
+    //obtenemos el ID de ese pedido al que hacemos click
+    const orderId = e.target.id;
+    console.log(orderId)
 
   }
 }

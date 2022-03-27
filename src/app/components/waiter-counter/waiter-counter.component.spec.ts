@@ -1,4 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { environment } from 'src/environments/environment';
 import { WaiterCounterComponent } from './waiter-counter.component';
 
 describe('WaiterCounterComponent', () => {
@@ -7,9 +10,15 @@ describe('WaiterCounterComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ WaiterCounterComponent ]
+      imports: [
+        AngularFireModule.initializeApp(environment.firebaseConfig),
+      ],
+      providers: [
+        AngularFireAuth,
+      ],
+      declarations: [WaiterCounterComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

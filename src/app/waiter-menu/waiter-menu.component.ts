@@ -17,8 +17,7 @@ export class WaiterMenuComponent implements OnInit, OnDestroy {
   suscription: Subscription | undefined; // Su valor por defecto es undefined
 
   itemsMenu: any[] = [];
-  idDoc: string = '';
-  itemsId: any[] = [];
+
   itemsMenuFilter: any[] = []; // trae los platos filtrados para mostrar
   menuCategory: string = '';
   selectedTable: any;
@@ -36,7 +35,7 @@ export class WaiterMenuComponent implements OnInit, OnDestroy {
   ngOnInit() {
     //Inicializar valores
     this.getProducts();
-    //this.obtenerId();
+
     //console.log(this.itemsCart);
 
     //Aqui me suscribo al servicio
@@ -107,28 +106,25 @@ export class WaiterMenuComponent implements OnInit, OnDestroy {
   }
   //Enviar pedido a cocina
   makeOrder() {
-
     console.log('diste click a enviar pedido')
     const date = new Date();
     const newDate = date.toString();
     const saveOrder = {
       mesero: localStorage.getItem('usuarioActivo'),
       cliente: this.nameCommensal,
-      idDoc: this.idDoc,
       total: this.getTotal(),
       mesa: this.numberTable,
-      status: 'Pendiente',
+      statusOrder: 'pendiente',
       fecha: newDate,
       detalle: this.itemsCart,
       tiempo: ''
     }
 
-    //console.log(saveOrder.detalle)
+    console.log(saveOrder.detalle)
     this.itemsCart = [];// limpia el contenido del carrito
 
     this.username = '';
     this.service.createOrder(saveOrder);
   }
-
 };
 
