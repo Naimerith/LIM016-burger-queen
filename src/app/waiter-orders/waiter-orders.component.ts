@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Orders, Detalle } from '../interfaz/order.interface';
-import { CartService } from '../services/cart.service';
+import { MenuService } from '../services/menu.service';
 
 
 @Component({
@@ -13,14 +13,14 @@ export class WaiterOrdersComponent implements OnInit {
   public clientOrder: Detalle[] = [];
 
 
-  constructor(private oderService: CartService) { }
+  constructor(private service: MenuService) { }
 
   ngOnInit(): void {
-    this.oderService.getOrder().subscribe(
+    this.service.collectionOrder().subscribe(
       (ped: any) => {
         //console.log(ped); //trae los pedidos preparados por el cheff
         this.orderToServe = ped;
-        console.log(this.orderToServe)
+        //console.log(this.orderToServe)
       }
     )
 

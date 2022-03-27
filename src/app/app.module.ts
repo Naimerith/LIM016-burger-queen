@@ -17,6 +17,8 @@ import { far } from '@fortawesome/free-regular-svg-icons';
 import { HeaderComponent } from './header/header.component';
 import { ModalComponentComponent } from './modal-component/modal-component.component';
 import { SignInComponent } from './auth/sign-in/sign-in.component';
+import { ViewBrokenComponent } from './components/view-broken/view-broken.component';
+
 
 // Auth service
 import { AuthService } from "./services/auth.service";
@@ -37,6 +39,7 @@ import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { environment } from '../environments/environment';
+import { HeaderChefComponent } from './header-chef/header-chef.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +54,9 @@ import { environment } from '../environments/environment';
     ModalComponentComponent,
     SignInComponent,
     TemplateProductsComponent,
-    WaiterCounterComponent
+    WaiterCounterComponent,
+    HeaderChefComponent,
+    ViewBrokenComponent
   ],
   exports: [
     WaiterTablesComponent,

@@ -24,13 +24,13 @@ export class AuthGuard implements CanActivate {
           return false //esto quiere decir que no entra 
         }
         return true//caso contrario si entra (si hay usuario activo)
-
         // if (user.uid === 'pTftFqY78KcEjD65gqbMkDniXfd2') {
         //   this.router.navigate(['/cocina']) //no entra a esta ruta
         //   console.log('no entra a cocina')
         //   return false //esto quiere decir que no entra 
         // }
       })
+
     )
   }
 }

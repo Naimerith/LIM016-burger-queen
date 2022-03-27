@@ -9,7 +9,11 @@ $color-words: #fff;
     box-sizing: border-box;
     /*para mover el modelo de caja*/
 }
-
+.home{
+    background-image: url(../../assets/img/fondo.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;    
+}
 .welcome {
     position: absolute;
     width: 479px;
@@ -57,8 +61,8 @@ $color-words: #fff;
 
 .section-btnHome {
     display: flex;
-    flex-direction: column;
-    margin-top: 4rem;
+    flex-direction: column-reverse;
+    margin: -4rem 0rem 0 6rem;
     align-items: center;
 }
 
@@ -84,8 +88,9 @@ $color-words: #fff;
 }
 
 .img-logo {
-    width: 150px;
-    height: 80px;
+    width: 300px;
+    height: 150px;
+    margin-bottom: 40px;
 }
 
 /* ---------------------------------- Media Query para pantallas a partir de 1300px ---------------------------------- */

@@ -4,9 +4,8 @@ export interface Orders {
     cliente: string;
     mesa: number;
     mesero: string;
-    id: [];
+    id: string;
     status: string;
-    //total: number;
 }
 export interface Detalle {
     cantidad: number;
@@ -22,5 +21,6 @@ export interface Item {
     categoria: string;
     precio: number;
     tipo: string;
+    id: string;
 }
 

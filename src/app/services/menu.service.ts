@@ -18,7 +18,7 @@ export class MenuService {
   createOrder(order: any) {
     return this.firestoreMenu.collection('pedidos').add(order);
   }
-  collection(): Observable<any> {
+  collectionOrder(): Observable<any> {
     return this.firestoreMenu.collection("pedidos").get();
   }
 }

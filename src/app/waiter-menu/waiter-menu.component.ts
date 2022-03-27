@@ -17,7 +17,7 @@ export class WaiterMenuComponent implements OnInit, OnDestroy {
   suscription: Subscription | undefined; // Su valor por defecto es undefined
 
   itemsMenu: any[] = [];
-  itemsId: any[] = [];
+
   itemsMenuFilter: any[] = []; // trae los platos filtrados para mostrar
   menuCategory: string = '';
   selectedTable: any;
@@ -35,7 +35,7 @@ export class WaiterMenuComponent implements OnInit, OnDestroy {
   ngOnInit() {
     //Inicializar valores
     this.getProducts();
-    this.obtenerId();
+
     //console.log(this.itemsCart);
 
     //Aqui me suscribo al servicio
@@ -77,17 +77,6 @@ export class WaiterMenuComponent implements OnInit, OnDestroy {
     this.nameCommensal = localStorage.getItem("NombreCliente") //obtengo el num de mesa
   }
 
-  obtenerId() {
-    return this.service.collection().subscribe((docs: any[]) => {
-      this.itemsId = [];
-      docs.forEach(doc => {
-        console.log(doc.id)
-        this.itemsId.push(doc.id);
-      })
-      console.log(this.itemsId);
-    })
-  }
-
   // Muestra los productos disponibles para desayuno o cena segun lo que seleccione
   getBreakfastItem() {
     if (this.menuCategory === 'desayuno') {
@@ -109,10 +98,9 @@ export class WaiterMenuComponent implements OnInit, OnDestroy {
     const saveOrder = {
       mesero: localStorage.getItem('usuarioActivo'),
       cliente: this.nameCommensal,
-      idDoc: this.obtenerId(),
       total: this.getTotal(),
       mesa: this.numberTable,
-      status: 'Pendiente',
+      statusOrder: 'pendiente',
       fecha: newDate,
       detalle: this.itemsCart,
       tiempo: ''
