@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators'
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 
 @Injectable({
@@ -18,6 +19,7 @@ export class MenuService {
   createOrder(order: any) {
     return this.firestoreMenu.collection('pedidos').add(order);
   }
+
   collectionOrder(): Observable<any> {
     return this.firestoreMenu.collection("pedidos").get();
   }

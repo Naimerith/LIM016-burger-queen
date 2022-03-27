@@ -60,6 +60,7 @@ export class WaiterMenuComponent implements OnInit, OnDestroy {
   getProducts() {
     this.service.getProducts().subscribe((items: any[]) => {
       this.itemsMenu = [];
+      console.log(this.itemsMenu)
       items.forEach((e: any) => {
         this.itemsMenu.push({
           id: e.payload.doc.id,
@@ -69,6 +70,19 @@ export class WaiterMenuComponent implements OnInit, OnDestroy {
       this.itemsMenuFilter = this.getBreakfastItem();
     });
   }
+/*
+  //Trae id de documentos de la colección "Pedidos"
+  getId() {
+  this.service.getOrdeDoc(this.id).subscribe(
+    content => {
+      console.log(content);
+    }
+  )
+}
+  id(id: any) {
+    throw new Error('Method not implemented.');
+  }
+  */
 
   saveNameClient(event: Event) {
     const element = event.target as HTMLInputElement;
@@ -90,7 +104,7 @@ export class WaiterMenuComponent implements OnInit, OnDestroy {
     this.menuCategory = type;
     this.itemsMenuFilter = this.getBreakfastItem();
   }
-
+  //Enviar pedido a cocina
   makeOrder() {
     console.log('diste click a enviar pedido')
     const date = new Date();
@@ -105,6 +119,7 @@ export class WaiterMenuComponent implements OnInit, OnDestroy {
       detalle: this.itemsCart,
       tiempo: ''
     }
+
     console.log(saveOrder.detalle)
     this.itemsCart = [];// limpia el contenido del carrito
 

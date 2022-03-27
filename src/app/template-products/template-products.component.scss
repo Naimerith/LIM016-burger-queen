@@ -1,4 +1,30 @@
-.itemsIcons{
-  background-color: transparent;
-  border: 1px solid transparent;
+#eachItem {
+  background: #fff;
+  width: 100%;
+  height: 290px;
+  border-radius: 10px;
+  color: black;
+  font-size: 15px;
+  margin: 3%;
+  padding: 5%;
+  text-align: center;
+  cursor: pointer;
+}
+
+.img-item{
+  width: 100%;
+  height: 170px;
+}
+
+.product {
+  font-size: small;
+}
+
+.btn-add {
+  background-color: orange;
+  border: 1px solid;
+  border-radius: 10px;
+  width: 100px;
+  height: 40px;
+  font-size: 20px;
 }
