@@ -1,4 +1,5 @@
 export interface Orders {
+    fechaNew: Date;
     detalle: Detalle[];
     fecha: Date;
     cliente: string;

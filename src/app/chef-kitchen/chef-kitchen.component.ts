@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { throwIfEmpty } from 'rxjs';
 import { Orders } from '../interfaz/order.interface';
 import { MenuService } from '../services/menu.service';
 
@@ -19,16 +20,20 @@ export class ChefKitchenComponent implements OnInit {
   ngOnInit(): void {
     this.getId();
   }
+
+
   getId() {
     return this.service.collectionOrder().subscribe((docs: any[]) => {
       this.itemsId = [];
+      console.log(docs);
       docs.forEach(doc => {
-        this.itemsId.push({
+        this.itemsId.push({  //ordenando por mesa :(
           id: doc.id,
-          ...doc.data()
+          ...doc.data(),
         });
       })
       console.log(this.itemsId);
+      console.log(this.itemsId.sort((a,b)=> b.fecha.getTime() - a.fecha.getTime()))
     })
   }
 
@@ -55,3 +60,5 @@ export class ChefKitchenComponent implements OnInit {
 
   }
 }
+
+
