@@ -4,7 +4,7 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { environment } from 'src/environments/environment';
 import { AuthService } from './auth.service';
 
-describe('CartService', () => {
+describe('AuthService', () => {
     let service: AuthService;
 
     beforeEach(() => {

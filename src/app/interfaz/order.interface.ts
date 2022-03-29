@@ -4,7 +4,7 @@ export interface Orders {
     cliente: string;
     mesa: number;
     mesero: string;
-    id: string;
+    id?: string;
     status: string;
 }
 export interface Detalle {
