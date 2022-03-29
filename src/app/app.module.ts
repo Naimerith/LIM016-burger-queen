@@ -40,6 +40,7 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { environment } from '../environments/environment';
 import { HeaderChefComponent } from './header-chef/header-chef.component';
+import { FilterByDatePipe } from './filter-by-date.pipe';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import { HeaderChefComponent } from './header-chef/header-chef.component';
     TemplateProductsComponent,
     WaiterCounterComponent,
     HeaderChefComponent,
-    ViewBrokenComponent
+    ViewBrokenComponent,
+    FilterByDatePipe
   ],
   exports: [
     WaiterTablesComponent,
