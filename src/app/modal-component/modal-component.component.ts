@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from '../services/data.service'
+import { MenuService } from '../services/menu.service';
 
 @Component({
   selector: 'app-modal-component',
@@ -9,7 +9,7 @@ import { DataService } from '../services/data.service'
 export class ModalComponentComponent implements OnInit {
 
   //Aqui consumimos el servicio 
-  constructor(private modalSS: DataService) { }
+  constructor(private modalSS: MenuService) { }
 
   ngOnInit(): void {
   }

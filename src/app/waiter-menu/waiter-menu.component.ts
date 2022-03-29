@@ -1,6 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { DataService } from '../services/data.service';
 import { MenuService } from '../services/menu.service';
 import { CartService } from '../services/cart.service';
 import { Detalle } from '../interfaz/order.interface';
@@ -27,8 +26,7 @@ export class WaiterMenuComponent implements OnInit, OnDestroy {
 
   constructor(private service: MenuService, //db de firebase
     //private shareData: ShareDataService, //servicio para compartir info
-    private cartService: CartService,
-    private dataService: DataService) { //Servicio del numero de mesa y nombre de cliente
+    private cartService: CartService) { //Servicio del numero de mesa y nombre de cliente
   };
 
   // Ejecuta funciones al cargar vista
@@ -39,7 +37,7 @@ export class WaiterMenuComponent implements OnInit, OnDestroy {
     //console.log(this.itemsCart);
 
     //Aqui me suscribo al servicio
-    this.dataService.tablesEvent$.subscribe(numMesa => {
+    this.service.tablesEvent$.subscribe(numMesa => {
       localStorage.setItem("mesa", numMesa) //guardo el numero de mesa
     })
     this.numberTable = localStorage.getItem("mesa") //obtengo el num de mesa
@@ -70,19 +68,19 @@ export class WaiterMenuComponent implements OnInit, OnDestroy {
       this.itemsMenuFilter = this.getBreakfastItem();
     });
   }
-/*
-  //Trae id de documentos de la colección "Pedidos"
-  getId() {
-  this.service.getOrdeDoc(this.id).subscribe(
-    content => {
-      console.log(content);
-    }
-  )
-}
-  id(id: any) {
-    throw new Error('Method not implemented.');
+  /*
+    //Trae id de documentos de la colección "Pedidos"
+    getId() {
+    this.service.getOrdeDoc(this.id).subscribe(
+      content => {
+        console.log(content);
+      }
+    )
   }
-  */
+    id(id: any) {
+      throw new Error('Method not implemented.');
+    }
+    */
 
   saveNameClient(event: Event) {
     const element = event.target as HTMLInputElement;
