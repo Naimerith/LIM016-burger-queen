@@ -10,8 +10,8 @@ export class MenuService {
 
   tablesEvent$ = new EventEmitter<string>(); //numero de mesa
 
-  //creamos un objeto observable, que vamos a poder ver cuando cambia su valor 
-  $modal = new EventEmitter<any>(); //permite comunicar componentes 
+  //creamos un objeto observable, que vamos a poder ver cuando cambia su valor
+  $modal = new EventEmitter<any>(); //permite comunicar componentes
 
   constructor(private firestoreMenu: AngularFirestore) {
   }
@@ -26,6 +26,6 @@ export class MenuService {
   }
 
   collectionOrder(): Observable<any> {
-    return this.firestoreMenu.collection("pedidos").get();
+    return this.firestoreMenu.collection("pedidos", ref => ref.orderBy('fecha')).get();
   }
 }

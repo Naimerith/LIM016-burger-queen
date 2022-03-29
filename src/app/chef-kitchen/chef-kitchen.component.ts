@@ -3,8 +3,6 @@ import { throwIfEmpty } from 'rxjs';
 import { Orders } from '../interfaz/order.interface';
 import { MenuService } from '../services/menu.service';
 
-
-
 @Component({
   selector: 'app-chef-kitchen',
   templateUrl: './chef-kitchen.component.html',
@@ -21,19 +19,17 @@ export class ChefKitchenComponent implements OnInit {
     this.getId();
   }
 
-
-  getId() {
+    getId() {
     return this.service.collectionOrder().subscribe((docs: any[]) => {
       this.itemsId = [];
-      console.log(docs);
       docs.forEach(doc => {
-        this.itemsId.push({  //ordenando por mesa :(
+        this.itemsId.push({
           id: doc.id,
           ...doc.data(),
         });
       })
       console.log(this.itemsId);
-      console.log(this.itemsId.sort((a,b)=> b.fecha.getTime() - a.fecha.getTime()))
+      //console.log(this.itemsId.sort((a: any,b: any) => new Date(a.date).getTime() - new Date(b.date).getTime()))
     })
   }
 
@@ -60,5 +56,6 @@ export class ChefKitchenComponent implements OnInit {
 
   }
 }
+
 
 

@@ -8,7 +8,7 @@
         <div>
           <span>Mesero: {{orders.mesero}}</span><br>
           <span class="nameClient">Cliente: {{orders.cliente}}</span><br>
-          <span class="nameClient">Fecha: {{orders.fecha | date: 'short'}}</span>
+          <span class="nameClient">Fecha: {{orders.fecha | date: "shortTime"}}</span>
           <span style="display:block" [className]="myClass ? 'green' : 'red'">Estatus: {{statusOrder}}</span>
         </div>
         <div class="containerNumTable">
