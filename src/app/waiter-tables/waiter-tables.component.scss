@@ -3,7 +3,11 @@ $color-mix-btn: linear-gradient(180deg, rgba(255, 197, 70, 0.9) 0%, rgba(245, 13
 $color-header:  rgba(197, 156, 54, 1);
 $color-words: #fff;
 
-
+#main-tables{
+  background-image: url(../../assets/img/fondo1.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;    
+}
 
 .header{
   background-color: $color-header;

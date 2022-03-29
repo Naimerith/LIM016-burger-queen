@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators'
 import { AngularFirestore } from '@angular/fire/compat/firestore';
@@ -7,6 +7,11 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
   providedIn: 'root'
 })
 export class MenuService {
+
+  tablesEvent$ = new EventEmitter<string>(); //numero de mesa
+
+  //creamos un objeto observable, que vamos a poder ver cuando cambia su valor 
+  $modal = new EventEmitter<any>(); //permite comunicar componentes 
 
   constructor(private firestoreMenu: AngularFirestore) {
   }

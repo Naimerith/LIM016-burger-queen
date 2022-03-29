@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-waiter-tables',
@@ -8,7 +7,7 @@ import { DataService } from '../services/data.service';
 })
 export class WaiterTablesComponent implements OnInit {
 
-  constructor(private dataService: DataService) { }
+  constructor() { }
 
   ngOnInit(): void {
 
