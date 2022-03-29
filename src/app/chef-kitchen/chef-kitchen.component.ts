@@ -53,8 +53,8 @@ export class ChefKitchenComponent implements OnInit {
     this.statusPedido(orderId)
 
     //vemos cual es el status del pedido al que hacemos click
-    // const statusOrder = e.target.value;
-    // console.log(statusOrder);
+    const statusOrder = e.target.value;
+    console.log(statusOrder);
 
     // if (statusOrder === 'pendiente') {
     //   this.myClass = !this.myClass;
