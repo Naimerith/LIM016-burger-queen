@@ -112,7 +112,7 @@ export class WaiterMenuComponent implements OnInit, OnDestroy {
       cliente: this.nameCommensal,
       total: this.getTotal(),
       mesa: this.numberTable,
-      statusOrder: 'pendiente',
+      status: 'pendiente',
       fecha: newDate,
       detalle: this.itemsCart,
       tiempo: ''

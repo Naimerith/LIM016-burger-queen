@@ -11,7 +11,6 @@ import { MenuService } from '../services/menu.service';
 export class ChefKitchenComponent implements OnInit {
   itemsId: Orders[] = [];
   public myClass: boolean = false;
-  statusOrder: string = 'pendiente';
 
   constructor(private service: MenuService) { }
 
@@ -28,31 +27,44 @@ export class ChefKitchenComponent implements OnInit {
           ...doc.data(),
         });
       })
-      console.log(this.itemsId);
-      //console.log(this.itemsId.sort((a: any,b: any) => new Date(a.date).getTime() - new Date(b.date).getTime()))
+      //console.log(this.itemsId);
     })
+  }
+
+  statusPedido(id: any) {
+    console.log(this.itemsId)
+
+    const statusNamePedido = this.itemsId.forEach((x: any) => {
+      if (x.id == id && x.status == 'pendiente') {
+        console.log('holaaaa')
+        x.status = x.status = 'cocinando';
+      }
+    })
+    console.log(statusNamePedido);
   }
 
 
   btnPendient(e: any) {
     console.log('diste click a un pedido');
     //this.myClass = !this.myClass;
-
-
-    //vemos cual es el status del pedido al que hacemos click
-    const statusOrder = e.target.value;
-    console.log(statusOrder);
-
-    if (statusOrder === 'pendiente') {
-      this.myClass = !this.myClass;
-    } else {
-      this.myClass = !this.myClass;
-      this.statusOrder = 'cocinando';
-      console.log(this.statusOrder)
-    }
-    //obtenemos el ID de ese pedido al que hacemos click
     const orderId = e.target.id;
     console.log(orderId)
+
+    this.statusPedido(orderId)
+
+    //vemos cual es el status del pedido al que hacemos click
+    // const statusOrder = e.target.value;
+    // console.log(statusOrder);
+
+    // if (statusOrder === 'pendiente') {
+    //   this.myClass = !this.myClass;
+    // } else {
+    //   this.myClass = !this.myClass;
+    //   this.statusOrder = 'cocinando';
+    //   console.log(this.statusOrder)
+    // }
+    //obtenemos el ID de ese pedido al que hacemos click
+
 
   }
 }

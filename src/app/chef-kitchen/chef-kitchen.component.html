@@ -8,8 +8,9 @@
         <div>
           <span>Mesero: {{orders.mesero}}</span><br>
           <span class="nameClient">Cliente: {{orders.cliente}}</span><br>
-          <span class="nameClient">Fecha: {{orders.fecha | date: "shortTime"}}</span>
-          <span style="display:block" [className]="myClass ? 'green' : 'red'">Estatus: {{statusOrder}}</span>
+          <span class="nameClient">Fecha: {{orders.fecha | date: 'shortTime'}}</span>
+          <span style="display:block" [className]="myClass ? 'green' : 'red'">Estatus:
+            {{orders.status}}</span>
         </div>
         <div class="containerNumTable">
           <span class="titleTable">mesa:</span>
@@ -32,4 +33,3 @@
     </div>
   </section>
 </main>
-
