@@ -11,14 +11,16 @@ import { MenuService } from '../services/menu.service';
 export class ChefKitchenComponent implements OnInit {
   itemsId: Orders[] = [];
   public myClass: boolean = false;
+  orderPending: any;
 
   constructor(private service: MenuService) { }
 
   ngOnInit(): void {
     this.getId();
+
   }
 
-    getId() {
+  getId() {
     return this.service.collectionOrder().subscribe((docs: any[]) => {
       this.itemsId = [];
       docs.forEach(doc => {
@@ -27,30 +29,34 @@ export class ChefKitchenComponent implements OnInit {
           ...doc.data(),
         });
       })
+      this.getOrderFilter();
       //console.log(this.itemsId);
     })
   }
 
   statusPedido(id: any) {
     console.log(this.itemsId)
-
     const statusNamePedido = this.itemsId.forEach((x: any) => {
       if (x.id == id && x.status == 'pendiente') {
         console.log('holaaaa')
         x.status = x.status = 'cocinando';
       }
     })
-    console.log(statusNamePedido);
+    return statusNamePedido;
   }
 
+  getOrderFilter() {
+    return this.itemsId = this.itemsId.filter(pedidos => pedidos.status === 'pendiente');
+  }
 
   btnPendient(e: any) {
     console.log('diste click a un pedido');
     //this.myClass = !this.myClass;
     const orderId = e.target.id;
     console.log(orderId)
-
-    this.statusPedido(orderId)
+    this.service.editOrder(orderId, 'cocinando');
+    this.statusPedido(orderId);
+    this.getOrderFilter();
 
     //vemos cual es el status del pedido al que hacemos click
     const statusOrder = e.target.value;

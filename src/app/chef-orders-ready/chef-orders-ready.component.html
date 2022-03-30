@@ -1,4 +1,34 @@
 <app-header-chef></app-header-chef>
 <main class="main-content">
     <h5 class="title-kitchen">Pedidos preparados</h5>
+    <section class="containerAllOrders">
+        <div class="container-orders-received" *ngFor="let orders of itemsId">
+            <div class="orderContainer">
+                <div>
+                    <span>Mesero: {{orders.mesero}}</span><br>
+                    <span class="nameClient">Cliente: {{orders.cliente}}</span><br>
+                    <span class="nameClient">Fecha: {{orders.fecha | date: 'shortTime'}}</span>
+                    <span style="display:block" [className]="myClass ? 'green' : 'red'">Estatus:
+                        {{orders.status}}</span>
+                </div>
+                <div class="containerNumTable">
+                    <span class="titleTable">mesa:</span>
+                    <span class="numTable">{{orders.mesa}}</span>
+                </div>
+            </div>
+            <span class="description">
+                <h5 class="titleProducts">Producto</h5>
+                <h5 class="titleCant">Cant</h5>
+            </span>
+            <div class="orderContainer" *ngFor="let clientOrder of orders.detalle ">
+                <li class="listProducts">{{clientOrder.nombre}}</li>
+                <li class="listCant">{{clientOrder.cantidad}}</li>
+            </div>
+            <div class="containerButton">
+                <button class="btnPendient" data-id={{orders.id}} data-value={{orders.status}}
+                    (click)="btnPendient($event)">Aceptar</button>
+                <button class="btnDelete">Eliminar</button>
+            </div>
+        </div>
+    </section>
 </main>

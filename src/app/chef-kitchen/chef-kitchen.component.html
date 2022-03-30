@@ -21,7 +21,7 @@
         <h5 class="titleProducts">Producto</h5>
         <h5 class="titleCant">Cant</h5>
       </span>
-      <div class="orderContainer" *ngFor="let clientOrder of orders.detalle">
+      <div class="orderContainer" *ngFor="let clientOrder of orders.detalle ">
         <li class="listProducts">{{clientOrder.nombre}}</li>
         <li class="listCant">{{clientOrder.cantidad}}</li>
       </div>

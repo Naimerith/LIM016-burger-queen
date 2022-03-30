@@ -26,6 +26,10 @@ export class MenuService {
   }
 
   collectionOrder(): Observable<any> {
-    return this.firestoreMenu.collection("pedidos", ref => ref.orderBy('fecha')).get();
+    return this.firestoreMenu.collection('pedidos', ref => ref.orderBy('fecha')).get();
+  }
+
+  editOrder(idOrder: any, orderStatus: any) {
+    return this.firestoreMenu.collection('pedidos').doc(idOrder).update({ status: orderStatus })
   }
 }

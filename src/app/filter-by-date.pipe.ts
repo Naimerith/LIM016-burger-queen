@@ -1,24 +1,19 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'filterByDate'
+    name: 'filterByOrder'
 })
 export class FilterByDatePipe implements PipeTransform {
 
-  transform(value: any, args?: any): any {
-    let newVal = value.sort((a: any, b: any) => {
-        let date1 = new Date(a.date);
-        let date2 = new Date(b.date);
-
-        if (date1 > date2) {
-            return 1;
-        } else if (date1 < date2) {
-            return -1;
-        } else {
-            return 0;
-        }
-    });
-
-    return newVal;
-}
+    transform(value: any, arg: any): any {
+        console.log(value)
+        // const resultFilter = [];
+        // for (const order of value) {
+        //     if (order.status.indexOf(arg) > -1) {
+        //         resultFilter.push(order)
+        //     };
+        // };
+        //return resultFilter
+        return 0
+    }
 }
