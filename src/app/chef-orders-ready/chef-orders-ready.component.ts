@@ -34,23 +34,23 @@ export class ChefOrdersReadyComponent implements OnInit {
   statusPedido(id: any) {
     console.log(this.itemsId)
     const statusNamePedido = this.itemsId.forEach((x: any) => {
-      if (x.id == id && x.status == 'cocinando') {
+      if (x.id == id && x.status == 'Cocinando') {
         console.log('holaaaa')
-        x.status = x.status = 'preparado';
+        x.status = x.status = 'Preparado';
       }
     })
     return statusNamePedido;
   }
 
   getOrderFilter() {
-    return this.itemsId = this.itemsId.filter(pedidos => pedidos.status === 'cocinando');
+    return this.itemsId = this.itemsId.filter(pedidos => pedidos.status === 'Cocinando');
   }
 
   btnPendient(e: any) {
     console.log('diste click a un pedido');
     const orderId = e.target.id;
     console.log(orderId)
-    this.service.editOrder(orderId, 'preparado');
+    this.service.editOrder(orderId, 'Preparado');
     this.statusPedido(orderId);
     this.getOrderFilter();
 
