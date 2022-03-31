@@ -34,19 +34,20 @@ export class ChefKitchenComponent implements OnInit {
     })
   }
 
+  //cambiar de status pendiente a cocinando
   statusPedido(id: any) {
     console.log(this.itemsId)
     const statusNamePedido = this.itemsId.forEach((x: any) => {
-      if (x.id == id && x.status == 'pendiente') {
+      if (x.id == id && x.status == 'Pendiente') {
         console.log('holaaaa')
-        x.status = x.status = 'cocinando';
+        x.status = x.status = 'Cocinando';
       }
     })
     return statusNamePedido;
   }
 
   getOrderFilter() {
-    return this.itemsId = this.itemsId.filter(pedidos => pedidos.status === 'pendiente');
+    return this.itemsId = this.itemsId.filter(pedidos => pedidos.status === 'Pendiente');
   }
 
   btnPendient(e: any) {
@@ -54,7 +55,7 @@ export class ChefKitchenComponent implements OnInit {
     //this.myClass = !this.myClass;
     const orderId = e.target.id;
     console.log(orderId)
-    this.service.editOrder(orderId, 'cocinando');
+    this.service.editOrder(orderId, 'Cocinando');
     this.statusPedido(orderId);
     this.getOrderFilter();
 
