@@ -1,23 +1,43 @@
 <app-header></app-header>
 
-  <main class="flex-container">
-    <article class="menuOptions-content">
-      <h5>Por servir</h5>
-      <section id="toServeContainer">
-        <div id="eachOrderToServe" *ngFor="let eachOrderToServe of orderToServe">
-            <span class="nameClient">Cliente: {{eachOrderToServe.cliente}}</span><br>
-          <div>Num de mesa: {{eachOrderToServe.mesa}}</div>
-          <div *ngFor="let eachOrderToServeDetails of eachOrderToServe.detalle">
-            <span class="list-group-item" class="eachOrderDetails">{{eachOrderToServeDetails.nombre}}</span>
-            <span class="list-group-item" class="eachOrderDetails"> {{eachOrderToServeDetails.cantidad}}</span>
-          </div>
-          <button class="btn-toServe" id="btn-toServe-listo">Listo</button>
-          <button class="btn-toServe" id="btn-toServe-cerrar">Cerrar</button>
+<main class="flex-container">
+  <article class="menuOptions-content">
+    <h5>Por servir</h5>
+    <section id="toServeContainer">
+      <div id="eachOrderToServe" *ngFor="let eachOrderToServe of itemsId">
+        <span>Mesero: {{eachOrderToServe.mesero}}</span><br>
+        <span class="nameClient">Cliente: {{eachOrderToServe.cliente}}</span><br>
+        <span class="nameClient">Fecha: {{eachOrderToServe.fecha | date: 'shortTime'}}</span><br>
+        <span>Num de mesa: {{eachOrderToServe.mesa}}</span><br>
+        <span> Estatus: {{eachOrderToServe.status}}</span>
+        <div *ngFor="let eachOrderToServeDetails of eachOrderToServe.detalle">
+          <span class="list-group-item" class="eachOrderDetails">{{eachOrderToServeDetails.nombre}}</span>
+          <span class="list-group-item" class="eachOrderDetails"> {{eachOrderToServeDetails.cantidad}}</span>
         </div>
-      </section>
+        <button class="btn-toServe" id="btn-toServe-listo"  data-id={{eachOrderToServe.id}} data-value={{eachOrderToServe.status}}
+        (click)="btnListo($event)">Listo</button>
+        <button class="btn-toServe" id="btn-toServe-cerrar">Cerrar</button>
+      </div>
+    </section>
+  </article>
 
-    </article>
-    <aside class="selectedOptionsMenu">
-      <h5>Servidos</h5>
-    </aside>
-  </main>
+  <aside class="selectedOptionsMenu">
+    <h5>Servidos</h5>
+    <section id="toServeContainer">
+      <div id="eachOrderToServe" *ngFor="let eachOrderToServe of itemsServed">
+        <span>Mesero: {{eachOrderToServe.mesero}}</span><br>
+        <span class="nameClient">Cliente: {{eachOrderToServe.cliente}}</span><br>
+        <span class="nameClient">Fecha: {{eachOrderToServe.fecha | date: 'shortTime'}}</span><br>
+        <span>Num de mesa: {{eachOrderToServe.mesa}}</span><br>
+        <span> Estatus: {{eachOrderToServe.status}}</span>
+        <div *ngFor="let eachOrderToServeDetails of eachOrderToServe.detalle">
+          <span class="list-group-item" class="eachOrderDetails">{{eachOrderToServeDetails.nombre}}</span>
+          <span class="list-group-item" class="eachOrderDetails"> {{eachOrderToServeDetails.cantidad}}</span>
+        </div>
+        <button class="btn-toServe" id="btn-toServe-listo"  data-id={{eachOrderToServe.id}} data-value={{eachOrderToServe.status}}>Listo</button>
+        <button class="btn-toServe" id="btn-toServe-cerrar">Cerrar</button>
+      </div>
+    </section>
+
+  </aside>
+</main>
