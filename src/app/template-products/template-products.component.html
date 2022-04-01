@@ -1,7 +1,7 @@
 
 <div id="eachItem" class="btn-add" (click)="addToCart(product)">
-  <img class="img-item" [src]="product.img" alt="">
-  <span class="product"> {{ product.nombre }} </span>
+  <img *ngIf="product" class="img-item" [src]="product.img" alt="">
+  <span *ngIf="product" class="product"> {{ product.nombre }} </span>
   <br>
-  <span class="product">{{ product.precio | currency }}</span>
+  <span *ngIf="product" class="product">{{ product.precio | currency }}</span>
 </div>

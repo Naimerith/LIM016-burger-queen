@@ -24,3 +24,8 @@ export interface Item {
     id: string;
 }
 
+export interface ProductsCards {
+  img: string;
+  nombre: string;
+  precio: number
+}
