@@ -1,16 +1,16 @@
-<li *ngIf="itemCart" class="list-group-item mt-1 mb-1">
-  <div class="containerProduct">
-      <p class="text-center w-10 fs-4"> {{itemCart.nombre}}   </p>
-      <button class="itemsIcons w-10" (click)="deleteItem(itemCart)">Eliminar</button>
-  </div>
-  <div class="containerProduct">
-      <div class="col-sm">
-          <button type="button" (click)="minus()" class="w-10 itemsIcons"> - </button>
-          <input readonly type="text" [value]="itemCart.cantidad" class="w-25 text-center fs-4"/>
-          <button type="button" (click)="plus()" class="w-10 itemsIcons"> + </button>
-      </div>
-      <div class="col-sm">
-          <span class="fs-4">{{itemCart.total | currency }}</span>
-      </div>
-  </div>
-</li>
+<section *ngIf="itemCart" class="container-order">
+      <img class="img-item-selected" [src]="itemCart.img" alt="">
+    <div class="order-details">
+      <p> {{itemCart.nombre}} </p><br>
+      <p>{{itemCart.total | currency }}</p>
+    </div>
+
+  <div class="container-order-options">
+      <button type="button" (click)="minus()" class="w-10 itemsIcons"> - </button>
+      <input [value]="itemCart.cantidad" class="w-25 text-center fs-5" />
+      <button type="button" (click)="plus()" class="w-10 itemsIcons"> + </button>
+      <button class="itemsIcons w-10" (click)="deleteItem(itemCart)">x</button>
+    </div>
+    <div class="col-sm">
+    </div>
+  </section>
