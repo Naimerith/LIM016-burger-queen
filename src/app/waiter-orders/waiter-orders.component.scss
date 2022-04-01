@@ -1,17 +1,27 @@
-$color-mix-btn: linear-gradient(180deg, rgba(255, 197, 70, 0.9) 0%, rgba(245, 130, 50, 0.9) 100%);
+$color-mix-btn: linear-gradient(
+  180deg,
+  rgba(255, 197, 70, 0.9) 0%,
+  rgba(245, 130, 50, 0.9) 100%
+);
 $color-header: rgba(197, 156, 54, 1);
-$color-body: linear-gradient(180.3deg, #0E4975 50.98%, rgba(0, 11, 19, 0.97) 116.78%), linear-gradient(180.3deg, #0E4975 50.98%, rgba(0, 11, 19, 0.97) 116.78%);
+$color-body: linear-gradient(
+    180.3deg,
+    #0e4975 50.98%,
+    rgba(0, 11, 19, 0.97) 116.78%
+  ),
+  linear-gradient(180.3deg, #0e4975 50.98%, rgba(0, 11, 19, 0.97) 116.78%);
 $color-words: #fff;
 
 /* ----------------------------------Tablet - Pantallas hasta 1024px ---------------------------------- */
-.flex-container{
+.flex-container {
   @media (min-width: 740px) {
     display: flex;
     height: 658px;
   }
 }
 
-article, aside{
+article,
+aside {
   width: 100%;
   height: auto;
   margin-top: 2%;
@@ -37,8 +47,8 @@ h5 {
 }
 
 #toServeContainer {
-  width:100%;
-  height:95%;
+  width: 100%;
+  height: 95%;
   overflow-x: hidden;
   overflow-y: scroll;
   display: flex;
@@ -48,18 +58,42 @@ h5 {
   padding: 0 10px 0 10px;
 }
 
-#eachOrderToServe {
-  background: #fff;
+.container-orders-received {
+  background: aliceblue;
   width: 90%;
-  height: 200px;
+  height: auto;
   border-radius: 10px;
   color: black;
   font-size: 15px;
   margin: 1.5%;
   overflow-y: scroll;
+  padding: 5px;
+  border: 1px solid;
+}
+
+//detalle pedido producto - cantidad
+.orderContainer {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px 0 10px;
+  flex-direction: row;
+  align-items: baseline;
+}
+
+.listProducts,
+.listCant {
+  list-style: none;
+  font-size: 13px;
+}
+.listProducts {
+  padding: 0 0 0 10px;
+}
+.listCant {
+  padding: 0 10px 0 0;
 }
 
 .btn-toServe {
+  background-color: #0ddc53;
   border: none;
   cursor: pointer;
   height: 4vh;
@@ -74,18 +108,79 @@ h5 {
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
-#btn-toServe-listo {
-  background-color: #0DDC53;
+.btn-delete{
+  background-color: #efb22ccf;
+  border: none;
+  cursor: pointer;
+  height: 4vh;
+  text-shadow: 0 4px 4px rgb(0 0 0 / 25%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: $color-words;
+  font-size: 15px;
+  width: 5vw;
+  border-radius: 15px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
-#btn-toServe-cerrar {
-  background-color: #EFB22CCF;
+//contenedor datos de la orden menos productos
+.orderContainer {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px 0 10px;
+  flex-direction: row;
+  align-items: baseline;
 }
 
+//Formato cliente - fecha
+.nameClient {
+  font-size: 14px;
+  color: #887c7c;
+}
+
+//------------------Número de mesa----------------
+.containerNumTable {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 70px;
+  height: 70px;
+}
+
+.titleTable {
+  font-size: 17px;
+}
+.numTable {
+  height: 65%;
+  width: 65%;
+  background-color: $color-header;
+  color: #ffffff;
+  font-size: 15px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.description{
+  display: flex;
+  justify-content: space-around;
+}
+.titleProducts,
+.titleCant {
+  font-size: 17px;
+  font-weight: normal;
+  text-decoration: underline;
+}
+
+.containerButton {
+  display: flex;
+  justify-content: space-around;
+}
 
 /* ---------------------------------- Media Query para pantallas a partir de 1300px ---------------------------------- */
 @media (min-width: 1300px) {
-
   #eachOrderToServe {
     background: #fff;
     width: 40%;
@@ -96,5 +191,4 @@ h5 {
     margin: 3%;
     justify-content: center;
   }
-
 }

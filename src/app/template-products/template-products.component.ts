@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { CartService } from '../services/cart.service';
+import { ProductsCards } from '../interfaz/order.interface';
+
 
 @Component({
   selector: 'app-template-products',
@@ -8,8 +10,9 @@ import { CartService } from '../services/cart.service';
 })
 export class TemplateProductsComponent implements OnInit {
 
+
   @Input () product: any;
-  itemsCart = this.cartService.getItems();
+  itemsCart: ProductsCards[] = this.cartService.getItems();
 
   constructor(private cartService: CartService) { }
 
@@ -18,7 +21,7 @@ export class TemplateProductsComponent implements OnInit {
 
   addToCart(product: any) {
     // agrega producto al carrito si está vacio
-  if(this.itemsCart.length === 0) {
+    if(this.itemsCart.length === 0) {
     this.cartService.addToCart(product);
   } else {
       // agrega el producto si el id es diferente a los agregados

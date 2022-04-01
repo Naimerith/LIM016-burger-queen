@@ -1,5 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { AngularFireModule } from '@angular/fire/compat';
+import { RouterTestingModule } from '@angular/router/testing';
+import { environment } from 'src/environments/environment';
 import { ChefOrdersReadyComponent } from './chef-orders-ready.component';
 
 describe('ChefOrdersReadyComponent', () => {
@@ -8,7 +10,11 @@ describe('ChefOrdersReadyComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ChefOrdersReadyComponent ]
+      declarations: [ ChefOrdersReadyComponent ],
+      imports: [
+        AngularFireModule.initializeApp(environment.firebaseConfig),
+        RouterTestingModule
+      ],
     })
     .compileComponents();
   });

@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/compat/firestore';
 
 @Injectable({
   providedIn: 'root'
@@ -9,9 +8,7 @@ export class CartService {
   itemsCart: any[] = []; //para carrito
 
 
-  constructor(private af: AngularFirestore) { }
-
-  /****************Funciones*************** */
+  constructor() { }
 
   //agregar a carrito (sale de templates-products)
   addToCart(product: any) {
