@@ -6,6 +6,9 @@
     </div>
     <h2>Inicia sesión:</h2>
     <div class="formGroup">
+        <input type="text" class="input-sigIn" id="inputEmail" placeholder="Nombre" [(ngModel)]="usuario.name">
+    </div>
+    <div class="formGroup">
         <input type="email" class="input-sigIn" id="inputEmail" autocomplete placeholder="Correo electrónico"
             [(ngModel)]="usuario.email">
     </div>

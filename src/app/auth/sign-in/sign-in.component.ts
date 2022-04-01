@@ -53,8 +53,6 @@ export class SignInComponent implements OnInit {
             break;
           case 'cocinero': this.router.navigate(['/cocina'])
             break;
-          case 'administrador': this.router.navigate(['/tables'])
-            break;
         }
       }
 
