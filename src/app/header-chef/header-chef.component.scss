@@ -1,16 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Festive&family=Redressed&display=swap');
 
-$color-header: rgba(197, 156, 54, 1);
+$color-header: rgba(255, 197, 70, 0.9);
 $color-text: #ffffff;
 
-.text-userLogged{
+.text-userLogged {
     color: $color-text;
     padding: 0 25px;
     font-size: 20px;
     font-style: oblique;
 }
-.header-kitchen{
-    background-color: #c59c36;
+
+.header-kitchen {
+    background-color: $color-header;
     width: 100%;
     height: 10%;
     display: flex;
@@ -18,31 +19,38 @@ $color-text: #ffffff;
     align-items: center;
     justify-content: space-between;
 }
-.logo{
+
+.logo {
     height: 140px;
     width: 280px;
     padding: 0 0 0 20px;
     margin-bottom: -30px;
 }
-section{
+
+section {
     display: flex;
     align-items: center;
 }
-.home, .orders, .back{
+
+.home,
+.orders,
+.back {
     height: 60px;
     width: 50px;
     padding: 0 0 4px 0;
     cursor: pointer;
     margin: 0px 25px;
 }
-.sectionHeader{
+
+.sectionHeader {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     margin-top: 11px;
     margin-bottom: -6px;
 }
-.text-header{
+
+.text-header {
     color: $color-text;
     font-family: 'festive', cursive;
     font-weight: normal;
@@ -50,12 +58,3 @@ section{
     font-size: 25px;
     padding: 0 35px 0 0;
 }
-/* .text-home{
-    text-decoration: none;
-    cursor: pointer;
-    padding: 0 0 0 30px;
-    display: flex;
-    flex-direction: column-reverse;
-    font-size: 25px;
-    padding: 10px 20px 0 0;
-} */
