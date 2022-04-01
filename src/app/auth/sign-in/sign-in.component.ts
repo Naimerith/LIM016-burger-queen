@@ -34,7 +34,7 @@ export class SignInComponent implements OnInit {
       console.log("Inicio sesion", res);
     })
     if (name || email || password === '') {
-      alert('Debes llenar todos los campos')
+      //alert('Debes llenar todos los campos')
       this.router.navigate(['/'])
     }
     //Guardamos en el localStorage el usuario activo

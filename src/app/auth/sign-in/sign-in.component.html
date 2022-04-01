@@ -3,12 +3,8 @@
     <div class="input-rol">
         <span><input type="radio" name="rol" value="mesero" (click)="activeBtn()" />Mesero</span>
         <span><input type="radio" name="rol" value="cocinero" (click)="activeBtn()" />Chef</span>
-        <span><input type="radio" name="rol" value="administrador" (click)="activeBtn()" />Administrador</span>
     </div>
     <h2>Inicia sesión:</h2>
-    <div class="formGroup">
-        <input type="text" class="input-sigIn" id="inputEmail" placeholder="Nombre" [(ngModel)]="usuario.name">
-    </div>
     <div class="formGroup">
         <input type="email" class="input-sigIn" id="inputEmail" autocomplete placeholder="Correo electrónico"
             [(ngModel)]="usuario.email">
