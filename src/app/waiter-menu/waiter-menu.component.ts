@@ -25,7 +25,6 @@ export class WaiterMenuComponent implements OnInit, OnDestroy {
   nameCommensal: any = "";
 
   constructor(private service: MenuService, //db de firebase
-    //private shareData: ShareDataService, //servicio para compartir info
     private cartService: CartService) { //Servicio del numero de mesa y nombre de cliente
   };
 

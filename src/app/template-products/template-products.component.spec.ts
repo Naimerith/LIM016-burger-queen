@@ -21,12 +21,16 @@ describe('TemplateProductsComponent', () => {
     })
       .compileComponents();
   });
-
   beforeEach(() => {
     fixture = TestBed.createComponent(TemplateProductsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
+
+  afterEach(() => {
+    fixture.destroy();
+  });
+
 
   it('should create', () => {
     expect(component).toBeTruthy();
