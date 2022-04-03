@@ -3,6 +3,8 @@ import { Subscription } from 'rxjs';
 import { MenuService } from '../services/menu.service';
 import { CartService } from '../services/cart.service';
 import { Detalle } from '../interfaz/order.interface';
+import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-waiter-menu',
@@ -25,7 +27,8 @@ export class WaiterMenuComponent implements OnInit, OnDestroy {
   nameCommensal: any = "";
 
   constructor(private service: MenuService, //db de firebase
-    private cartService: CartService) { //Servicio del numero de mesa y nombre de cliente
+    private cartService: CartService, public router: Router
+    ) { //Servicio del numero de mesa y nombre de cliente
   };
 
   // Ejecuta funciones al cargar vista
@@ -101,27 +104,72 @@ export class WaiterMenuComponent implements OnInit, OnDestroy {
     this.menuCategory = type;
     this.itemsMenuFilter = this.getBreakfastItem();
   }
-  //Enviar pedido a cocina
-  makeOrder() {
-    console.log('diste click a enviar pedido')
-    const date = new Date();
-    const newDate = date.toString();
-    const saveOrder = {
-      mesero: localStorage.getItem('usuarioActivo'),
-      cliente: this.nameCommensal,
-      total: this.getTotal(),
-      mesa: this.numberTable,
-      status: 'Pendiente',
-      Hora: newDate,
-      detalle: this.itemsCart,
-      tiempo: ''
-    }
 
-    console.log(saveOrder.detalle)
-    this.itemsCart = [];// limpia el contenido del carrito
+  //mostrar modal de confirmación antes de enviar pedido
+  showModal() {
+    console.log('modal');
+    Swal.fire({
+      title: '¿Estas seguro que quieres enviar el pedido?',
+      text: "No podrás realizar modificaciones!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Sí, enviar pedido',
+      cancelButtonText: 'Cancelar'
+    }).then((result) => {
 
-    this.username = '';
-    this.service.createOrder(saveOrder);
+      if (result.isConfirmed) {
+        this.router.navigate(['/pedidos']) //redirigir a ruta de pedidos
+        console.log('diste click a confirmar');
+        const date = new Date();
+        const newDate = date.toString();
+        const saveOrder = {
+          mesero: localStorage.getItem('usuarioActivo'),
+          cliente: this.nameCommensal,
+          idDoc: "",
+          total: this.getTotal(),
+          mesa: this.numberTable,
+          status: 'Pendiente',
+          Hora: newDate,
+          detalle: this.itemsCart,
+          tiempo: ''
+        }
+
+        console.log(saveOrder.detalle)
+        this.itemsCart = [];// limpia el contenido del carrito
+
+        this.username = '';
+        this.service.createOrder(saveOrder);
+        Swal.fire(
+          'Enviado!',
+          'El pedido fué enviado exitosamente!',
+          'success'
+        )
+      }
+    })
   }
-};
+  /*
+    //Enviar pedido a cocina
+    makeOrder() {
+      console.log('diste click a enviar pedido')
+      const date = new Date();
+      const newDate = date.toString();
+      const saveOrder = {
+        mesero: localStorage.getItem('usuarioActivo'),
+        cliente: this.nameCommensal,
+        total: this.getTotal(),
+        mesa: this.numberTable,
+        status: 'Pendiente',
+        Hora: newDate,
+        detalle: this.itemsCart,
+        tiempo: ''
+      }
 
+      console.log(saveOrder.detalle)
+      this.itemsCart = [];// limpia el contenido del carrito
+
+      this.username = '';
+      this.service.createOrder(saveOrder);
+    }*/
+};

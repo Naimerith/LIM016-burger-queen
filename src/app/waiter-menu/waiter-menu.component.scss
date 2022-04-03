@@ -1,26 +1,39 @@
 $color-mix-btn: linear-gradient(180deg,
   rgba(255, 197, 70, 0.9) 0%,
   rgba(245, 130, 50, 0.9) 100%);
-$color-header: rgba(197, 156, 54, 1);
+$color-body: #40403F;
 $color-words: #fff;
 
-.flex-container {
-  @media (min-width: 740px) {
-    display: flex;
-    height: 658px;
-  }
+/* ----------------------------------Tablet - Pantallas hasta 1024px ---------------------------------- */
+//fondo
+body{
+  margin: 0;
+  background: $color-body;
 }
 
+//fondo
+.flex-main{
+  display: flex;
+  padding: 0;
+  //height: 100%;
+}
+
+//secciones
 article,
 aside {
   width: 100%;
-  height: auto;
+  //height: auto;
   margin-top: 2%;
   margin-bottom: 2%;
   padding: 0px 20px 20px 20px;
-  border-radius: 12px;
-  border: 6px solid #112e50;
   color: #fff;
+
+  height: 83vh;
+  border-radius: 10px;
+  border: 6px solid #5c5b5b;
+  color: #fff;
+
+
 }
 
 article {
