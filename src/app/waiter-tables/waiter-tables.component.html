@@ -1,14 +1,25 @@
+<body>
 <app-header></app-header>
+<app-root></app-root>
 
-<main id="main-tables">
-  <div class="container">
-    <div class="btn-table-container">
-      <button (click)="selectTable($event)" id="01" class="btn-table" [routerLink]="['/', 'menu']">Mesa 01</button>
-      <button (click)="selectTable($event)" id="02" class="btn-table" [routerLink]="['/', 'menu']">Mesa 02</button>
-      <button (click)="selectTable($event)" id="03" class="btn-table" [routerLink]="['/', 'menu']">Mesa 03</button>
-      <button (click)="selectTable($event)" id="04" class="btn-table" [routerLink]="['/', 'menu']">Mesa 04</button>
-      <button (click)="selectTable($event)" id="05" class="btn-table" [routerLink]="['/', 'menu']">Mesa 05</button>
-      <button (click)="selectTable($event)" id="06" class="btn-table" [routerLink]="['/', 'menu']">Mesa 06</button>
-    </div>
-  </div>
+<main class="flex-main">
+  <section class="containerAllOrders">
+    <aside class="containerImg">
+      <img class="imgOrder" src="../../assets/img/tables-img.png" alt="">
+    </aside>
+    <aside class="containerOrders">
+
+      <div class="container">
+        <div class="btn-table-container">
+          <button (click)="selectTable($event)" id="01" class="btn-table" [routerLink]="['/', 'menu']">Mesa 01</button>
+          <button (click)="selectTable($event)" id="02" class="btn-table" [routerLink]="['/', 'menu']">Mesa 02</button>
+          <button (click)="selectTable($event)" id="03" class="btn-table" [routerLink]="['/', 'menu']">Mesa 03</button>
+          <button (click)="selectTable($event)" id="04" class="btn-table" [routerLink]="['/', 'menu']">Mesa 04</button>
+          <button (click)="selectTable($event)" id="05" class="btn-table" [routerLink]="['/', 'menu']">Mesa 05</button>
+          <button (click)="selectTable($event)" id="06" class="btn-table" [routerLink]="['/', 'menu']">Mesa 06</button>
+        </div>
+      </div>
+    </aside>
+  </section>
 </main>
+</body>
