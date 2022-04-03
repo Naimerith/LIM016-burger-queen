@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { throwIfEmpty } from 'rxjs';
+//import { throwIfEmpty } from 'rxjs';
 import { Orders } from '../interfaz/order.interface';
 import { MenuService } from '../services/menu.service';
 
@@ -75,6 +75,3 @@ export class ChefKitchenComponent implements OnInit {
 
   }
 }
-
-
-

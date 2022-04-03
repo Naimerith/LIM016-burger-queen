@@ -1,37 +1,51 @@
+$Color-sign-in : rgba(247, 173, 80, 1);
 
-$Color-sign-in : linear-gradient(180deg, rgba(255, 197, 70, 0.9) 0%, rgba(245, 130, 50, 0.9) 100%);
+.displayTable {
+    background: $Color-sign-in;
+    border-radius: 20px;
+    padding: 10px;
 
-.displayTable{
-background: $Color-sign-in;
-border-radius: 20px;
-padding: 10px;
-    h2{
-        color: #fff;
+    h2 {
+        color: rgb(0, 0, 0);
         font-size: 16px;
     }
-    span{
+
+    span {
         color: rgb(68, 63, 63);
     }
 }
-.formGroup{
-    display: flex;
+
+.formGroup {
     display: flex;
     justify-content: center;
 }
-.input-sigIn{
+
+.input-sigIn {
     border-radius: 7px;
     margin: 3px;
     border: 1px solid #fff;
 }
-.input-rol{
+
+.input-rol {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     margin: 0 0 0 10px;
 }
+
+.rolMesero,
+.rolChef {
+    cursor: pointer;
+}
+
 button.logIn-button {
     margin-top: 5px;
     border-radius: 6px;
-    border: 1px solid #ffffff;
-    background: #ffffff;
+    border: 1px solid rgba(13, 220, 83, 1);
+    color: #000000;
+}
+
+.logIn-button:active {
+    background: rgba(13, 220, 83, 1);
+    color: #ffffff;
 }
