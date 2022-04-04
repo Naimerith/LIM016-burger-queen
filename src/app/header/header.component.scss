@@ -14,11 +14,13 @@ $color-text: #ffffff;
 
 .iconWaiter {
     width: 10%;
+    height: 52%;
 }
 
 .userLogged {
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 .header {

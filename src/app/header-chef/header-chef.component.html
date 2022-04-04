@@ -3,18 +3,18 @@
     <div>
       <img class="logo" src="../../assets/img/logo.png" alt="logo luna burger">
     </div>
-    <div class="date-user">
+    <!-- <div class="date-user">
       <p class="date">◷ Fecha y hora</p>
     </div>
-    <p class="text-userLogged">👤{{usuarioLogueado}}</p>
-
-
-
-
+    <p class="text-userLogged">👤{{usuarioLogueado}}</p> -->
 
     <div class="icons">
-      <img class="home" [routerLink]="['/cocina']" src="../../assets/img/chef-masculino.png" alt="home">
-      <img class="home" [routerLink]="['/cocinando']" src="../../assets/img/cocinando.png" alt="home">
+      <div class="userLogged">
+        <img class="iconWaiter" src="../../assets/img/chef-masculino.png" alt="mesero">
+        <p class="text-userLogged">{{usuarioLogueado}}</p>
+      </div>
+      <img class="home" [routerLink]="['/cocina']" src="../../assets/img/orden.png" alt="home">
+      <img class="home" [routerLink]="['/cocinando']" src="../../assets/img/cocinandopedido.png" alt="home">
       <img class="orders" [routerLink]="['/pedidos']" src="../../assets/img/pedidos.png" alt="home">
       <img class="back" src="../../assets/img/cerrar-sesion.png" alt="home" (click)="logout()">
     </div>
