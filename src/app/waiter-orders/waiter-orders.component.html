@@ -29,6 +29,7 @@
           <button class="btnPendient" data-id={{eachOrderToServe.id}} data-value={{eachOrderToServe.status}} (click)="btnListo($event)">
             <!-- <img class="checklistOrder" src="../../assets/img/listo.png" alt=""> -->✓
           </button>
+          <button class="btn-delete"><img class="img-btn-delete" src="../../assets/img/pendiente.png" alt=""></button><br>
           <!-- <button class="btnDelete">Eliminar</button> -->
         </div>
       </div>
@@ -60,11 +61,11 @@
 
         <div class="containerButton">
           <span><img class="waiter" src="../../assets/img/mesero.png" alt=""> {{eachOrderToServe.mesero}}</span><br>
-          <button class="btnPendient" data-id={{eachOrderToServe.id}} data-value={{eachOrderToServe.status}} (click)="btnListo($event)">
-            <!-- <img class="checklistOrder" src="../../assets/img/listo.png" alt=""> -->✓
-          </button>
-          <!-- <button class="btnDelete">Eliminar</button> -->
+        <div class="div-btn-delete">
+          <button class="btn-delete"><img class="img-btn-delete" src="../../assets/img/pendiente.png" alt=""></button><br>
         </div>
+        </div>
+
       </div>
     </section>
 

@@ -1,3 +1,9 @@
+.counterProduct{
+  border: 1px inset;
+  width: 20%;
+  text-align: center;
+}
+
 .itemsIcons {
   background-color: transparent;
   border: 1px solid transparent;
@@ -26,8 +32,8 @@
 }
 
 .img-item-selected {
-  width: 85px;
-  height: 85px;
+  width: 12%;
+  height: 110%;
 }
 
 .container-order-options {

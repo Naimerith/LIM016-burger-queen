@@ -7,7 +7,7 @@
 
   <div class="container-order-options">
       <button type="button" (click)="minus()" class="w-10 itemsIcons"> - </button>
-      <input [value]="itemCart.cantidad" class="w-25 text-center fs-5" />
+      <input class="counterProduct" [value]="itemCart.cantidad"/>
       <button type="button" (click)="plus()" class="w-10 itemsIcons"> + </button>
       <button class="itemsIcons w-10" (click)="deleteItem(itemCart)">x</button>
     </div>
