@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 //import { throwIfEmpty } from 'rxjs';
 import { Orders } from '../interfaz/order.interface';
 import { MenuService } from '../services/menu.service';
@@ -13,7 +15,8 @@ export class ChefKitchenComponent implements OnInit {
   public myClass: boolean = false;
   orderPending: any;
 
-  constructor(private service: MenuService) { }
+  constructor(private service: MenuService,
+    public router: Router) { }
 
   ngOnInit(): void {
     this.getId();
@@ -63,15 +66,15 @@ export class ChefKitchenComponent implements OnInit {
     const statusOrder = e.target.value;
     console.log(statusOrder);
 
-    // if (statusOrder === 'pendiente') {
-    //   this.myClass = !this.myClass;
-    // } else {
-    //   this.myClass = !this.myClass;
-    //   this.statusOrder = 'cocinando';
-    //   console.log(this.statusOrder)
-    // }
-    //obtenemos el ID de ese pedido al que hacemos click
-
-
+    Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: 'Enviado a cocina',
+      showConfirmButton: false,
+      timer: 2000,
+      color: 'rgba(247, 173, 80, 1)',
+      background: '#fff',
+    })
+    this.router.navigate(['/cocinando']);
   }
 }

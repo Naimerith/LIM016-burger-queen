@@ -1,9 +1,31 @@
-.itemsIcons {
+// .itemsIcons {
+//   background-color: transparent;
+//   border: 1px solid transparent;
+// }
+
+.rotate {
+  transform: rotate(-45deg);
+}
+
+.eliminar {
   background-color: transparent;
   border: 1px solid transparent;
 }
-.rotate {
-  transform: rotate(-45deg);
+
+.menos,
+.mas {
+  border: 2px solid #fcfafa;
+  border-radius: 50%;
+  color: #f8f9fa;
+  font-weight: 900;
+}
+
+.menos {
+  background-color: #dc3545;
+}
+
+.mas {
+  background-color: #35dc46;
 }
 
 .container-order {
@@ -37,6 +59,7 @@
   align-items: center;
   font-size: 25px;
 }
+
 /*
 .item-counter{
   width: 25px;

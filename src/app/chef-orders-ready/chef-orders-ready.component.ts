@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import Swal from 'sweetalert2';
 import { Orders } from '../interfaz/order.interface';
 import { MenuService } from '../services/menu.service';
 
@@ -54,8 +55,14 @@ export class ChefOrdersReadyComponent implements OnInit {
     this.statusPedido(orderId);
     this.getOrderFilter();
 
-    // //vemos cual es el status del pedido al que hacemos click
-    // const statusOrder = e.target.value;
-    // console.log(statusOrder);
+    Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: 'Orden Lista para servir',
+      showConfirmButton: false,
+      timer: 2000,
+      color: 'rgba(247, 173, 80, 1)',
+      background: '#fff',
+    })
   }
 }

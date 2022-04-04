@@ -1,16 +1,16 @@
 <section *ngIf="itemCart" class="container-order">
-      <img class="img-item-selected" [src]="itemCart.img" alt="">
-    <div class="order-details">
-      <p> {{itemCart.nombre}} </p><br>
-      <p>{{itemCart.total | currency }}</p>
-    </div>
+  <img class="img-item-selected" [src]="itemCart.img" alt="">
+  <div class="order-details">
+    <p> {{itemCart.nombre}} </p><br>
+    <p>{{itemCart.total | currency }}</p>
+  </div>
 
   <div class="container-order-options">
-      <button type="button" (click)="minus()" class="w-10 itemsIcons"> - </button>
-      <input [value]="itemCart.cantidad" class="w-25 text-center fs-5" />
-      <button type="button" (click)="plus()" class="w-10 itemsIcons"> + </button>
-      <button class="itemsIcons w-10" (click)="deleteItem(itemCart)">x</button>
-    </div>
-    <div class="col-sm">
-    </div>
-  </section>
+    <button class="menos" type="button" (click)="minus()"> - </button>
+    <input [value]="itemCart.cantidad" class="w-25 text-center fs-5" />
+    <button class="mas" type="button" (click)="plus()"> + </button>
+    <button class="eliminar" (click)="deleteItem(itemCart)">🗑️</button>
+  </div>
+  <div class="col-sm">
+  </div>
+</section>
