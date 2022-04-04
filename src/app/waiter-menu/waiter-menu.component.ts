@@ -3,6 +3,8 @@ import { Subscription } from 'rxjs';
 import { MenuService } from '../services/menu.service';
 import { CartService } from '../services/cart.service';
 import { Detalle } from '../interfaz/order.interface';
+import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-waiter-menu',
@@ -25,8 +27,8 @@ export class WaiterMenuComponent implements OnInit, OnDestroy {
   nameCommensal: any = "";
 
   constructor(private service: MenuService, //db de firebase
-    //private shareData: ShareDataService, //servicio para compartir info
-    private cartService: CartService) { //Servicio del numero de mesa y nombre de cliente
+    private cartService: CartService, //Servicio del numero de mesa y nombre de cliente
+    public router: Router) { //para redirigir a vista de pedidos al presionar "Enviar pedido"
   };
 
   // Ejecuta funciones al cargar vista
@@ -102,6 +104,8 @@ export class WaiterMenuComponent implements OnInit, OnDestroy {
     this.menuCategory = type;
     this.itemsMenuFilter = this.getBreakfastItem();
   }
+
+
   //Enviar pedido a cocina
   makeOrder() {
     console.log('diste click a enviar pedido')
@@ -124,4 +128,33 @@ export class WaiterMenuComponent implements OnInit, OnDestroy {
     this.username = '';
     this.service.createOrder(saveOrder);
   }
+
+
+  //Mostrar modal de confirmación antes de enviar pedido
+  showModal() {
+    console.log('modal');
+    Swal.fire({
+      title: '¿Estas seguro que quieres enviar el pedido?',
+      text: "No podrás realizar modificaciones!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Sí, enviar pedido',
+      cancelButtonText: 'Cancelar'
+    }).then((result) => {
+
+      if (result.isConfirmed) {
+        this.router.navigate(['/pedidos']) //redirigir a ruta de pedidos
+
+        this.makeOrder();
+        Swal.fire({
+          title: 'Enviado a cocina!',
+          icon: 'success'
+        }
+        )
+      }
+    })
+  }
+
 }

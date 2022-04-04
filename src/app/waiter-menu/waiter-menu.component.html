@@ -1,6 +1,7 @@
+<body>
 <app-header> </app-header>
 
-<main class="flex-container">
+<main class="flex-main">
   <article class="menuOptions-content">
     <div class="commensalDates">
       <div class="commensalNameDiv">
@@ -41,8 +42,8 @@
     </section>
     <p class="text-end fs-3 mb-0 " id="total">Total: {{getTotal() | currency}}</p>
     <div class="container-btn-enviarPedido">
-      <button type="button" class="btn-enviarPedido" [routerLink]="['/', 'cocina']" (click)="makeOrder()">ENVIAR
-        PEDIDO</button>
+      <button type="button" class="btn-enviarPedido" (click)="showModal()">Enviar pedido</button>
     </div>
   </aside>
 </main>
+</body>
