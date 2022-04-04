@@ -1,29 +1,41 @@
 // variable
-$color-mix-btn: linear-gradient(180deg, rgba(255, 197, 70, 0.9) 0%, rgba(245, 130, 50, 0.9) 100%);
-$color-header:  rgba(197, 156, 54, 1);
+$color-mix-btn: linear-gradient(180deg, #F7AD50 0%, #7B4500 100%);
+$color-body: #40403F;
 $color-words: #fff;
 
-#main-tables{
-  background-image: url(../../assets/img/fondo1.jpg);
-  background-repeat: no-repeat;
-  background-size: 100% 100%;    
+body{
+  margin: 0;
+  background: $color-body;
 }
 
-.header{
-  background-color: $color-header;
-  width: 100%;
-  height: 20%;
+//fondo
+.flex-main{
+  padding: 20px;
+  //height: 100%;
+}
+
+
+//contenedor principal con borde
+.containerAllOrders {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: row-reverse;
+  border: 4px solid #5c5b5b;
+  border-radius: 10px;
+  height: 83vh;
 }
 
-.logo{
-height: 140px;
-width: 280px;
-padding: 0 0 0 20px;
-margin-bottom: -30px;
+//contenedor de tables
+.containerOrders {
+  display: flex;
+  padding: 0 5px 0 0;
+  flex-wrap: wrap;
+  overflow-y: scroll;
+}
+
+//imagen principal
+.imgOrder {
+  width: 100%;
+  height: 100%;
 }
 
 .home{
@@ -57,6 +69,7 @@ padding: 0 0 20px 0;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 40px;
+  padding: 5%;
 }
 
 .btn-table{
