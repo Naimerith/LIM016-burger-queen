@@ -1,7 +1,6 @@
-<body>
 <app-header> </app-header>
-<!-- -->
-<main class="flex-main">
+
+<main class="flex-container">
   <article class="menuOptions-content">
     <div class="commensalDates">
       <div class="commensalNameDiv">
@@ -21,8 +20,7 @@
         (click)="changeTypeMenu('menu')">Almuerzo</button>
     </div>
     <section id="menuContainer">
-      <app-template-products id="template-content" *ngFor="let product of itemsMenuFilter" [product]="product">
-      </app-template-products>
+        <app-template-products id="template-content" *ngFor="let product of itemsMenuFilter" [product]="product"></app-template-products>
     </section>
   </article>
   <aside class="selectedOptionsMenu">
@@ -42,9 +40,8 @@
     </section>
     <p class="text-end fs-3 mb-0 " id="total">Total: {{getTotal() | currency}}</p>
     <div class="container-btn-enviarPedido">
-      <button type="button" class="btn-enviarPedido" (click)="showModal()">Enviar
-        pedido</button>
+      <button type="button" class="btn-enviarPedido" [routerLink]="['/', 'cocina']" (click)="makeOrder()">ENVIAR
+        PEDIDO</button>
     </div>
   </aside>
 </main>
-</body>
