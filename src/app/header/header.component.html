@@ -1,16 +1,17 @@
 <header>
-    <div class="header-kitchen">
-        <div>
-            <img class="logo" src="../../assets/img/logo.png" alt="logo luna burger">
-        </div>
-        <section class="sectionHeader">
-            <div>
-                <img class="home" [routerLink]="['/tables']" src="../../assets/img/mesa.png" alt="home">
-                <img class="menu" [routerLink]="['/menu']" src="../../assets/img/menu.png" alt="home">
-                <img class="orders" [routerLink]="['/pedidos']" src="../../assets/img/pedidos.png" alt="home">
-                <img class="back" src="../../assets/img/cerrar-sesion.png" alt="home" (click)="logout()">
-            </div>
-            <p class="text-userLogged">Usuario: {{usuarioLogueado}}</p>
-        </section>
+  <div class="header">
+    <div>
+      <img class="logo" src="../../assets/img/logo.png" alt="logo luna burger">
     </div>
+    <div class="date-user">
+      <p class="date">◷ Fecha y hora</p>
+    </div>
+    <p class="text-userLogged">👤{{usuarioLogueado}}</p>
+    <div class="icons">
+      <img class="home" [routerLink]="['/tables']" src="../../assets/img/mesa.png" alt="home">
+      <img class="menu" [routerLink]="['/menu']" src="../../assets/img/menu.png" alt="home">
+      <img class="orders" [routerLink]="['/pedidos']" src="../../assets/img/pedidos.png" alt="home">
+      <img class="back" src="../../assets/img/cerrar-sesion.png" alt="home" (click)="logout()">
+    </div>
+  </div>
 </header>
