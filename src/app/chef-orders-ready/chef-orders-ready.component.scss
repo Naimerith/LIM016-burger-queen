@@ -1,139 +1,88 @@
-$color-body: linear-gradient(180.3deg, #1C3240 50.98%, rgba(0, 11, 19, 0.97) 116.78%), linear-gradient(180.3deg, #0E4975 50.98%, rgba(0, 11, 19, 0.97) 116.78%);
-
-.main-content{
-height: 100vh;
-background: $color-body;
-}
-.title-kitchen{
-    color: #ffffff;
-    /*font-family: 'festive', cursive;*/
-    font-weight: normal;
-    text-align: center;
-  }
-
-  @import url("https://fonts.googleapis.com/css2?family=Festive&family=Redressed&display=swap");
-$color-header: rgba(197, 156, 54, 1);
-$color-body: linear-gradient(180.3deg, #1C3240 50.98%, rgba(0, 11, 19, 0.97) 116.78%), linear-gradient(180.3deg, #0E4975 50.98%, rgba(0, 11, 19, 0.97) 116.78%);
+@import url("https://fonts.googleapis.com/css2?family=Festive&family=Redressed&display=swap");
+$color-body: #40403F;
 
 
-.header-kitchen {
-  background-color: $color-header;
-  width: 100%;
-  height: 20%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-.main-kitchen{
-  height: 100%;
+.main-kitchen {
+  padding: 15px;
+  height: 90%;
   background: $color-body;
 }
 
-
-// .main-kitchen {
-//   @media (min-width: 740px) {
-//     display: flex;
-//     height: 658px;
-//   }
-// }
-
-// article,
-// aside {
-//   width: 100%;
-//   height: auto;
-//   margin-top: 2%;
-//   margin-bottom: 2%;
-//   padding: 0px 20px 20px 20px;
-//   border-radius: 12px;
-//   border: 6px solid #112e50;
-//   color: #fff;
-// }
-
-// article {
-//   margin-right: 0.5%;
-//   margin-left: 1%;
-//   padding: 0%;
-// }
-
-// aside {
-//   margin-right: 1%;
-//   margin-left: 0.5%;
-// }
-
 .containerAllOrders {
+  display: flex;
+  flex-direction: row-reverse;
+  border: 4px solid #5c5b5b;
+  border-radius: 10px;
+  height: 74vh;
+}
+
+.imgOrder {
+  width: 20rem;
+  height: 70vh;
+}
+
+
+.containerOrders {
+  width: 100%;
+  height: 95%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0 10px 0 10px;
+
   // display: flex;
-  //   justify-content: center;
-  //   align-items: flex-start;
-  //   padding: 0 10px 0 10px;
-  //   width: 100%;
-  //   height: 95%;
-  //   overflow-x: hidden;
-  //   overflow-y: scroll;
-  //   flex-wrap: nowrap;
-  //   flex-direction: row;
-
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 0 10px 0 10px;
-    flex-wrap: wrap;
-    height: 100%;
-    overflow-x: hidden;
-    overflow-y: scroll;
-}
-.container-orders-received{
-    height: 80%;
-    width: 30%;
-    //height: 250px;
-    margin: 10px;
-    padding: 5px;
-    border-radius: 10px;
-    background-color: aliceblue;
-    border: 1px solid;
-    height: 200px;
-    overflow-y: scroll;
+  // height: auto;
+  // /* padding: 0 5px 0 0; */
+  // flex-wrap: wrap;
+  // overflow-y: scroll;
+  // justify-content: center;
+  // align-items: center;
 }
 
-// .container-orders-received {
-//   width: 90%;
-//   height: 200px;
-//   margin: 10px;
-//   border-radius: 10px;
-//   background-color: aliceblue;
-//   border: 1px solid;
-//   color: black;
-//   font-size: 15px;
-//   margin: 1.5%;
-//   overflow-y: scroll;
-// }
+.waiter {
+  width: 40px;
+}
 
-.title-kitchen{
+.container-orders-received {
+  border: 5px solid rgba(0, 0, 0, 0.09);
+  border-radius: 10px;
+  width: 29%;
+  height: 40%;
+  margin: 10px;
+  background-color: #ffffff;
+  overflow-y: scroll;
+}
+
+.containerImg {
+  padding: 10px;
+  height: 70%;
+}
+
+.title-kitchen {
   color: #ffffff;
-  /*font-family: 'festive', cursive;*/
+  font-size: 35px;
   font-weight: normal;
   text-align: center;
+  font-family: Redressed;
+  text-shadow: #EFB22C 0.1em 0.1em 0.2em;
 }
-// .text-home {
-//   text-decoration: none;
-//   cursor: pointer;
-//   padding: 0 0 0 30px;
-//   display: flex;
-//   flex-direction: column-reverse;
-//   font-size: 25px;
-//   padding: 10px 20px 0 0;
-// }
+
 .orderContainer {
   display: flex;
   justify-content: space-between;
-  padding: 0 10px 0 10px;
+  padding: 10px 10px 0 10px;
   flex-direction: row;
-  align-items: baseline;
 }
+
 .nameClient {
-  font-size: 14px;
-  color: #887c7c;
+  font-size: 17px;
+  font-weight: 500;
+  color: #000000;
 }
+
 .containerNumTable {
   display: flex;
   flex-direction: column;
@@ -141,74 +90,67 @@ $color-body: linear-gradient(180.3deg, #1C3240 50.98%, rgba(0, 11, 19, 0.97) 116
   width: 70px;
   height: 70px;
 }
-.titleTable {
-  font-size: 17px;
+
+.headerOrder {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  padding: 6px 0 0 4px;
 }
+
 .numTable {
-  height: 65%;
-  width: 65%;
-  background-color: $color-header;
-  color: #ffffff;
-  font-size: 15px;
+  height: 55%;
+  width: 55%;
+  background-color: #EFB22C;
+  color: #000000;
+  font-size: 20px;
+  font-family: Redressed;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 .description {
   display: flex;
   justify-content: space-around;
 }
+
 .titleProducts,
 .titleCant {
-  font-size: 17px;
-  font-weight: normal;
+  font-size: 15px;
+  font-weight: 700;
   text-decoration: underline;
 }
+
 .titleProducts {
-  padding: 0 0 0 40px;
+  padding: 0 0 0 10px;
 }
+
 .listProducts,
 .listCant {
   list-style: none;
-  font-size: 13px;
+  font-size: 16px;
+  font-weight: 500;
 }
-.listProducts {
-  padding: 0 0 0 10px;
-}
+
 .listCant {
-  padding: 0 10px 0 0;
+  font-weight: 700;
 }
+
 .containerButton {
+  margin-top: 10px;
   display: flex;
   justify-content: space-around;
 }
-.btnPendient,
-.btnDelete {
-  border-radius: 10px;
-  font-size: 12px;
-  color: #ffffff;
-  border: 1px solid;
-}
+
 .btnPendient {
-  background-color: #ff6900;
-}
-.btnDelete {
-  background-color: $color-header;
-}
-
-.red {
-  // background-image: url(../../assets/img/chef-masculino.png);
-  // width: 10px;
-  // height: 10px;
-  // background: red;
-  color: red;
-}
-
-.green {
-  // background-image: url(../../assets/img/cocinandopedido.png);
-  // width: 10px;
-  // height: 10px;
-  // background: green;
-  color: green;
+  border-radius: 50%;
+  width: 15%;
+  border: none;
+  font-size: 24px;
+  font-weight: 900;
+  color: #ffffff;
+  cursor: pointer;
+  background-color: #72de50;
 }
