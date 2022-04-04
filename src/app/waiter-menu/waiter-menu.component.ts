@@ -25,6 +25,7 @@ export class WaiterMenuComponent implements OnInit, OnDestroy {
   nameCommensal: any = "";
 
   constructor(private service: MenuService, //db de firebase
+    //private shareData: ShareDataService, //servicio para compartir info
     private cartService: CartService) { //Servicio del numero de mesa y nombre de cliente
   };
 
@@ -112,7 +113,7 @@ export class WaiterMenuComponent implements OnInit, OnDestroy {
       total: this.getTotal(),
       mesa: this.numberTable,
       status: 'Pendiente',
-      Hora: newDate,
+      fecha: newDate,
       detalle: this.itemsCart,
       tiempo: ''
     }
@@ -123,5 +124,4 @@ export class WaiterMenuComponent implements OnInit, OnDestroy {
     this.username = '';
     this.service.createOrder(saveOrder);
   }
-};
-
+}
