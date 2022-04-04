@@ -124,5 +124,4 @@ export class WaiterMenuComponent implements OnInit, OnDestroy {
     this.username = '';
     this.service.createOrder(saveOrder);
   }
-};
-
+}

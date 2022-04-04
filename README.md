@@ -1,27 +1,76 @@
-# MyApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.5.
+   ![logoReadme](https://user-images.githubusercontent.com/89501132/161436502-9398f83c-cda2-4497-8337-510b103d6918.png)
 
-## Development server
+## Índice
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+* [1. Preámbulo](#1-preámbulo)
+* [2. Definición del Producto](#2-definición-del-producto)
+* [3. Diseño de la Interfaz de Usuario](#3-diseño-de-la-interfaz-de-usuario)
+* [4. Implementación de la Interfaz de Usuario en Responsive](#4-implementación-de-la-interfaz-de-usuario-en-responsive)
+* [5. Pruebas Unitarias](#5-pruebas-unitarias)
+* [6. Puntuaciones de Performance, PWA, Accessibility y Best Practices de Lighthouse.](#6-puntuaciones-de-performance-PWA-accessibility-y-best-practices-de-lighthouse)
+* [7. Organización del Trabajo ](#7-organización-del-trabajo)
+* [8. Herramientas](#8-herramientas)
+* [9. Autoras](#9-autoras)
 
-## Code scaffolding
+***
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## 1. Preámbulo
 
-## Build
+Un pequeño restaurante de hamburguesas, que está creciendo, necesita una interfaz en la que puedan tomar pedidos usando una tablet, y enviarlos a la cocina para que se preparen ordenada y eficientemente
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## 2. Definición del producto
 
-## Running unit tests
+El objetivo principal de este proyecto es construir una interfaz web usando el framework Angular con la finalidad de atacar este problema: ***"cómo mantener la interfaz y el estado sincronizados".*** Esta experiencia nos permitio familiarizarnos con el estado de pantalla, y cómo cada cambio sobre el estado se va a ir reflejando en la interfaz (por ejemplo, cada vez que agregamos un producto a un pedido, la interfaz debe actualizar la lista del pedido y el total). 
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+* _¿Quiénes son los principales usuarios de producto?_
 
-## Running end-to-end tests
+> | Roles           | Usuario  | Email            | Password   |
+> |-----------------|----------|------------------|------------|
+> | Mesero          | carlos   | carlos@gmail.com | holacarlos |
+> | chef            | manuel   | manuel@gmail.com | holamanuel |
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-## Further help
+### Historias de usuario
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+![Historias de Usuario](https://user-images.githubusercontent.com/89501132/161439924-7fcd0789-a147-4f27-a259-8e9c0c1de837.png)
+
+
+## 3. Diseño de la Interfaz de Usuario
+
+![figmalogo](https://user-images.githubusercontent.com/89501132/161439529-021d9f26-f1d2-474d-b011-4b8ea9aee34d.png)
+
+
+![PAF](https://user-images.githubusercontent.com/89501132/161440078-770ff8ec-b118-4094-a4fb-df34e82637b2.png)
+
+## 4. Implementación de la Interfaz de Usuario en Responsive 
+
+
+## 5. Pruebas unitarias
+
+Estas deben dar una cobertura del 70% de _statements_
+(_sentencias_), _functions_ (_funciones_), _lines_ (_líneas_), y _branches_
+(_ramas_) del archivo `src/data.js` que contenga las funciones. 
+
+
+
+## 6. Puntuaciones de Performance, PWA, Accessibility y Best Practices de Lighthouse
+
+
+## 7. Organización del Trabajo
+
+
+
+## 8. Herramientas 
+
+* [Angular](https://https://angular.io/)
+* [Git](https://git-scm.com/)
+* [GitHub](https://github.com/)
+* [GitHub Pages](https://pages.github.com/)
+
+
+
+## 8. Autoras
+👩‍💻 Lucero Sotelo 
+
+👩‍💻 Naimerith Magdaleno 

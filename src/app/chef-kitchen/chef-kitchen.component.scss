@@ -4,7 +4,7 @@ $color-body: #40403F;
 
 .main-kitchen {
   padding: 20px;
-  height: 100%;
+  height: 86%;
   background: $color-body;
 }
 
@@ -18,7 +18,7 @@ $color-body: #40403F;
 
 .imgOrder {
   width: 20rem;
-  height: 100vh
+  height: 70%;
 }
 
 
@@ -37,27 +37,22 @@ $color-body: #40403F;
   border: 5px solid rgba(0, 0, 0, 0.09);
   box-sizing: border-box;
   border-radius: 10px;
-  width: 45%;
-  height: 45%;
+  width: 29%;
+  height: 35%;
   margin: 0px 10px;
   background-color: #ffffff;
   overflow-y: scroll;
 }
 
 .containerImg {
-  height: 100vh;
+  padding: 10px;
+  height: 70%;
 }
 
 .title-kitchen {
   color: #ffffff;
   font-weight: normal;
   text-align: center;
-}
-
-.status {
-  font-weight: 500;
-  font-size: 17px;
-  color: red;
 }
 
 .orderContainer {
@@ -81,16 +76,16 @@ $color-body: #40403F;
   height: 70px;
 }
 
-.titleTable {
-  padding: 5px 0 0 7px;
-  color: #000000;
-  font-weight: 500;
-  font-size: 17px;
+.headerOrder {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  padding: 6px 0 0 4px;
 }
 
 .numTable {
-  height: 65%;
-  width: 65%;
+  height: 55%;
+  width: 55%;
   background-color: #EFB22C;
   color: #000000;
   font-size: 29px;
@@ -108,28 +103,24 @@ $color-body: #40403F;
 
 .titleProducts,
 .titleCant {
-  font-size: 17px;
+  font-size: 15px;
   font-weight: 700;
   text-decoration: underline;
 }
 
 .titleProducts {
-  padding: 0 0 0 40px;
+  padding: 0 0 0 10px;
 }
 
 .listProducts,
 .listCant {
   list-style: none;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 500;
 }
 
-.listProducts {
-  padding: 0 0 0 10px;
-}
-
 .listCant {
-  padding: 0 35px 0 0;
+  font-weight: 700;
 }
 
 .containerButton {

@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Festive&family=Redressed&display=swap');
-$color-mix-btn: linear-gradient(180deg, rgba(255, 197, 70, 0.9) 0%, rgba(245, 130, 50, 0.9) 100%);
-$color-header: rgba(197, 156, 54, 1);
+$color-mix-btn: rgba(247, 173, 80, 1);
 $color-words: #fff;
 
 * {
@@ -9,11 +8,13 @@ $color-words: #fff;
     box-sizing: border-box;
     /*para mover el modelo de caja*/
 }
-.home{
+
+.home {
     background-image: url(../../assets/img/fondo1.jpg);
     background-repeat: no-repeat;
-    background-size: 100% 100%;    
+    background-size: 100% 100%;
 }
+
 .welcome {
     position: absolute;
     width: 479px;
@@ -59,8 +60,7 @@ $color-words: #fff;
 /* ---------------------------------- Media Query para pantallas a partir de 1300px ---------------------------------- */
 @media (min-width: 1300px) {
 
-  .container-home {
-    margin-left: 400px;
-}
-
+    .container-home {
+        margin-left: 400px;
+    }
 }
