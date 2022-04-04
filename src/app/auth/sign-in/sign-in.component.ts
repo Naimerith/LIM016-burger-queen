@@ -44,13 +44,23 @@ export class SignInComponent implements OnInit {
         icon: 'error',
         title: 'Oops...',
         text: 'Debes llenar todos los campos!',
-        footer: 'No tienes cuenta? Consulta al administrador'
+        footer: 'No tienes cuenta? Consulta al administrador',
+        color: 'rgba(247, 173, 80, 1)',
+        background: '#fff',
+        confirmButtonColor: 'rgba(13, 220, 83, 1)',
       })
       this.router.navigate(['/'])
     }
     if (this.usuario.email !== '' && this.usuario.password !== '') {
       if (this.usuario.password.length < 6) {
-        alert('El password debe contener minimo 6 caracteres.')
+        Swal.fire({
+          title: 'Contraseña incorrecta',
+          text: 'Debe ingresar más de 6 caracteres',
+          icon: 'error',
+          color: 'rgba(247, 173, 80, 1)',
+          background: '#fff',
+          confirmButtonColor: 'rgba(13, 220, 83, 1)',
+        })
         this.router.navigate(['/'])
       }
     }
@@ -78,11 +88,14 @@ export class SignInComponent implements OnInit {
     this.disabled = !this.disabled;
     if (this.disabled === true) {
       this.disabled = !this.disabled;
-      Swal.fire(
-        'Haz cambiado de rol',
-        'Por favor, verifique el rol que ha seleccionado',
-        'warning'
-      )
+      Swal.fire({
+        title: 'Haz cambiado de rol',
+        text: 'Por favor, verifique el rol que ha seleccionado',
+        icon: 'warning',
+        color: 'rgba(247, 173, 80, 1)',
+        background: '#fff',
+        confirmButtonColor: 'rgba(13, 220, 83, 1)',
+      })
 
     }
   }
