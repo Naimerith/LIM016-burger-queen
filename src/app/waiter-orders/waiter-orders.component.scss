@@ -43,7 +43,6 @@ h5 {
 }
 
 #toServeContainer {
-  width: 100%;
   height: 95%;
   overflow-x: hidden;
   overflow-y: scroll;
@@ -51,7 +50,6 @@ h5 {
   flex-wrap: wrap;
   justify-content: center;
   align-items: flex-start;
-  padding: 0 10px 0 10px;
 }
 
 .container-orders-received {
@@ -73,7 +71,8 @@ h5 {
 }
 
 .listProducts,
-.listCant {
+.listCant,
+.lisPrice {
   list-style: none;
   font-size: 13px;
 }
@@ -84,25 +83,13 @@ h5 {
   //padding: 0 10px 0 0;
   padding: 0 75px 0 0;
 }
+.listPrice {
+  //padding: 0 10px 0 0;
+  padding: 0 12% 0 0;
+}
 
 .btn-toServe {
   background-color: #0ddc53;
-  border: none;
-  cursor: pointer;
-  height: 4vh;
-  text-shadow: 0 4px 4px rgb(0 0 0 / 25%);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  color: $color-words;
-  font-size: 15px;
-  width: 5vw;
-  border-radius: 15px;
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-}
-
-.btn-delete{
-  background-color: #efb22ccf;
   border: none;
   cursor: pointer;
   height: 4vh;
@@ -124,6 +111,7 @@ h5 {
   padding: 0 10px 0 10px;
   flex-direction: row;
   align-items: baseline;
+  list-style:none;
   //padding: 10px 10px 0 10px;
 }
 
@@ -178,7 +166,11 @@ h5 {
   justify-content: space-around;
 }
 
-.waiter {
+.waiter{
+  display: flex;
+}
+
+.img-waiter {
   width: 40px;
 }
 
@@ -193,12 +185,32 @@ h5 {
   background-color: #72de50;
 }
 
+.div-btn-delete{
+  display: flex;
+  margin-left: 65%
+}
+
+.btn-delete{
+  border-radius: 50%;
+  width: 15%;
+  border: none;
+  font-size: 24px;
+  font-weight: 900;
+  color: #ffffff;
+  cursor: pointer;
+  background-color: #de5750;
+}
+
+.img-btn-delete{
+  width: 100%;
+}
+
 /* ---------------------------------- Media Query para pantallas a partir de 1300px ---------------------------------- */
 @media (min-width: 1300px) {
   #eachOrderToServe {
     background: #fff;
     width: 40%;
-    height: 200px;
+    height: 280px;
     border-radius: 10px;
     color: black;
     font-size: 15px;

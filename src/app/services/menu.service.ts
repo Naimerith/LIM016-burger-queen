@@ -32,4 +32,8 @@ export class MenuService {
   editOrder(idOrder: any, orderStatus: any) {
     return this.firestoreMenu.collection('pedidos').doc(idOrder).update({ status: orderStatus });
   }
+
+  deleteOrder(idOrder: any) {
+    return this.firestoreMenu.collection('pedidos').doc(idOrder).delete();
+  }
 }

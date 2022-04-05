@@ -25,6 +25,9 @@ export class WaiterOrdersComponent implements OnInit {
   getOrderFilter() {
     return this.itemsId = this.itemsId.filter(order => order.status === 'Preparado');
   }
+  getOrdeFilterServed() {
+    return this.itemsId = this.itemsId.filter(order => order.status === 'Servido');
+  }
 
   //traer pedidos con status "preparados" de la colección de firebase
   getId() {
@@ -67,6 +70,27 @@ export class WaiterOrdersComponent implements OnInit {
   //Función para mostrar las ordenes servidas
   servedOrdersFilter() {
     return this.itemsServed = this.itemsServed.filter(order => order.status === 'Servido');
+  }
+
+  //Funcionalidad al botón delete para archivar orden
+  btnfileOrder(e: any) {
+    console.log('se archiva orden');
+    const orderIdD = e.target.id;
+    console.log(orderIdD);
+    this.service.editOrder(orderIdD, 'Archivado');
+    this.fileOrder(orderIdD);
+    //this.getOrdeFilterServed();
+    this.getIdItemsServed()
+  }
+
+  //cambiar a status archivado
+  fileOrder(id: any) {
+    const statusNamePedido = this.itemsId.forEach((item: any) => {
+      if (item.id == id && item.status == "Preparado" || "Servido") {
+        item.status = item.status = 'Archivado';
+      }
+    })
+    return statusNamePedido;
   }
 
   //traer pedidos con status "servidos" de la colección de firebase
