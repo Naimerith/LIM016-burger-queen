@@ -33,7 +33,7 @@ export class MenuService {
     return this.firestoreMenu.collection('pedidos').doc(idOrder).update({ status: orderStatus });
   }
 
-  deleteOrder(idOrder: any) {
-    return this.firestoreMenu.collection('pedidos').doc(idOrder).delete();
+  deleteOrder(order: any) {
+    return this.firestoreMenu.collection('pedidos').doc(order).delete();
   }
 }

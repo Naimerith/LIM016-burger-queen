@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Orders, Detalle } from '../interfaz/order.interface';
 import { MenuService } from '../services/menu.service';
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -52,9 +53,11 @@ export class WaiterOrdersComponent implements OnInit {
     console.log(orderId);
     this.service.editOrder(orderId, 'Servido');
     this.statusPedido(orderId);
-    this.getOrderFilter();
+    //this.getOrderFilter();
     this.getIdItemsServed()
+    this.getId();
   };
+
 
   //Cambiar el status del pedido
   statusPedido(idaaa: any) {
@@ -71,6 +74,33 @@ export class WaiterOrdersComponent implements OnInit {
   servedOrdersFilter() {
     return this.itemsServed = this.itemsServed.filter(order => order.status === 'Servido');
   }
+
+  //funcionalidad para eliminar orden
+  btnDeleteOrder(e: any) {
+    console.log('diste click a Eliminar orden');
+    const orderId = e.target.id;
+    console.log(orderId);
+    //this.service.deleteOrder(orderId);
+    this.service.editOrder(orderId, 'Archivado');
+    this.fileOrder(orderId);
+    //this.getOrdeFilterServed();
+    this.getIdItemsServed()
+    this.getId();
+
+    /*
+    //Mostrar modal de confirmación antes de eliminar orden
+    Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: 'Orden eliminada',
+      showConfirmButton: false,
+      timer: 2000,
+      color: 'rgba(247, 173, 80, 1)',
+      background: '#fff',
+    })
+    */
+  };
+
 
   //Funcionalidad al botón delete para archivar orden
   btnfileOrder(e: any) {
