@@ -25,6 +25,7 @@ export class WaiterMenuComponent implements OnInit, OnDestroy {
   itemsCart: Detalle[] = this.cartService.getItems(); // trae los platos del carrito
   username: string = '';
   nameCommensal: any = "";
+  //totalPrice: any = "";
 
   constructor(private service: MenuService, //db de firebase
     private cartService: CartService, //Servicio del numero de mesa y nombre de cliente
@@ -43,6 +44,7 @@ export class WaiterMenuComponent implements OnInit, OnDestroy {
       localStorage.setItem("mesa", numMesa) //guardo el numero de mesa
     })
     this.numberTable = localStorage.getItem("mesa") //obtengo el num de mesa
+    //this.totalPrice = localStorage.getItem("total") //obtengo el precio total
   }
 
 
