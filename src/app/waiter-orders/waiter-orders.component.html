@@ -27,13 +27,16 @@
           </div>
 
 
-        <div class="containerButton">
-          <span class="waiter"><img class="img-waiter" src="../../assets/img/mesero.png" alt=""> {{eachOrderToServe.mesero}}</span><br>
-          <button class="btnPendient" data-id={{eachOrderToServe.id}} data-value={{eachOrderToServe.status}} (click)="btnListo($event)">
-            <!-- <img class="checklistOrder" src="../../assets/img/listo.png" alt=""> -->✓
-          </button>
-          <button  class="btn-delete" data-id={{eachOrderToServe.id}} data-value={{eachOrderToServe.status}} (click)="btnDeleteOrder($event)">✗</button><br>
-
+          <div class="containerButton">
+            <span class="waiter"><img class="img-waiter" src="../../assets/img/mesero.png" alt="">
+              {{eachOrderToServe.mesero}}</span><br>
+            <button class="btnPendient" data-id={{eachOrderToServe.id}} data-value={{eachOrderToServe.status}}
+              (click)="btnListo($event)">
+              <!-- <img class="checklistOrder" src="../../assets/img/listo.png" alt=""> -->✓
+            </button>
+            <button class="btn-delete" data-id={{eachOrderToServe.id}} data-value={{eachOrderToServe.status}}
+              (click)="btnDeleteOrder($event)">✗</button><br>
+          </div>
         </div>
       </section>
     </article>
@@ -66,13 +69,15 @@
 
 
 
-        <div class="containerButtonServido">
-          <span class="waiter"><img class="img-waiter" src="../../assets/img/mesero.png" alt=""> {{eachOrderToServe.mesero}}</span><br>
-          <button class="btn-deleteServido" data-id={{eachOrderToServe.id}} data-value={{eachOrderToServe.status}} (click)="btnfileOrder($event)">✗</button><br>
-          <!-- <button class="btnDelete">Eliminar</button> -->
+          <div class="containerButtonServido">
+            <span class="waiter"><img class="img-waiter" src="../../assets/img/mesero.png" alt="">
+              {{eachOrderToServe.mesero}}</span><br>
+            <button class="btn-deleteServido" data-id={{eachOrderToServe.id}} data-value={{eachOrderToServe.status}}
+              (click)="btnfileOrder($event)">✗</button><br>
+            <!-- <button class="btnDelete">Eliminar</button> -->
+          </div>
         </div>
       </section>
-
     </aside>
   </main>
 </body>

@@ -2,12 +2,12 @@
   <img class="img-item-selected" [src]="itemCart.img" alt="">
   <div class="order-details">
     <p> {{itemCart.nombre}} </p><br>
-    <p>{{itemCart.total | currency }}</p>
+    <p class="totalProduct">{{itemCart.total | currency }}</p>
   </div>
 
   <div class="container-order-options">
     <button class="menos" type="button" (click)="minus()"> - </button>
-    <input class="counterProduct" [value]="itemCart.cantidad"/>
+    <input class="counterProduct" [value]="itemCart.cantidad" />
     <button class="mas" type="button" (click)="plus()"> + </button>
     <button class="eliminar" (click)="deleteItem(itemCart)">🗑️</button>
   </div>

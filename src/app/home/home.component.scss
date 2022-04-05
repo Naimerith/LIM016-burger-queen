@@ -58,9 +58,13 @@ $color-words: #fff;
 }
 
 /* ---------------------------------- Media Query para pantallas a partir de 1300px ---------------------------------- */
-@media (min-width: 1300px) {
+@media (min-width: 1200px) {
 
-    .container-home {
-        margin-left: 400px;
+    .img-logo {
+        margin-top: 80px
     }
+
+    // .container-home {
+    //     margin-left: 400px;
+    // }
 }

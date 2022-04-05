@@ -8,6 +8,10 @@ body {
   background: $color-body;
 }
 
+.flex-main {
+  background-color: $color-body;
+}
+
 //fondo
 .flex-main {
   display: flex;
@@ -78,12 +82,13 @@ h5 {
 }
 
 .listProducts {
-  padding: 0 0 0 10px;
+  width: 37%;
+  //padding: 0 0 0 10px;
 }
 
 .listCant {
-  //padding: 0 10px 0 0;
-  padding: 0 75px 0 0;
+  width: 30%;
+  padding: 0px 7px;
 }
 
 .listPrice {
