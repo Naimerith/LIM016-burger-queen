@@ -136,13 +136,13 @@ export class WaiterMenuComponent implements OnInit, OnDestroy {
   showModal() {
     console.log('modal');
     Swal.fire({
-      title: '¿Estas seguro que quieres enviar el pedido?',
+      title: '¿Estas seguro que quieres enviar la orden?',
       text: "No podrás realizar modificaciones!",
       icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
-      confirmButtonText: 'Sí, enviar pedido',
+      confirmButtonText: 'Sí, enviar orden',
       cancelButtonText: 'Cancelar'
     }).then((result) => {
 
