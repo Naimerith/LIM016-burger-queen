@@ -18,19 +18,20 @@
         <span class="description">
           <h5 class="titleProducts">ORDEN</h5>
           <h5 class="titleCant">CANT.</h5>
+          <h5 class="titleCant">TOTAL</h5>
         </span>
         <div class="orderContainer" *ngFor="let  eachOrderToServeDetails of  eachOrderToServe.detalle ">
           <li class="listProducts">{{eachOrderToServeDetails.nombre}}</li>
           <li class="listCant">{{eachOrderToServeDetails.cantidad}}</li>
+          <li class="listPrice">{{eachOrderToServeDetails.total}}</li>
         </div>
 
         <div class="containerButton">
-          <span><img class="waiter" src="../../assets/img/mesero.png" alt=""> {{eachOrderToServe.mesero}}</span><br>
+          <span class="waiter"><img class="img-waiter" src="../../assets/img/mesero.png" alt=""> {{eachOrderToServe.mesero}}</span><br>
           <button class="btnPendient" data-id={{eachOrderToServe.id}} data-value={{eachOrderToServe.status}} (click)="btnListo($event)">
             <!-- <img class="checklistOrder" src="../../assets/img/listo.png" alt=""> -->✓
           </button>
-          <button class="btn-delete"><img class="img-btn-delete" src="../../assets/img/pendiente.png" alt=""></button><br>
-          <!-- <button class="btnDelete">Eliminar</button> -->
+          <button class="btn-delete">✗</button><br>
         </div>
       </div>
     </section>
@@ -53,19 +54,21 @@
         <span class="description">
           <h5 class="titleProducts">ORDEN</h5>
           <h5 class="titleCant">CANT.</h5>
+          <h5 class="titleCant">TOTAL</h5>
+
         </span>
         <div class="orderContainer" *ngFor="let  eachOrderToServeDetails of  eachOrderToServe.detalle ">
           <li class="listProducts">{{eachOrderToServeDetails.nombre}}</li>
           <li class="listCant">{{eachOrderToServeDetails.cantidad}}</li>
+          <li class="listPrice">{{eachOrderToServeDetails.total}}</li>
         </div>
 
         <div class="containerButton">
-          <span><img class="waiter" src="../../assets/img/mesero.png" alt=""> {{eachOrderToServe.mesero}}</span><br>
-        <div class="div-btn-delete">
-          <button class="btn-delete"><img class="img-btn-delete" src="../../assets/img/pendiente.png" alt=""></button><br>
+          <span class="waiter"><img class="img-waiter" src="../../assets/img/mesero.png" alt=""> {{eachOrderToServe.mesero}}</span><br>
+          <button class="btn-delete" data-id={{eachOrderToServe.id}} data-value={{eachOrderToServe.status}} (click)="btnfileOrder($event)">✗
+            <!--<img class="img-btn-delete" src="../../assets/img/pendiente.png" alt="">--></button><br>
+          <!-- <button class="btnDelete">Eliminar</button> -->
         </div>
-        </div>
-
       </div>
     </section>
 

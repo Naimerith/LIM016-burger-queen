@@ -3,11 +3,24 @@
 $color-header: rgba(247, 173, 80, 1);
 $color-text: #ffffff;
 
-.date-user, .text-userLogged {
-    color: $color-text;
+.date-user,
+.text-userLogged {
+    color: #ffffff;
     font-size: 20px;
     font-style: oblique;
-    margin-top: 0.9%;
+    /* margin-top: 0.9%; */
+    padding: 11px 0 0 1px;
+}
+
+.iconWaiter {
+    width: 10%;
+    height: 52%;
+}
+
+.userLogged {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 .header {
@@ -27,15 +40,15 @@ $color-text: #ffffff;
     margin-bottom: -5%;
 }
 
-.date-user{
-  display: flex;
-  margin-left: -13%;
+.date-user {
+    display: flex;
+    margin-left: -13%;
 }
 
-.icons{
-  display: flex;
-  justify-content: flex-end;
-  margin-right: 1%;
+.icons {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 1%;
 }
 
 .home,

@@ -71,7 +71,8 @@ h5 {
 }
 
 .listProducts,
-.listCant {
+.listCant,
+.lisPrice {
   list-style: none;
   font-size: 13px;
 }
@@ -81,6 +82,10 @@ h5 {
 .listCant {
   //padding: 0 10px 0 0;
   padding: 0 75px 0 0;
+}
+.listPrice {
+  //padding: 0 10px 0 0;
+  padding: 0 12% 0 0;
 }
 
 .btn-toServe {
@@ -106,6 +111,7 @@ h5 {
   padding: 0 10px 0 10px;
   flex-direction: row;
   align-items: baseline;
+  list-style:none;
   //padding: 10px 10px 0 10px;
 }
 
@@ -160,7 +166,11 @@ h5 {
   justify-content: space-around;
 }
 
-.waiter {
+.waiter{
+  display: flex;
+}
+
+.img-waiter {
   width: 40px;
 }
 
@@ -181,10 +191,14 @@ h5 {
 }
 
 .btn-delete{
-  width: 50px;
+  border-radius: 50%;
+  width: 15%;
   border: none;
+  font-size: 24px;
+  font-weight: 900;
+  color: #ffffff;
   cursor: pointer;
-  background-color: transparent;
+  background-color: #de5750;
 }
 
 .img-btn-delete{

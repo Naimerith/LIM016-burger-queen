@@ -3,11 +3,23 @@
 $color-header: rgba(247, 173, 80, 1);
 $color-text: #ffffff;
 
-.date-user, .text-userLogged {
+.date-user,
+.text-userLogged {
   color: $color-text;
   font-size: 20px;
   font-style: oblique;
   margin-top: 0.9%;
+}
+
+.iconWaiter {
+  width: 10%;
+  height: 58%;
+}
+
+.userLogged {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .header {
@@ -27,12 +39,12 @@ $color-text: #ffffff;
   margin-bottom: -5%;
 }
 
-.date-user{
+.date-user {
   display: flex;
   margin-left: -13%;
 }
 
-.icons{
+.icons {
   display: flex;
   justify-content: flex-end;
   margin-right: 1%;

@@ -3,11 +3,11 @@
     <div>
       <img class="logo" src="../../assets/img/logo.png" alt="logo luna burger">
     </div>
-    <div class="date-user">
-      <p class="date">◷ Fecha y hora</p>
-    </div>
-    <p class="text-userLogged">👤{{usuarioLogueado}}</p>
     <div class="icons">
+      <div class="userLogged">
+        <img class="iconWaiter" src="../../assets/img/mesero.png" alt="mesero">
+        <p class="text-userLogged">{{usuarioLogueado}}</p>
+      </div>
       <img class="home" [routerLink]="['/tables']" src="../../assets/img/mesa.png" alt="home">
       <img class="menu" [routerLink]="['/menu']" src="../../assets/img/menu.png" alt="home">
       <img class="orders" [routerLink]="['/pedidos']" src="../../assets/img/pedidos.png" alt="home">
