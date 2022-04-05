@@ -1,30 +1,31 @@
 <body>
-<app-header></app-header>
+  <app-header></app-header>
 
-<main class="flex-main">
-  <article class="menuOptions-content">
-    <h5>Por servir</h5>
-    <section id="toServeContainer">
-      <div class="container-orders-received" id="eachOrderToServe" *ngFor="let eachOrderToServe of itemsId">
-        <div class="orderContainer">
-          <div>
-            <span class="nameClient">👤 {{eachOrderToServe.cliente}}</span><br>
-            <span class="nameClient">◷ {{eachOrderToServe.fecha | date: 'shortTime'}}</span><br>
+  <main class="flex-main">
+    <article class="menuOptions-content">
+      <h5>Por servir</h5>
+      <section id="toServeContainer">
+        <div class="container-orders-received" id="eachOrderToServe" *ngFor="let eachOrderToServe of itemsId">
+          <div class="orderContainer">
+            <div>
+              <span class="nameClient">👤 {{eachOrderToServe.cliente}}</span><br>
+              <span class="nameClient">◷ {{eachOrderToServe.fecha | date: 'shortTime'}}</span><br>
+            </div>
+            <div class="containerNumTable">
+              <span class="numTable">{{eachOrderToServe.mesa}}</span>
+            </div>
           </div>
-          <div class="containerNumTable">
-            <span class="numTable">{{eachOrderToServe.mesa}}</span>
+          <span class="description">
+            <h5 class="titleProducts">ORDEN</h5>
+            <h5 class="titleCant">CANT.</h5>
+            <h5 class="titleCant">SUB-TOTAL</h5>
+          </span>
+          <div class="orderContainer" *ngFor="let  eachOrderToServeDetails of  eachOrderToServe.detalle ">
+            <li class="listProducts">{{eachOrderToServeDetails.nombre}}</li>
+            <li class="listCant">{{eachOrderToServeDetails.cantidad}}</li>
+            <li class="listPrice">$ {{eachOrderToServeDetails.total}}</li>
           </div>
-        </div>
-        <span class="description">
-          <h5 class="titleProducts">ORDEN</h5>
-          <h5 class="titleCant">CANT.</h5>
-          <h5 class="titleCant">TOTAL</h5>
-        </span>
-        <div class="orderContainer" *ngFor="let  eachOrderToServeDetails of  eachOrderToServe.detalle ">
-          <li class="listProducts">{{eachOrderToServeDetails.nombre}}</li>
-          <li class="listCant">{{eachOrderToServeDetails.cantidad}}</li>
-          <li class="listPrice">{{eachOrderToServeDetails.total}}</li>
-        </div>
+
 
         <div class="containerButton">
           <span class="waiter"><img class="img-waiter" src="../../assets/img/mesero.png" alt=""> {{eachOrderToServe.mesero}}</span><br>
@@ -32,45 +33,46 @@
             <!-- <img class="checklistOrder" src="../../assets/img/listo.png" alt=""> -->✓
           </button>
           <button  class="btn-delete" data-id={{eachOrderToServe.id}} data-value={{eachOrderToServe.status}} (click)="btnDeleteOrder($event)">✗</button><br>
+
         </div>
-      </div>
-    </section>
-  </article>
+      </section>
+    </article>
 
-  <aside class="selectedOptionsMenu">
-    <h5>Servidos</h5>
-    <section id="toServeContainer">
+    <aside class="selectedOptionsMenu">
+      <h5>Servidos</h5>
+      <section id="toServeContainer">
 
-      <div class="container-orders-received" id="eachOrderToServe" *ngFor="let eachOrderToServe of itemsServed">
-        <div class="orderContainer">
-          <div>
-            <span class="nameClient">👤 {{eachOrderToServe.cliente}}</span><br>
-            <span class="nameClient">◷ {{eachOrderToServe.fecha | date: 'shortTime'}}</span><br>
+        <div class="container-orders-received" id="eachOrderToServe" *ngFor="let eachOrderToServe of itemsServed">
+          <div class="orderContainer">
+            <div>
+              <span class="nameClient">👤 {{eachOrderToServe.cliente}}</span><br>
+              <span class="nameClient">◷ {{eachOrderToServe.fecha | date: 'shortTime'}}</span><br>
+            </div>
+            <div class="containerNumTable">
+              <span class="numTable">{{eachOrderToServe.mesa}}</span>
+            </div>
           </div>
-          <div class="containerNumTable">
-            <span class="numTable">{{eachOrderToServe.mesa}}</span>
+          <span class="description">
+            <h5 class="titleProducts">ORDEN</h5>
+            <h5 class="titleCant">CANT.</h5>
+            <h5 class="titleCant">SUB-TOTAL</h5>
+          </span>
+
+          <div class="orderContainer" *ngFor="let  eachOrderToServeDetails of  eachOrderToServe.detalle ">
+            <li class="listProducts">{{eachOrderToServeDetails.nombre}}</li>
+            <li class="listCant">{{eachOrderToServeDetails.cantidad}}</li>
+            <li class="listPrice">$ {{eachOrderToServeDetails.total}}</li>
           </div>
-        </div>
-        <span class="description">
-          <h5 class="titleProducts">ORDEN</h5>
-          <h5 class="titleCant">CANT.</h5>
-          <h5 class="titleCant">TOTAL</h5>
 
-        </span>
-        <div class="orderContainer" *ngFor="let  eachOrderToServeDetails of  eachOrderToServe.detalle ">
-          <li class="listProducts">{{eachOrderToServeDetails.nombre}}</li>
-          <li class="listCant">{{eachOrderToServeDetails.cantidad}}</li>
-          <li class="listPrice">{{eachOrderToServeDetails.total}}</li>
-        </div>
 
-        <div class="containerButton">
+
+        <div class="containerButtonServido">
           <span class="waiter"><img class="img-waiter" src="../../assets/img/mesero.png" alt=""> {{eachOrderToServe.mesero}}</span><br>
-          <button class="btn-delete" data-id={{eachOrderToServe.id}} data-value={{eachOrderToServe.status}} (click)="btnfileOrder($event)">✗</button><br>
+          <button class="btn-deleteServido" data-id={{eachOrderToServe.id}} data-value={{eachOrderToServe.status}} (click)="btnfileOrder($event)">✗</button><br>
           <!-- <button class="btnDelete">Eliminar</button> -->
         </div>
-      </div>
-    </section>
+      </section>
 
-  </aside>
-</main>
+    </aside>
+  </main>
 </body>
