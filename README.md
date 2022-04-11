@@ -66,7 +66,8 @@ Estas deben dar una cobertura del 70% de _statements_
 * [Angular](https://https://angular.io/)
 * [Git](https://git-scm.com/)
 * [GitHub](https://github.com/)
-* [GitHub Pages](https://pages.github.com/)
+* [Netlify](https://www.netlify.com//)
+* [Figma](https://www.figma.com/)
 
 
 
