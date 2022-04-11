@@ -59,7 +59,7 @@ Estas deben dar una cobertura del 70% de _statements_
 
 ## 7. Organización del Trabajo
 
-
+![Imagen1](https://user-images.githubusercontent.com/89501132/162799143-83880fb1-c8dc-4041-ad8f-21030ef50ed9.png)
 
 ## 8. Herramientas 
 
